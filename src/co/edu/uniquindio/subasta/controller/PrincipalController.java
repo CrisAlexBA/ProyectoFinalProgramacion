@@ -16,8 +16,11 @@ import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class PrincipalController implements Initializable{
+public class PrincipalController{
 
+	/*
+	 * Atributos
+	 */
     @FXML
     private Button btnLoginAnunciante;
 
@@ -29,7 +32,12 @@ public class PrincipalController implements Initializable{
 
     @FXML
     private Button btnRegistroComprador;
+    //____________________________________________________________________ 
 
+
+    /*
+     * Metodo que abre la vista del login de los anunciantes
+     */
     @FXML
     void loginAnunciante(ActionEvent event) {
     	//Metodo que permite tener solo una pestaña abierta (implementar en todo el codigo)
@@ -58,7 +66,12 @@ public class PrincipalController implements Initializable{
 			alert.showAndWait();
 		}
     }
+    //____________________________________________________________________ 
 
+    
+    /*
+     * Metodo que abre la vista para el login de los compradores
+     */
     @FXML
     void loginComprador(ActionEvent event) {
     	try {
@@ -86,7 +99,12 @@ public class PrincipalController implements Initializable{
 			alert.showAndWait();
 		}
     }
+    //____________________________________________________________________ 
 
+    
+    /*
+     * Metodo que abre la vista para el registro de un anunciante
+     */
     @FXML
     void registroAnunciante(ActionEvent event) {
 
@@ -115,7 +133,12 @@ public class PrincipalController implements Initializable{
 			alert.showAndWait();
 		}
     }
+    //____________________________________________________________________ 
 
+
+    /*
+     * Metodo que abre la vista para el registro de un comprador
+     */
     @FXML
     void registroComprador(ActionEvent event) {
 
@@ -144,10 +167,6 @@ public class PrincipalController implements Initializable{
 			alert.showAndWait();
 		}
     }
+    //____________________________________________________________________ 
 
-    @Override
-   	public void initialize(URL url, ResourceBundle rb) {
-   		// TODO Auto-generated method stub
-   		
-   	}
 }

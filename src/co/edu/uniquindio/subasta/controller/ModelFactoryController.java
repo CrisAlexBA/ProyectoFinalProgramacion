@@ -3,6 +3,7 @@ package co.edu.uniquindio.subasta.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Comprador;
@@ -48,39 +49,68 @@ public class ModelFactoryController {
 		}
 
 	}
+	
+	
+	/*
+	 * Metodos Get and Set
+	 */
 	public SubastaQuindio getSubasta() {
 		return subasta;
 	}
 	public void setSubasta(SubastaQuindio subasta) {
 		this.subasta = subasta;
 	}
+	//____________________________________________________________________ 
+
+	
+	/*
+	 * Metodo que permite agregar un anunciante a la lista
+	 */
 	public void agregarAnunciante(Anunciante anunciante) throws IOException {
 		SubastaQuindio.agregarAnunciante(anunciante);
-		
-		
 	}
+	//____________________________________________________________________ 
+
+	
+	/*
+	 * Metodo que permite agregar un comprador a la lista
+	 */
 	public void agregarComprador(Comprador comprador) throws IOException {
 		
 		SubastaQuindio.agregarComprador(comprador);
 		
 	}
+	//____________________________________________________________________ 
+
 	
+	/*
+	 * Metodo que permite cargar los datos de la aplicacion recien se ejecuta
+	 */
+	public void cargarDatos() throws IOException{
+		
+		subasta = (SubastaQuindio) Persistencia.cargarXML();
+	}
+	//____________________________________________________________________ 
+
 	
+	/*
+	 * Metodo que permite traer la lista de los anunciantes
+	 */
 	ArrayList<Anunciante> traerListaAnunciantes() {
 		return SubastaQuindio.getListaAnunciantes();
 	}
-	
+	//____________________________________________________________________ 
 	
 	public void inicializarDatos(){
 		
-		SubastaQuindio subasta = new SubastaQuindio();
+//		SubastaQuindio subasta = new SubastaQuindio();
 		
-		Comprador anuncianteNuevo = new Comprador();
-		anuncianteNuevo.setNombre("as");
-		anuncianteNuevo.setIdUsuario("12345");
-		anuncianteNuevo.setEdad(24);
-		anuncianteNuevo.setDinero(240000);
-		subasta.getListaCompradores().add(anuncianteNuevo);
+//		Comprador anuncianteNuevo = new Comprador();
+//		anuncianteNuevo.setNombre("as");
+//		anuncianteNuevo.setIdUsuario("12345");
+//		anuncianteNuevo.setEdad(24);
+//		anuncianteNuevo.setDinero(240000);
+//		subasta.getListaCompradores().add(anuncianteNuevo);
 		
 //		try {
 //			Persistencia.guardarEstudiantes(main.getListaEstudiantes());
@@ -100,6 +130,11 @@ public class ModelFactoryController {
 	// El obejto anunciante (que contiene el nombre, la id y la edad) se va para el modelo
 
 	// ______________________________________________________________
+	
+	
+	/*
+	 * Metodo que permite iniciar la sesion del comprador
+	 */
 	public boolean inicioSesionComprador(String nombre, String contrasenia) {
 		try {
 			return Persistencia.iniciarSesionComprador(nombre, contrasenia);
@@ -108,6 +143,41 @@ public class ModelFactoryController {
 		}
 		return false;
 	}
+	//____________________________________________________________________ 
 	
 	
+	/*
+	 * Metodo que permite guardar lo que pase en la app en un archivo xml
+	 */
+	public void guardarXML() throws IOException {
+
+		Persistencia.guardarXML(subasta);
+		
+	}
+	//____________________________________________________________________ 
+	
+	
+	/*
+	 * Metodo que permite guardar lo que pase en la app en un archivo binario
+	 */
+	public void guardarBinario() throws Exception {
+
+		Persistencia.guardarBinario(subasta);
+		
+	}
+	//____________________________________________________________________ 
+
+	
+	/*
+	 * Metodo que permite hacer el inicio de sesion de un anunciante
+	 */
+	public boolean inicioSesionAnunciante(String nombre, String idUsuario) throws AnuncianteException {
+		try {
+			return Persistencia.iniciarSesionAnunciante(nombre, idUsuario);
+		} catch (IOException | AnuncianteException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	//____________________________________________________________________ 
 }

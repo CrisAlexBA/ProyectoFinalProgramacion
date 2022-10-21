@@ -17,8 +17,17 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class TransaccionCompradorLogController implements Initializable{
+public class TransaccionCompradorLogController{
+	/*
+	 * Instancia del singleton
+	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
+	//___________________________________________________________________________
+	
+	
+	/*
+	 * Atributos
+	 */
     @FXML
     private Button btnLogin;
     
@@ -30,7 +39,12 @@ public class TransaccionCompradorLogController implements Initializable{
 
     @FXML
     private TextField txtNombre;
-
+    //___________________________________________________________________________
+    
+    
+    /*
+     * Metodo que permite volver a la pantalla principal
+     */
     @FXML
     void volver(ActionEvent event) {
     	try {
@@ -50,6 +64,12 @@ public class TransaccionCompradorLogController implements Initializable{
     		ex.printStackTrace();
     	}
     }
+    //___________________________________________________________________________
+    
+    
+    /*
+     * Metodo que permite hacer el login de los compradores
+     */
     @FXML
     void login(ActionEvent event) {
 
@@ -91,14 +111,5 @@ public class TransaccionCompradorLogController implements Initializable{
 		}	
     }
 	//________________________________________________________
-
-
-
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
 

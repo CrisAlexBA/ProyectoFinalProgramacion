@@ -41,9 +41,7 @@ public class Aplication extends Application{
 //	}
 	
 	public static void main(String[] args) throws IOException {
-//		instancia.inicializarDatos();
-		
-//		loadAnunciantes();
+		instancia.cargarDatos();
 		launch(args);
 		
 //		instancia.cargarAnunciantes

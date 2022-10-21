@@ -18,8 +18,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class CrudCompradorRegistroController implements Initializable{
+public class CrudCompradorRegistroController{
 
+	/*
+	 * Instanciamos el singleton
+	 */
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
 	
 	@FXML
@@ -36,7 +39,12 @@ public class CrudCompradorRegistroController implements Initializable{
 
     @FXML
     private TextField txtNombre;
+    // _________________________________________________________________
 
+    
+    /*
+     * Metodo que permite volver a la pantalla principal
+     */
     @FXML
     void volver(ActionEvent event) {
     	try {
@@ -56,6 +64,12 @@ public class CrudCompradorRegistroController implements Initializable{
     		ex.printStackTrace();
     	}
     }
+    // _________________________________________________________________
+    
+    
+    /*
+     * Metodo que permite hacer el registro de un comprador
+     */
     @FXML
     void registro(ActionEvent event) throws EdadException {
 
@@ -65,12 +79,16 @@ public class CrudCompradorRegistroController implements Initializable{
 		
 		Comprador comprador = new Comprador(nombre, idUsuario, edad);
 		
+		// Aqui mandamos el obejto con el nombre, id y la edad hacia un metodo que nos permite crear
+		// el comprador
 		crearComprador(comprador);
-		
-		
     }
+    // ______________________________________________________________________
 
-
+    
+    /*
+     * Metodo que permite hacer las respectivas validaciones para posterior, crear un comprador
+     */
     private void crearComprador(Comprador comprador) throws EdadException {
 
     	if(comprador.getNombre().equals("") && comprador.getIdUsuario().equals("") || comprador.getEdad() == 0){
@@ -134,10 +152,5 @@ public class CrudCompradorRegistroController implements Initializable{
 		}
 		
 	}
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		// TODO Auto-generated method stub
-		
-	}
-
+    // ______________________________________________________________________
 }

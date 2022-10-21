@@ -20,9 +20,15 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class CrudAnuncianteRegistroController implements Initializable{
+public class CrudAnuncianteRegistroController{
+	
+	/*
+	 * Instanciamos el singleton
+	 */
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
-
+	// _________________________________________________________________
+	
+	
 	/*
 	 * Atributos
 	 */
@@ -42,8 +48,6 @@ public class CrudAnuncianteRegistroController implements Initializable{
 
 	@FXML
 	private TextField txtNombre;
-	
-
 	// ____________________________________________________________________
 
 
@@ -63,6 +67,11 @@ public class CrudAnuncianteRegistroController implements Initializable{
 		crearAnunciante(anunciante);
 	}
 	// ____________________________________________________________________
+	
+	
+	/*
+	 * Metodo que permite volver a la pantalla principal
+	 */
     @FXML
     public void volver(ActionEvent event) {
     	try {
@@ -82,6 +91,8 @@ public class CrudAnuncianteRegistroController implements Initializable{
     		ex.printStackTrace();
     	}
 	}
+    // ____________________________________________________________________
+    
 
 	/*
 	 * Metodo que se encargar de ir al de confirmar que no hayan espacios vacios, o de que el anunciante
@@ -152,13 +163,5 @@ public class CrudAnuncianteRegistroController implements Initializable{
 
 	}
 	// ____________________________________________________________________
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 }
-
-
