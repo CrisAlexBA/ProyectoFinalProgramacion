@@ -1,24 +1,33 @@
 package co.edu.uniquindio.subasta.controller;
 
+import java.awt.Label;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import co.edu.uniquindio.subasta.aplication.Aplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class MenuAnuncianteController {
+public class MenuAnuncianteController{
 
 	/*
 	 * Atributos
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
-	
+
+    @FXML
+    private Button btnAgregarDin;
+
+    //__________________________________________________________
+    
     @FXML
     private Button btnAtras;
     
@@ -33,7 +42,15 @@ public class MenuAnuncianteController {
 
     @FXML
     private Button btnVerListaVentas;
-    //____________________________________________________________________ 
+    
+
+    //____________________________________________________________________
+    @FXML
+    void btnAgragarDin(ActionEvent event) {
+
+    }
+
+	//____________________________________________________________________ 
 
     
     /*
@@ -104,5 +121,6 @@ public class MenuAnuncianteController {
     	System.out.println("Se guardaron");
     }
     //____________________________________________________________________ 
+
 
 }

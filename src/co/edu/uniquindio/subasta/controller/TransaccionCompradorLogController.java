@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -71,7 +72,7 @@ public class TransaccionCompradorLogController{
      * Metodo que permite hacer el login de los compradores
      */
     @FXML
-    void login(ActionEvent event) {
+    void login(ActionEvent event) throws CompradorException {
 
 		String nombre = this.txtNombre.getText();
 		String idUsuario = this.txtIndentificacion.getText();
@@ -79,18 +80,20 @@ public class TransaccionCompradorLogController{
 		// Aqui entra al metodo de la lina de codigo numero 87
 		if(singleton.inicioSesionComprador(nombre, idUsuario) == true){
 			try {
-		
+				singleton.guardaRegistroLog("Usuario: "+nombre+" inicio sesion", 1, "LoginComprador");
+
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuComprador.fxml"));
 				Parent root = loader.load();
-		
+
 				MenuCompradorController controlador = loader.getController();
-		
+
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
 				
 				stage.setScene(scene);
 				stage.show();
-				Stage myStage = (Stage) this.btnVolver.getScene().getWindow();
+				stage.setOnCloseRequest(e -> controlador.btnMostrarVentanaPrincipal(event));
+				Stage myStage = (Stage) this.btnLogin.getScene().getWindow();
 				myStage.close();
 			} catch (IOException ex) {
 
@@ -103,11 +106,13 @@ public class TransaccionCompradorLogController{
 
 			// Si el metodo retorno false entonces mandara una alerta
 		}else{
+			singleton.guardaRegistroLog("Se intento iniciar sesion sin cuenta", 2, "LoginComprador");
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
 			alert.setContentText("Los datos no coinciden, vuelva a intentarlo.");
 			alert.showAndWait();
+			throw new CompradorException("Comprador no existe");
 		}	
     }
 	//________________________________________________________

@@ -8,6 +8,7 @@ import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Comprador;
 import co.edu.uniquindio.subasta.model.SubastaQuindio;
+import co.edu.uniquindio.subasta.persistencia.ArchivoUtil;
 import co.edu.uniquindio.subasta.persistencia.Persistencia;
 
 public class ModelFactoryController {
@@ -180,4 +181,9 @@ public class ModelFactoryController {
 		return false;
 	}
 	//____________________________________________________________________ 
+	
+	public void guardaRegistroLog(String mensajeLog, int nivel, String accion)
+	{
+		Persistencia.guardaRegistroLog(mensajeLog, nivel, accion);
+	}
 }

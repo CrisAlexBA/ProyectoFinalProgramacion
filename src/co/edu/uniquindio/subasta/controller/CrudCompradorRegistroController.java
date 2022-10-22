@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.exceptions.EdadException;
 import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
@@ -71,7 +72,7 @@ public class CrudCompradorRegistroController{
      * Metodo que permite hacer el registro de un comprador
      */
     @FXML
-    void registro(ActionEvent event) throws EdadException {
+    void registro(ActionEvent event) throws EdadException, CompradorException {
 
     	String nombre = this.txtNombre.getText();
     	String idUsuario = this.txtIdUsuario.getText();
@@ -79,9 +80,10 @@ public class CrudCompradorRegistroController{
 		
 		Comprador comprador = new Comprador(nombre, idUsuario, edad);
 		
-		// Aqui mandamos el obejto con el nombre, id y la edad hacia un metodo que nos permite crear
+		// Aqui mandamos el objeto con el nombre, id y la edad hacia un metodo que nos permite crear
 		// el comprador
 		crearComprador(comprador);
+		
     }
     // ______________________________________________________________________
 
@@ -89,32 +91,32 @@ public class CrudCompradorRegistroController{
     /*
      * Metodo que permite hacer las respectivas validaciones para posterior, crear un comprador
      */
-    private void crearComprador(Comprador comprador) throws EdadException {
+    private void crearComprador(Comprador comprador) throws EdadException, CompradorException {
 
     	if(comprador.getNombre().equals("") && comprador.getIdUsuario().equals("") || comprador.getEdad() == 0){
-
+    		modelFactoryController.guardaRegistroLog("Se intento registrar un usuario erroneamente", 2, "RegistroComprador");
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
 			alert.setContentText("Primero agregue informacion");
 			alert.showAndWait();
-
-			// Si la edad es menor a 18, mandara una alerta y propaga la excepcion de edad
+			//Excepcion propia
+			throw new CompradorException("Falta información para agregar el comprador.");
 		}else if(comprador.getEdad() < 18){
-
+			modelFactoryController.guardaRegistroLog("Se intento registrar un usuario menor de edad", 2, "RegistroComprador");
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
 			alert.setContentText("Debes ser mayor de edad para ingresar.");
 			alert.showAndWait();
-
+			//Excepcion propia
 			throw new EdadException("La edad es menor a los 18 a�os.");
 
 		}else{
 			
 			// Este metodo no se usa, X, el proposito era comparar que no exista ya la misma identificacion
 			if(comprador.getIdUsuario().equals(txtIdUsuario)){
-
+				modelFactoryController.guardaRegistroLog("Se intento registrar un usuario existente", 2, "RegistroComprador");
 				Alert alert = new Alert(Alert.AlertType.INFORMATION);
 				alert.setHeaderText(null);
 				alert.setTitle("Notificacion");
@@ -127,6 +129,7 @@ public class CrudCompradorRegistroController{
 				// Abrirle la respectiva intefaz
 				try {
 					modelFactoryController.agregarComprador(comprador);
+					modelFactoryController.guardaRegistroLog("Se registro el usuario: "+this.txtNombre.getText(), 1, "RegistroComprador");
 					
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuComprador.fxml"));
 					Parent root = loader.load();
@@ -135,9 +138,12 @@ public class CrudCompradorRegistroController{
 
 					Scene scene = new Scene(root);
 					Stage stage = new Stage();
-					stage.initModality(Modality.APPLICATION_MODAL); 
+					
 					stage.setScene(scene);
-					stage.showAndWait();
+					stage.show();
+					stage.setOnCloseRequest(e -> controlador.btnMostrarVentanaPrincipal(null));
+					Stage myStage = (Stage) this.btnRegistro.getScene().getWindow();
+					myStage.close();
 
 				} catch (IOException ex) {
 

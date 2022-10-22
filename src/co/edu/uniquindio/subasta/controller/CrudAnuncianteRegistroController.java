@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.subasta.aplication.Aplication;
+import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.EdadException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import javafx.event.ActionEvent;
@@ -55,7 +56,7 @@ public class CrudAnuncianteRegistroController{
 	 * Metodo que permite hacer el registro de un anunciante
 	 */
 	@FXML
-	void registro(ActionEvent event) throws IOException, EdadException {
+	void registro(ActionEvent event) throws IOException, EdadException, AnuncianteException {
 
 		String nombre = this.txtNombre.getText();
 		String idUsuario = this.txtIdUsuario.getText();
@@ -98,21 +99,21 @@ public class CrudAnuncianteRegistroController{
 	 * Metodo que se encargar de ir al de confirmar que no hayan espacios vacios, o de que el anunciante
 	 *  sea mayor de edad para luego, agregar ese anunciante a la lista
 	 */
-	private void crearAnunciante(Anunciante anunciante) throws EdadException {
+	private void crearAnunciante(Anunciante anunciante) throws EdadException, AnuncianteException {
 
 		
 		// Aqui verifica que ni el campo de nombre, id usuario o la edad esten vacios, de estarlo manda una alerta
 		if(anunciante.getNombre().equals("") && anunciante.getIdUsuario().equals("") || anunciante.getEdad() == 0){
-
+			modelFactoryController.guardaRegistroLog("Se intento registrar un usuario erroneamente", 2, "RegistroAnunciante");
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
 			alert.setContentText("Primero agregue informacion");
 			alert.showAndWait();
-
+			throw new AnuncianteException("Falta información para agregar el anunciante.");
 			// Si la edad es menor a 18, mandara una alerta y propaga la excepcion de edad
 		}else if(anunciante.getEdad() < 18){
-
+			modelFactoryController.guardaRegistroLog("Se intento registrar un usuario menor de edad", 2, "RegistroAnunciante");
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
@@ -125,7 +126,7 @@ public class CrudAnuncianteRegistroController{
 			
 			// Este metodo no se usa, X, el proposito era comparar que no exista ya la misma identificacion
 			if(anunciante.getIdUsuario().equals(txtIdUsuario)){
-
+				modelFactoryController.guardaRegistroLog("Se intento registrar un usuario existente", 2, "RegistroAnunciante");
 				Alert alert = new Alert(Alert.AlertType.INFORMATION);
 				alert.setHeaderText(null);
 				alert.setTitle("Notificacion");
@@ -138,6 +139,8 @@ public class CrudAnuncianteRegistroController{
 				// Abrirle la respectiva intefaz
 				try {
 					modelFactoryController.agregarAnunciante(anunciante);
+					modelFactoryController.guardaRegistroLog("Se registro el usuario: "+this.txtNombre.getText(), 1, "RegistroAnunciante");
+
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 					Parent root = loader.load();
 
@@ -145,17 +148,21 @@ public class CrudAnuncianteRegistroController{
 
 					Scene scene = new Scene(root);
 					Stage stage = new Stage();
-					stage.initModality(Modality.APPLICATION_MODAL); 
+					
 					stage.setScene(scene);
-					stage.showAndWait();
+					stage.show();
+					
+					stage.setOnCloseRequest(e -> controlador.btnMostrarVentanaPrincipal(null));
+					Stage myStage = (Stage) this.btnRegistro.getScene().getWindow();
+					myStage.close();
 
 				} catch (IOException ex) {
-
-					Alert alert = new Alert(Alert.AlertType.ERROR);
-					alert.setHeaderText(null);
-					alert.setTitle("Error");
-					alert.setContentText(ex.getMessage());
-					alert.showAndWait();
+					ex.printStackTrace();
+//					Alert alert = new Alert(Alert.AlertType.ERROR);
+//					alert.setHeaderText(null);
+//					alert.setTitle("Error");
+//					alert.setContentText(ex.getMessage());
+//					alert.showAndWait();
 				}
 			}
 

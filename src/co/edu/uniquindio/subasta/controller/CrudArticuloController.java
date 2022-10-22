@@ -10,6 +10,12 @@ import javafx.scene.input.KeyEvent;
 
 public class CrudArticuloController {
 
+
+	/*
+	 * Instanciamos el singleton
+	 */
+	ModelFactoryController singleton = ModelFactoryController.getInstance();
+	// _________________________________________________________________
     //@FXML
     //private BottomNavigationButton atras;
 

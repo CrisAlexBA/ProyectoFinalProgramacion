@@ -13,6 +13,12 @@ import javafx.scene.input.KeyEvent;
 
 public class CrudAnuncioController implements InterfaceCrudAnuncio{
 
+
+	/*
+	 * Instanciamos el singleton
+	 */
+	ModelFactoryController singleton = ModelFactoryController.getInstance();
+	// _________________________________________________________________
 //    @FXML
 //    private BottomNavigationButton atras;
 

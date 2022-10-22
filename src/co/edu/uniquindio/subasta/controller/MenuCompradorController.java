@@ -13,6 +13,11 @@ import javafx.stage.Stage;
 public class MenuCompradorController {
 
 	/*
+	 * Instanciamos el singleton
+	 */
+	ModelFactoryController singleton = ModelFactoryController.getInstance();
+	// _________________________________________________________________
+	/*
 	 * Atributos
 	 */
     @FXML

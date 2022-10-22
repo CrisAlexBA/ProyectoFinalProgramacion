@@ -22,8 +22,15 @@ public class Persistencia {
 	public static final String RUTA_ARCHIVO_ANUNCIOS = "src/resources/ArchivoArticulos.txt";
 	public static final String RUTA_ARCHIVO_SUBASTA = "src/resources/Subasta.xml";
 	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "src/resources/Subasta.txt";
-
-
+	public static final String RUTA_ARCHIVO_LOG = "src/resources/SubastaLog.txt";
+	
+//	public static final String RUTA_ARCHIVO_ANUNCIANTES = "C:/td/persistencia/archivos/ArchivoAnunciantes.txt";
+//	public static final String RUTA_ARCHIVO_COMPRADORES = "C:/td/persistencia//archivos/ArchivoCompradores.txt";
+//	public static final String RUTA_ARCHIVO_ARTICULOS = "C:/td/persistencia/archivos/ArchivoAnuncios.txt";
+//	public static final String RUTA_ARCHIVO_ANUNCIOS = "C:/td/persistencia/archivo/ArchivoArticulos.txt";
+//	public static final String RUTA_ARCHIVO_SUBASTA = "C:/td/persistencia/Subasta.xml";
+//	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "C:/td/persistencia/Subasta.txt";
+//	public static final String RUTA_ARCHIVO_LOG = "C:/td/persistencia/log/SubastaLog.txt";
 	/**
 	 * Guarda toda la informacion de los anunciantes
 	 * @param listaEmpleados
@@ -221,5 +228,14 @@ public class Persistencia {
 
 	}
 	// _______________________________________________________________________________
-
+	
+	/*
+	 * Metodo que permite hacer un log de lo que hacen los usuarios
+	 */
+	public static void guardaRegistroLog(String mensajeLog, int nivel, String accion)
+	{
+		
+		ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
+	}
+	
 }

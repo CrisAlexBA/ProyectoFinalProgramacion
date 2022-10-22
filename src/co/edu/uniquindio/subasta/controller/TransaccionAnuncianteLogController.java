@@ -80,8 +80,10 @@ public class TransaccionAnuncianteLogController{
 		
 		
 		if(singleton.inicioSesionAnunciante(nombre, idUsuario) == true){
+			
 			try {
-
+				singleton.guardaRegistroLog("Usuario: "+nombre+" inicio sesion", 1, "LoginAnunciante");
+				
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 				Parent root = loader.load();
 
@@ -89,9 +91,12 @@ public class TransaccionAnuncianteLogController{
 
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
-				stage.initModality(Modality.APPLICATION_MODAL); 
+				
 				stage.setScene(scene);
-				stage.showAndWait();
+				stage.show();
+				stage.setOnCloseRequest(e -> controlador.btnMostrarVentanaPrincipal(event));
+				Stage myStage = (Stage) this.btnLogin.getScene().getWindow();
+				myStage.close();
 
 			} catch (IOException ex) {
 
@@ -102,11 +107,13 @@ public class TransaccionAnuncianteLogController{
 				alert.showAndWait();
 			}
 		}else{
+			singleton.guardaRegistroLog("Se intento iniciar sesion sin cuenta", 2, "LoginAnunciante");
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
 			alert.setContentText("Los datos no coinciden, vuelva a intentarlo.");
 			alert.showAndWait();
+			throw new AnuncianteException("Anunciante no existe");
 		}
 		
 	}
