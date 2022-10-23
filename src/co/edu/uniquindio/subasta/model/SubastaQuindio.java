@@ -123,6 +123,16 @@ public class SubastaQuindio {
 		}
 		
 	}
+	
+    public Comprador leerComprador(String id) {
+        if (id != null) {
+            for (Comprador c :listaCompradores) {
+                if (c.getIdUsuario().equals(id))
+                    return c;
+            }
+        }
+        return null;
+    }
 
 	
 	

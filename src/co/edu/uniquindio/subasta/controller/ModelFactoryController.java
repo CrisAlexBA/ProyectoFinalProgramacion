@@ -186,4 +186,15 @@ public class ModelFactoryController {
 	{
 		Persistencia.guardaRegistroLog(mensajeLog, nivel, accion);
 	}
+	public Comprador traerComprador(String idUsuario) {
+		
+		try {
+			return Persistencia.cargarComprador(idUsuario);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
+    
 }

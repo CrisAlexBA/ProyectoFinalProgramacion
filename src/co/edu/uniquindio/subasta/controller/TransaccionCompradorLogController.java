@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
+import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -71,6 +72,7 @@ public class TransaccionCompradorLogController{
     /*
      * Metodo que permite hacer el login de los compradores
      */
+    private Comprador usuario;
     @FXML
     void login(ActionEvent event) throws CompradorException {
 
@@ -81,12 +83,12 @@ public class TransaccionCompradorLogController{
 		if(singleton.inicioSesionComprador(nombre, idUsuario) == true){
 			try {
 				singleton.guardaRegistroLog("Usuario: "+nombre+" inicio sesion", 1, "LoginComprador");
-
+				this.usuario = singleton.traerComprador(idUsuario);
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuComprador.fxml"));
 				Parent root = loader.load();
 
 				MenuCompradorController controlador = loader.getController();
-
+				controlador.init(usuario);
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
 				

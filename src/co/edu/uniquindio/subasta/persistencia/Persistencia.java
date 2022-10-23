@@ -96,6 +96,29 @@ public class Persistencia {
 		}
 		return anunciantes;
 	}
+	//____________________________________________________________________________________
+	public static Comprador cargarComprador(String idUsuario) throws IOException {
+
+		ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_COMPRADORES);
+		Comprador comprador = new Comprador();
+		String linea = "";
+
+		for (int i = 0; i < contenido.size(); i++) {
+			linea = contenido.get(i);
+			Comprador compradorCom = new Comprador();
+			compradorCom.setNombre(linea.split("@@")[0]);
+			compradorCom.setIdUsuario(linea.split("@@")[1]);
+			compradorCom.setEdad(Integer.parseInt(linea.split("@@")[2]));
+			compradorCom.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			compradorCom.setCantPujas(Integer.parseInt(linea.split("@@")[4]));
+			if(compradorCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
+				comprador = compradorCom;
+				return comprador;
+			}
+
+		}
+		return null;
+	}
 	//	 _________________________________________________________________________________
 	
 	

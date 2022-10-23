@@ -73,6 +73,11 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <Label fx:id="lblNombre" layoutX="491.0" layoutY="68.0" prefHeight="19.0" prefWidth="201.0" textFill="#f4f4f4">
+               <font>
+                  <Font name="Roboto Black Italic" size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </left>

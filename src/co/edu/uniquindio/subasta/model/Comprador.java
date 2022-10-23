@@ -23,7 +23,7 @@ public class Comprador extends Usuario{
 	
 	public Comprador(String nombre, String idUsuario, int edad) {
 		super(nombre, idUsuario, edad, 0, new ArrayList<Articulo>());
-		// TODO Auto-generated constructor stub
+		this.cantPujas = 0;
 	}
 	// Metodos Get and Set
 	public int getCantPujas() {

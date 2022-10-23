@@ -87,7 +87,7 @@ public class CrudCompradorRegistroController{
     }
     // ______________________________________________________________________
 
-    
+    private Comprador usuario;
     /*
      * Metodo que permite hacer las respectivas validaciones para posterior, crear un comprador
      */
@@ -130,7 +130,7 @@ public class CrudCompradorRegistroController{
 				try {
 					modelFactoryController.agregarComprador(comprador);
 					modelFactoryController.guardaRegistroLog("Se registro el usuario: "+this.txtNombre.getText(), 1, "RegistroComprador");
-					
+					this.usuario = comprador;
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuComprador.fxml"));
 					Parent root = loader.load();
 
@@ -140,6 +140,8 @@ public class CrudCompradorRegistroController{
 					Stage stage = new Stage();
 					
 					stage.setScene(scene);
+					//controlador.init(txtNombre.getText(), txtIdUsuario.getText(), this);
+					controlador.init(usuario);
 					stage.show();
 					stage.setOnCloseRequest(e -> {
 						try {
@@ -150,6 +152,7 @@ public class CrudCompradorRegistroController{
 					});
 					Stage myStage = (Stage) this.btnRegistro.getScene().getWindow();
 					myStage.close();
+					
 
 				} catch (IOException ex) {
 

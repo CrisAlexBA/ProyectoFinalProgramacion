@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class MenuCompradorController implements Initializable{
+public class MenuCompradorController{
 
 	/*
 	 * Instanciamos el singleton
@@ -43,6 +44,9 @@ public class MenuCompradorController implements Initializable{
     @FXML
     private Button btnAgregarDin;
     
+
+    @FXML
+    private Label lblNombre;
     
 
     //_____________________________________________________________________
@@ -130,10 +134,15 @@ public class MenuCompradorController implements Initializable{
     }
     //____________________________________________________________________ 
 
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		
+    private Comprador usuario;
+	public void init(Comprador comprador) {
+		lblNombre.setText(comprador.getNombre());
+		this.usuario = comprador;
 	}
+//    public void init(String idUsuario, CrudCompradorRegistroController crudCompradorRegistroController) {
+//		this.crudCompradorRegistroController = crudCompradorRegistroController;
+//		usuario = singleton.traerComprador(idUsuario);
+//		lblNombre.setText(usuario.getNombre());
+//	}
 
 }
