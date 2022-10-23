@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.subasta.exceptions.ArticuloException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
+import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Articulo;
 import co.edu.uniquindio.subasta.model.TipoArticulo;
 import javafx.event.ActionEvent;
@@ -45,7 +46,9 @@ public class CrudArticuloController implements Initializable{
 
     @FXML
     private ComboBox<TipoArticulo> tipoProducto;
-
+    
+    private Anunciante usuario;
+    
     @FXML
     void CrearArticulo(ActionEvent event) throws ArticuloException, IOException {
     	
@@ -53,7 +56,7 @@ public class CrudArticuloController implements Initializable{
     	String idArticulo = this.txtiDArticulo.getText();
     	TipoArticulo tipoArticulo = tipoProducto.getSelectionModel().getSelectedItem();
     	
-    	Articulo articuloNuevo = new Articulo(nombreArticulo, idArticulo, tipoArticulo);
+    	Articulo articuloNuevo = new Articulo(usuario, nombreArticulo, idArticulo, tipoArticulo);
     	
     	crearNuevoArticulo(articuloNuevo);
     	

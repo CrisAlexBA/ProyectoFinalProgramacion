@@ -19,13 +19,14 @@ public class Persistencia {
 	/*
 	 * Las rutas de los archivos
 	 */
-	public static final String RUTA_ARCHIVO_ANUNCIANTES = "src/resources/ArchivoAnunciantes.txt";
-	public static final String RUTA_ARCHIVO_COMPRADORES = "src/resources/ArchivoCompradores.txt";
-	public static final String RUTA_ARCHIVO_ARTICULOS = "src/resources/ArchivoAnuncios.txt";
-	public static final String RUTA_ARCHIVO_ANUNCIOS = "src/resources/ArchivoArticulos.txt";
-	public static final String RUTA_ARCHIVO_SUBASTA = "src/resources/SubastaXML.xml";
-	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "src/resources/SubastaBinario.txt";
-	public static final String RUTA_ARCHIVO_LOG = "src/resources/SubastaLog.txt";
+	public static final String RUTA_ARCHIVO_ANUNCIANTES = "src/co/edu/uniquindio/subasta/persistencia/archivos/ArchivoAnunciantes.txt";
+	public static final String RUTA_ARCHIVO_COMPRADORES = "src/co/edu/uniquindio/subasta/persistencia/archivos/ArchivoCompradores.txt";
+	public static final String RUTA_ARCHIVO_ARTICULOS = "src/co/edu/uniquindio/subasta/persistencia/archivos/ArchivoAnuncios.txt";
+	public static final String RUTA_ARCHIVO_ANUNCIOS = "src/co/edu/uniquindio/subasta/persistencia/archivos/ArchivoArticulos.txt";
+	public static final String RUTA_ARCHIVO_SUBASTA = "src/co/edu/uniquindio/subasta/persistencia/archivos/SubastaXML.xml";
+	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "src/co/edu/uniquindio/subasta/persistencia/archivos/SubastaBinario.dat";
+	public static final String RUTA_ARCHIVO_LOG = "src/co/edu/uniquindio/subasta/persistencia/log/SubastaLog.txt";
+	public static final String RUTA_ARCHIVO_COPIASEGURIDAD = "src/co/edu/uniquindio/subasta/persistencia/respaldo/CopiaSeguridadSubasta.xml";
 	
 //	public static final String RUTA_ARCHIVO_ANUNCIANTES = "C:/td/persistencia/archivos/ArchivoAnunciantes.txt";
 //	public static final String RUTA_ARCHIVO_COMPRADORES = "C:/td/persistencia//archivos/ArchivoCompradores.txt";
@@ -92,8 +93,6 @@ public class Persistencia {
 			anunciante.setEdad(Integer.parseInt(linea.split("@@")[2]));
 			anunciante.setDinero(Float.parseFloat(linea.split("@@")[3]));
 			anunciante.setCantAnuncios(Integer.parseInt(linea.split("@@")[4]));
-			//Dudas de como maneja el array de articulos
-			anunciante.setListaArticulos(null);
 			anunciantes.add(anunciante);
 
 		}
@@ -349,5 +348,11 @@ public class Persistencia {
 			}
 			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIOS, contenido, true);
 			
+		}
+		/**
+		 * Metodo que llama a archivo Util CopiadeseguridadArchivo enviandole la ruta donde se va a almacenar la copia
+		 */
+		public static void copiaSeguridad (){
+			ArchivoUtil.copiaSeguridadArchivo(RUTA_ARCHIVO_SUBASTA, RUTA_ARCHIVO_COPIASEGURIDAD);
 		}
 }

@@ -334,3 +334,5 @@ oct 23, 2022 3:44:09 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guard
 INFORMACIÓN: CrudArticulo,El usuario: (nombre usuario) creÃ³ un nuevo articulo,2022-10-23
 oct 23, 2022 3:44:52 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
 ADVERTENCIA: RegistroArticulo,Se intento registrar un articulo erroneamente,2022-10-23
+oct 23, 2022 4:33:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: RegistroAnunciante,Se registro el usuario: Andres,2022-10-23

@@ -12,6 +12,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.FileHandler;
@@ -217,6 +221,16 @@ public  class ArchivoUtil {
 		codificadorXML.writeObject(objeto);
 		codificadorXML.close();
 		
+	}
+	
+	public static void copiaSeguridadArchivo (String rutaArchivo, String rutaCopia){
+		try {
+			Path origen = Paths.get(rutaArchivo);
+			Path destino = Paths.get(rutaCopia);
+			Files.copy(origen, destino, StandardCopyOption.REPLACE_EXISTING);
+		}catch (IOException e){
+		}
+
 	}
 	
 	

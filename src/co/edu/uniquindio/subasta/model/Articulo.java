@@ -3,6 +3,7 @@ package co.edu.uniquindio.subasta.model;
 public class Articulo {
 
 	// Atributos
+	private Anunciante usuario;
 	private String nombreArticulo;
 	private String idArticulo;
 	private TipoArticulo tipoArticulo;
@@ -10,11 +11,17 @@ public class Articulo {
 	
 	
 	// Metodos Constructor
-	public Articulo(String nombreArticulo, String idArticulo, TipoArticulo tipoArticulo) {
-		super();
+	public Articulo(Anunciante usuario, String nombreArticulo, String idArticulo, TipoArticulo tipoArticulo) {
+		this.usuario = usuario;
 		this.nombreArticulo = nombreArticulo;
 		this.idArticulo = idArticulo;
 		this.tipoArticulo = tipoArticulo;
+	}
+	public Anunciante getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Anunciante usuario) {
+		this.usuario = usuario;
 	}
 	public Articulo() {
 		super();

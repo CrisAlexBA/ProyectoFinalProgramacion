@@ -10,9 +10,6 @@
      <void property="idUsuario">
       <string>123</string>
      </void>
-     <void property="listaArticulos">
-      <null/>
-     </void>
      <void property="nombre">
       <string>Carl</string>
      </void>
@@ -28,9 +25,6 @@
      <void property="idUsuario">
       <string>123</string>
      </void>
-     <void property="listaArticulos">
-      <null/>
-     </void>
      <void property="nombre">
       <string>Jox</string>
      </void>
@@ -43,9 +37,6 @@
      </void>
      <void property="idUsuario">
       <string>234</string>
-     </void>
-     <void property="listaArticulos">
-      <null/>
      </void>
      <void property="nombre">
       <string>Koral</string>

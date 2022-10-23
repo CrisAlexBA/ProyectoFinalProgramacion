@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_202" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.subasta.model.SubastaQuindio" id="SubastaQuindio0">
+  <void property="listaAnunciantes">
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Anunciante">
+     <void property="edad">
+      <int>21</int>
+     </void>
+     <void property="idUsuario">
+      <string>123</string>
+     </void>
+     <void property="nombre">
+      <string>Carl</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaCompradores">
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Comprador">
+     <void property="edad">
+      <int>21</int>
+     </void>
+     <void property="idUsuario">
+      <string>123</string>
+     </void>
+     <void property="nombre">
+      <string>Jox</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Comprador">
+     <void property="edad">
+      <int>20</int>
+     </void>
+     <void property="idUsuario">
+      <string>234</string>
+     </void>
+     <void property="nombre">
+      <string>Koral</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Comprador">
+     <void property="edad">
+      <int>23</int>
+     </void>
+     <void property="idUsuario">
+      <string>678</string>
+     </void>
+     <void property="nombre">
+      <string>alex</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

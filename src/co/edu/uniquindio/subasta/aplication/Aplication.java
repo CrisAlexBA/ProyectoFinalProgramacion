@@ -57,7 +57,7 @@ public class Aplication extends Application{
 //	}
 	
 	public static void main(String[] args) throws IOException {
-//		singleton.cargarDatos();
+		singleton.copiaSeguridad();
 		launch(args);
 		
 //		instancia.cargarAnunciantes

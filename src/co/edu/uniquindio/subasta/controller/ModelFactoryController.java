@@ -34,14 +34,14 @@ public class ModelFactoryController {
 		// iniciarSalvarDatosPrueba();
 
 		// 2. Cargar los datos de los archivos
-		//cargarDatosDesdeArchivos();
+		cargarDatosDesdeArchivos();
 
 		// 3. Guardar y Cargar el recurso serializable binario
 		//guardarResourceBinario();
 		//cargarResourceBinario();
 
 		// 4. Guardar y Cargar el recurso serializable XML
-		cargarResourceXML();
+		//cargarResourceXML();
 		//guardarResourceXML();
 		// Siempre se debe verificar si la raiz del recurso es null
 		if (subasta == null) {
@@ -237,6 +237,10 @@ public class ModelFactoryController {
 	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
 		subasta.agregarArticulo(articuloNuevo);
 		
+	}
+	
+	public static void copiaSeguridad() {
+		Persistencia.copiaSeguridad();
 	}
 
 	
