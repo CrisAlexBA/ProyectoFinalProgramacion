@@ -4,11 +4,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
+import co.edu.uniquindio.subasta.exceptions.ArticuloException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
+import co.edu.uniquindio.subasta.model.Articulo;
 import co.edu.uniquindio.subasta.model.Comprador;
 import co.edu.uniquindio.subasta.model.SubastaQuindio;
-import co.edu.uniquindio.subasta.persistencia.ArchivoUtil;
 import co.edu.uniquindio.subasta.persistencia.Persistencia;
 
 public class ModelFactoryController {
@@ -33,20 +34,18 @@ public class ModelFactoryController {
 		// iniciarSalvarDatosPrueba();
 
 		// 2. Cargar los datos de los archivos
-		// cargarDatosDesdeArchivos();
+		//cargarDatosDesdeArchivos();
 
 		// 3. Guardar y Cargar el recurso serializable binario
-		// guardarResourceBinario();
-		// cargarResourceBinario();
+		//guardarResourceBinario();
+		//cargarResourceBinario();
 
 		// 4. Guardar y Cargar el recurso serializable XML
-		// guardarResourceXML();
-
+		cargarResourceXML();
+		//guardarResourceXML();
 		// Siempre se debe verificar si la raiz del recurso es null
 		if (subasta == null) {
 			System.out.println("es null");
-			inicializarDatos();
-			// guardarResourceSerializable();
 		}
 
 	}
@@ -68,7 +67,7 @@ public class ModelFactoryController {
 	 * Metodo que permite agregar un anunciante a la lista
 	 */
 	public void agregarAnunciante(Anunciante anunciante) throws IOException {
-		SubastaQuindio.agregarAnunciante(anunciante);
+		subasta.agregarAnunciante(anunciante);
 	}
 	//____________________________________________________________________ 
 
@@ -78,7 +77,7 @@ public class ModelFactoryController {
 	 */
 	public void agregarComprador(Comprador comprador) throws IOException {
 		
-		SubastaQuindio.agregarComprador(comprador);
+		subasta.agregarComprador(comprador);
 		
 	}
 	//____________________________________________________________________ 
@@ -87,10 +86,10 @@ public class ModelFactoryController {
 	/*
 	 * Metodo que permite cargar los datos de la aplicacion recien se ejecuta
 	 */
-	public void cargarDatos() throws IOException{
-		
-		subasta = (SubastaQuindio) Persistencia.cargarXML();
-	}
+//	public void cargarDatos() throws IOException{
+//		
+//		subasta = (SubastaQuindio) Persistencia.cargarXML();
+//	}
 	//____________________________________________________________________ 
 
 	
@@ -98,7 +97,7 @@ public class ModelFactoryController {
 	 * Metodo que permite traer la lista de los anunciantes
 	 */
 	ArrayList<Anunciante> traerListaAnunciantes() {
-		return SubastaQuindio.getListaAnunciantes();
+		return subasta.getListaAnunciantes();
 	}
 	//____________________________________________________________________ 
 	
@@ -117,7 +116,6 @@ public class ModelFactoryController {
 //			Persistencia.guardarEstudiantes(main.getListaEstudiantes());
 //			Persistencia.guardarProgramas(main.getListaProgramas());
 //		} catch (IOException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 	}
@@ -150,22 +148,22 @@ public class ModelFactoryController {
 	/*
 	 * Metodo que permite guardar lo que pase en la app en un archivo xml
 	 */
-	public void guardarXML() throws IOException {
-
-		Persistencia.guardarXML(subasta);
-		
-	}
-	//____________________________________________________________________ 
-	
-	
-	/*
-	 * Metodo que permite guardar lo que pase en la app en un archivo binario
-	 */
-	public void guardarBinario() throws Exception {
-
-		Persistencia.guardarBinario(subasta);
-		
-	}
+//	public void guardarXML() throws IOException {
+//
+//		Persistencia.guardarXML(subasta);
+//		
+//	}
+//	//____________________________________________________________________ 
+//	
+//	
+//	/*
+//	 * Metodo que permite guardar lo que pase en la app en un archivo binario
+//	 */
+//	public void guardarBinario() throws Exception {
+//
+//		Persistencia.guardarBinario(subasta);
+//		
+//	}
 	//____________________________________________________________________ 
 
 	
@@ -196,5 +194,51 @@ public class ModelFactoryController {
 		}
 		return null;
 	}
+	//  _________________________________________________________________________
+	
+	//Nueva parte de la carga de datos
+	
+	
+	private void cargarDatosDesdeArchivos() {
+		
+		subasta = new SubastaQuindio();
+		
+		try {
+
+			Persistencia.cargarDatosArchivos(getSubasta());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void cargarResourceBinario() {
+		subasta = new SubastaQuindio();
+		subasta = Persistencia.cargarRecursoSubastaQuindioBinario();
+	}
+
+
+	public void guardarResourceBinario() {
+		
+	    Persistencia.guardarRecursoSubastaQuindioBinario(subasta);
+	}
+
+
+	public void cargarResourceXML() {
+		subasta = new SubastaQuindio();
+		subasta = Persistencia.cargarRecursoSubastaQuindioXML();
+	}
+
+
+	public void guardarResourceXML() {
+		
+	    Persistencia.guardarRecursoSubastaQuindioXML(subasta);
+	}
+	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
+		subasta.agregarArticulo(articuloNuevo);
+		
+	}
+
+	
     
 }

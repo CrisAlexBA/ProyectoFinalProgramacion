@@ -3,6 +3,7 @@ package co.edu.uniquindio.subasta.model;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import co.edu.uniquindio.subasta.exceptions.ArticuloException;
 import co.edu.uniquindio.subasta.persistencia.Persistencia;
 
 
@@ -10,8 +11,9 @@ public class SubastaQuindio {
 
 	// Atributos
 	private String nombre;
-	static ArrayList<Anunciante> listaAnunciantes = new ArrayList<Anunciante>();
-	static ArrayList<Comprador> listaCompradores = new ArrayList<Comprador>();
+	private ArrayList<Anunciante> listaAnunciantes = new ArrayList<Anunciante>();
+	private ArrayList<Comprador> listaCompradores = new ArrayList<Comprador>();
+	private ArrayList<Articulo> listaArticulos = new ArrayList<Articulo>();
 	// ----------------------
 
 	
@@ -21,6 +23,14 @@ public class SubastaQuindio {
 		this.nombre = nombre;
 	}
 	
+	public ArrayList<Articulo> getListaArticulo() {
+		return listaArticulos;
+	}
+
+	public void setListaArticulo(ArrayList<Articulo> listaArticulo) {
+		this.listaArticulos = listaArticulo;
+	}
+
 	public SubastaQuindio() {
 		super();
 	}
@@ -34,14 +44,14 @@ public class SubastaQuindio {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public static ArrayList<Anunciante> getListaAnunciantes() {
+	public ArrayList<Anunciante> getListaAnunciantes() {
 		return listaAnunciantes;
 	}
 	
-	public static void setListaAnunciantes(ArrayList<Anunciante> listaAnunciantes) {
-		SubastaQuindio.listaAnunciantes = listaAnunciantes;
+	public void setListaAnunciantes(ArrayList<Anunciante> listaAnunciantes) {
+		listaAnunciantes = listaAnunciantes;
 	}
-	public  ArrayList<Comprador> getListaCompradores() {
+	public ArrayList<Comprador> getListaCompradores() {
 		return listaCompradores;
 	}
 
@@ -89,7 +99,7 @@ public class SubastaQuindio {
 
 	
 
-	public static void agregarAnunciante(Anunciante anunciante) throws IOException {
+	public void agregarAnunciante(Anunciante anunciante) throws IOException {
 		int bandera = 0;
 		for(int i = 0; i < listaAnunciantes.size() && bandera == 0; i++) {
 			if(listaAnunciantes.get(i).getIdUsuario().equals(anunciante.getIdUsuario())) {
@@ -106,7 +116,7 @@ public class SubastaQuindio {
 		
 	}
 
-	public static void agregarComprador(Comprador comprador) throws IOException {
+	public void agregarComprador(Comprador comprador) throws IOException {
 		
 		int bandera = 0;
 		for(int i = 0; i < listaCompradores.size() && bandera == 0; i++) {
@@ -133,6 +143,24 @@ public class SubastaQuindio {
         }
         return null;
     }
+
+	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
+int bandera = 0;
+		
+		for (int i = 0; i < listaArticulos.size(); i++) {
+			if(listaArticulos.get(i).getIdArticulo().equals(articuloNuevo.getIdArticulo())){
+				bandera = 1;
+			}
+		}
+		if(bandera == 0){
+			listaArticulos.add(articuloNuevo);
+			Persistencia.guardarArticulo(listaArticulos);
+		}else{
+			System.out.println("Este articulo ya existe");
+			throw new ArticuloException("Articulo ya existe");
+		}
+		
+	}
 
 	
 	

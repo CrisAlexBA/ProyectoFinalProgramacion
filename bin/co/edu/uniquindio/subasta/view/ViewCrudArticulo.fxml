@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.CrudArticuloController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.CrudArticuloController">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="261.0" prefWidth="628.0" style="-fx-background-color: #f4f4f4;">
           <children>
-              <TextField fx:id="nombreArticulo" layoutX="40.0" layoutY="49.0" onKeyTyped="#ValidarText" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" />
-              <TextField fx:id="idArticulo" layoutX="40.0" layoutY="134.0" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" />
-              <ComboBox fx:id="tipoProducto" layoutX="365.0" layoutY="90.0" prefHeight="28.0" prefWidth="204.0" promptText="Tipo Producto" />
+              <TextField fx:id="txtNombreArticulo" layoutX="40.0" layoutY="49.0" onKeyTyped="#ValidarText" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" />
+              <TextField fx:id="txtiDArticulo" layoutX="40.0" layoutY="134.0" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" />
+              <ComboBox fx:id="tipoProducto" layoutX="365.0" layoutY="90.0" onAction="#comboboxEvents" prefHeight="28.0" prefWidth="204.0" promptText="Tipo Producto" />
               <Label layoutX="42.0" layoutY="25.0" text="Nombre Articulo:" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" />
               <Label layoutX="42.0" layoutY="104.0" text="ID del Articulo:" />
               <Label layoutX="36.0" layoutY="227.0" style="-fx-text-fill: White;" />

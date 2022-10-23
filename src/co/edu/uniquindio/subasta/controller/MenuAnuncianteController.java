@@ -117,8 +117,8 @@ public class MenuAnuncianteController{
     	try {
     		
     		
-    		singleton.guardarXML();
-			singleton.guardarBinario();
+    		singleton.guardarResourceXML();
+			//singleton.guardarResourceBinario();
 			System.out.println("Se guardaron");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
@@ -148,19 +148,7 @@ public class MenuAnuncianteController{
 
     }
     //____________________________________________________________________ 
-    
-    
-    /*
-     * Metodo que permite guardar todo lo uqe haya pasado en al app mediante una rchivo xml y binario
-     */
-    @FXML
-    void btnGuardarEvent(ActionEvent event) throws Exception {
 
-    	singleton.guardarXML();
-    	singleton.guardarBinario();
-    	
-    	System.out.println("Se guardaron");
-    }
     //____________________________________________________________________ 
 
 

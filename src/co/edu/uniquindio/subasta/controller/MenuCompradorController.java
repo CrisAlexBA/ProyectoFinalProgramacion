@@ -68,8 +68,8 @@ public class MenuCompradorController{
 
     	try {
     		singleton.guardaRegistroLog("El usuario: (nombre usuario) cerró sesión", 1, "MenuAnunciante");
-    		singleton.guardarXML();
-			singleton.guardarBinario();
+    		singleton.guardarResourceXML();
+			//singleton.guardarResourceBinario();
 			System.out.println("Se guardaron");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();

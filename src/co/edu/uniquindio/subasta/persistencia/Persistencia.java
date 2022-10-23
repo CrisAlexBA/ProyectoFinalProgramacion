@@ -3,9 +3,12 @@ package co.edu.uniquindio.subasta.persistencia;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+
+
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
+import co.edu.uniquindio.subasta.model.Articulo;
 import co.edu.uniquindio.subasta.model.Comprador;
 import co.edu.uniquindio.subasta.model.SubastaQuindio;
 
@@ -20,8 +23,8 @@ public class Persistencia {
 	public static final String RUTA_ARCHIVO_COMPRADORES = "src/resources/ArchivoCompradores.txt";
 	public static final String RUTA_ARCHIVO_ARTICULOS = "src/resources/ArchivoAnuncios.txt";
 	public static final String RUTA_ARCHIVO_ANUNCIOS = "src/resources/ArchivoArticulos.txt";
-	public static final String RUTA_ARCHIVO_SUBASTA = "src/resources/Subasta.xml";
-	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "src/resources/Subasta.txt";
+	public static final String RUTA_ARCHIVO_SUBASTA = "src/resources/SubastaXML.xml";
+	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "src/resources/SubastaBinario.txt";
 	public static final String RUTA_ARCHIVO_LOG = "src/resources/SubastaLog.txt";
 	
 //	public static final String RUTA_ARCHIVO_ANUNCIANTES = "C:/td/persistencia/archivos/ArchivoAnunciantes.txt";
@@ -74,11 +77,11 @@ public class Persistencia {
 	/*
 	 * Metodo que permite cargar los anunciantes
 	 */
-	public static ArrayList<Anunciante> cargarAnunciantes(String ruta) throws IOException {
+	public static ArrayList<Anunciante> cargarAnunciantes() throws IOException {
 
 		ArrayList<Anunciante> anunciantes = new ArrayList<Anunciante>();
 
-		ArrayList<String> contenido = ArchivoUtil.leerArchivo(ruta);
+		ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ANUNCIANTES);
 		String linea = "";
 
 		for (int i = 0; i < contenido.size(); i++) {
@@ -125,11 +128,11 @@ public class Persistencia {
 	/*
 	 * Metodo que permite cargar los compradores del archivo txt
 	 */
-	public static ArrayList<Comprador> cargarCompradores(String ruta) throws IOException {
+	public static ArrayList<Comprador> cargarCompradores() throws IOException {
 
 		ArrayList<Comprador> compradors = new ArrayList<Comprador>();
 
-		ArrayList<String> contenido = ArchivoUtil.leerArchivo(ruta);
+		ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_COMPRADORES);
 		String linea = "";
 
 		for (int i = 0; i < contenido.size(); i++) {
@@ -140,8 +143,6 @@ public class Persistencia {
 			comprador.setEdad(Integer.parseInt(linea.split("@@")[2]));
 			comprador.setDinero(Float.parseFloat(linea.split("@@")[3]));
 			comprador.setCantPujas(Integer.parseInt(linea.split("@@")[4]));
-			//Dudas de como maneja el array de articulos
-			comprador.setListaArticulos(null);
 			compradors.add(comprador);
 
 		}
@@ -171,7 +172,7 @@ public class Persistencia {
 	 */
 	private static boolean validarAnunciante(String anunciante, String contrasenia) throws FileNotFoundException, IOException 
 	{
-		ArrayList<Anunciante> anunciantes = Persistencia.cargarAnunciantes(RUTA_ARCHIVO_ANUNCIANTES);
+		ArrayList<Anunciante> anunciantes = Persistencia.cargarAnunciantes();
 
 		for (int indiceAnunciante = 0; indiceAnunciante < anunciantes.size(); indiceAnunciante++) 
 		{
@@ -206,7 +207,7 @@ public class Persistencia {
 	 */
 	private static boolean validarComprador(String comprador, String contrasenia) throws FileNotFoundException, IOException 
 	{
-		ArrayList<Comprador> compradores = Persistencia.cargarCompradores(RUTA_ARCHIVO_COMPRADORES);
+		ArrayList<Comprador> compradores = Persistencia.cargarCompradores();
 
 		for (int indicecomprador = 0; indicecomprador < compradores.size(); indicecomprador++) 
 		{
@@ -260,5 +261,93 @@ public class Persistencia {
 		
 		ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
 	}
+
+
+	public static void cargarDatosArchivos(SubastaQuindio subasta) throws IOException {
+			
+			
+			//cargar archivo de compradores
+			ArrayList<Comprador> compradoresCargados = cargarCompradores();
+			
+			if(compradoresCargados.size() > 0)
+				subasta.getListaCompradores().addAll(compradoresCargados);
+
+			
+			//cargar archivos anunciantes
+			ArrayList<Anunciante> anuncianteCargados = cargarAnunciantes();
+			
+			if(anuncianteCargados.size() > 0)
+				subasta.getListaAnunciantes().addAll(anuncianteCargados);
+			
+			//cargar archivo articulos
+			
+			//cargar archivo anuncios
+			
+		}
+	//------------------------------------SERIALIZACIÓN  y XML
 	
+	
+		public static SubastaQuindio cargarRecursoSubastaQuindioBinario() {
+			
+			SubastaQuindio SubastaQuindio = null;
+			
+			try {
+				SubastaQuindio = (SubastaQuindio)ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_SUBASTABINARIO);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return SubastaQuindio;
+		}
+		
+		public static void guardarRecursoSubastaQuindioBinario(SubastaQuindio subastaQuindio) {
+			
+			try {
+				ArchivoUtil.salvarRecursoSerializado(RUTA_ARCHIVO_SUBASTABINARIO, subastaQuindio);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		public static SubastaQuindio cargarRecursoSubastaQuindioXML() {
+			
+			SubastaQuindio SubastaQuindio = null;
+			
+			try {
+				SubastaQuindio = (SubastaQuindio)ArchivoUtil.cargarRecursoSerializadoXML(RUTA_ARCHIVO_SUBASTA);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return SubastaQuindio;
+
+		}
+
+		
+		
+		public static void guardarRecursoSubastaQuindioXML(SubastaQuindio subastaQuindio) {
+			
+			try {
+				ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_SUBASTA, subastaQuindio);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+
+
+		public static void guardarArticulo(ArrayList<Articulo> listaArticulos) throws IOException {
+			
+			String contenido = "";
+
+			for (Articulo arituiculos : listaArticulos) {
+				contenido += arituiculos.getNombreArticulo() + "@@" + arituiculos.getIdArticulo() + "@@" + arituiculos.getTipoArticulo()  +"\n";
+
+			}
+			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIOS, contenido, true);
+			
+		}
 }

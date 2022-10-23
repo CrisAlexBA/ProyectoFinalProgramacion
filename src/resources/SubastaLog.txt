@@ -268,3 +268,69 @@ oct 23, 2022 12:11:40 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guar
 INFORMACIÓN: RegistroComprador,Se registro el usuario: Alex,2022-10-23
 oct 23, 2022 12:11:42 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 12:31:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: CARL inicio sesion,2022-10-23
+oct 23, 2022 12:35:20 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginAnunciante,Se intento iniciar sesion sin cuenta,2022-10-23
+oct 23, 2022 12:35:42 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: CARL inicio sesion,2022-10-23
+oct 23, 2022 12:40:08 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: kORAL inicio sesion,2022-10-23
+oct 23, 2022 12:40:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 12:41:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 12:41:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 12:43:13 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 12:43:14 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 12:58:03 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 12:58:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:00:25 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 1:00:27 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:01:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-10-23
+oct 23, 2022 1:01:56 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 1:01:57 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:03:19 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 1:03:22 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:05:51 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 1:05:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:07:28 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 1:07:29 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:11:04 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 1:11:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:14:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: RegistroComprador,Se registro el usuario: alex,2022-10-23
+oct 23, 2022 1:14:39 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:17:38 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 1:17:39 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 1:18:23 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: RegistroComprador,Se registro el usuario: alex,2022-10-23
+oct 23, 2022 1:18:26 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 3:44:09 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudArticulo,El usuario: (nombre usuario) intento agregar un articulo sin datos, ArticuloException,2022-10-23
+oct 23, 2022 3:44:09 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudArticulo,El usuario: (nombre usuario) creÃ³ un nuevo articulo,2022-10-23
+oct 23, 2022 3:44:52 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: RegistroArticulo,Se intento registrar un articulo erroneamente,2022-10-23
