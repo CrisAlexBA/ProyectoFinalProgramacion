@@ -1,5 +1,7 @@
 package co.edu.uniquindio.subasta.model;
 
+import javafx.scene.chart.PieChart.Data;
+
 public class Anuncio {
 
 	// Atributos
@@ -8,9 +10,11 @@ public class Anuncio {
 	private String descripcion;
 //	private image foto;
 //	private date fechaPublicacion;
-//	private date fechaCumlinacion;
+// 	private Data fechaCumlinacion;
+// 	private data fechaCumlinacion;
 	private float valorInicial;
 	private float valorFinal;
+//  private String idUsuario //--->Posible variable 
 	// ---------------------------------- 
 	
 	

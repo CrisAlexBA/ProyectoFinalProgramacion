@@ -1,16 +1,22 @@
 package co.edu.uniquindio.subasta.controller;
 
+import java.awt.TextField;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class MenuCompradorController {
+public class MenuCompradorController implements Initializable{
 
 	/*
 	 * Instanciamos el singleton
@@ -23,34 +29,45 @@ public class MenuCompradorController {
     @FXML
     private Button btnAtras;
 
-    @FXML
-    private Button btnGuardar;
 
     @FXML
     private Button btnVerAnuncios;
 
     @FXML
-    private Button btnVerPujas;
-    //____________________________________________________________________ 
+    private Label label;
     
-    
-    /*
-     * Metodo que permite guardar lo que haya pasado en la app en un archivo xml y binario
-     */
     @FXML
-    void btnGuardarEvent(ActionEvent event) {
+    private Button btnVerPujas;
+    
+    @FXML
+    private Button btnAgregarDin;
+    
+    @FXML
+    private TextField txtAgregarDin;
 
+    //_____________________________________________________________________
+    @FXML
+    void agregarDin(ActionEvent event) {
+    	
+    	singleton.guardaRegistroLog("El usuario: (nombre usuario) agrego dinero", 1, "MenuAnunciante");
+    	
     }
     //____________________________________________________________________ 
-    
 
+    	
+    public static Label static_Label;
+    
     /*
      * Metodo que permite mostrar la ventana principal
      */
     @FXML
-    void btnMostrarVentanaPrincipal(ActionEvent event) {
+    void btnMostrarVentanaPrincipal(ActionEvent event) throws Exception {
 
     	try {
+    		singleton.guardaRegistroLog("El usuario: (nombre usuario) cerró sesión", 1, "MenuAnunciante");
+    		singleton.guardarXML();
+			singleton.guardarBinario();
+			System.out.println("Se guardaron");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
 	
@@ -75,7 +92,32 @@ public class MenuCompradorController {
      */
     @FXML
     void btnVerAnunciosEvent(ActionEvent event) {
+    	try {
 
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/GestionAnuncios.fxml"));
+			Parent root = loader.load();
+
+			GestionAnunciosController controlador = loader.getController();
+
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			
+			stage.setScene(scene);
+			stage.show();
+			stage.setTitle("Login Anunciante");
+			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
+			myStage.close();
+
+		} catch (IOException ex) {
+
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setHeaderText(null);
+			alert.setTitle("Error");
+			alert.setContentText(ex.getMessage());
+			alert.showAndWait();
+		}
+    	
+  
     }
     //____________________________________________________________________ 
 
@@ -88,5 +130,13 @@ public class MenuCompradorController {
 
     }
     //____________________________________________________________________ 
+
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		static_Label = label;
+		
+	}
 
 }

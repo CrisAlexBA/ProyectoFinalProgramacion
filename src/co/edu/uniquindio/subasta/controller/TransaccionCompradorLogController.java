@@ -92,7 +92,15 @@ public class TransaccionCompradorLogController{
 				
 				stage.setScene(scene);
 				stage.show();
-				stage.setOnCloseRequest(e -> controlador.btnMostrarVentanaPrincipal(event));
+				stage.setTitle("Menu del Comprador");
+				stage.setOnCloseRequest(e -> {
+					try {
+						controlador.btnMostrarVentanaPrincipal(event);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				});
 				Stage myStage = (Stage) this.btnLogin.getScene().getWindow();
 				myStage.close();
 			} catch (IOException ex) {

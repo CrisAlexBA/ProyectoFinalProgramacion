@@ -141,7 +141,13 @@ public class CrudCompradorRegistroController{
 					
 					stage.setScene(scene);
 					stage.show();
-					stage.setOnCloseRequest(e -> controlador.btnMostrarVentanaPrincipal(null));
+					stage.setOnCloseRequest(e -> {
+						try {
+							controlador.btnMostrarVentanaPrincipal(null);
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
+					});
 					Stage myStage = (Stage) this.btnRegistro.getScene().getWindow();
 					myStage.close();
 

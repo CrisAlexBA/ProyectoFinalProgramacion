@@ -1,6 +1,7 @@
 package co.edu.uniquindio.subasta.controller;
 
 import java.awt.Label;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MenuAnuncianteController{
 
@@ -22,9 +24,8 @@ public class MenuAnuncianteController{
 	 * Atributos
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
-
-    @FXML
-    private Button btnAgregarDin;
+    
+    Stage primaryStage;
 
     //__________________________________________________________
     
@@ -43,11 +44,18 @@ public class MenuAnuncianteController{
     @FXML
     private Button btnVerListaVentas;
     
-
-    //____________________________________________________________________
     @FXML
-    void btnAgragarDin(ActionEvent event) {
+    private Button btnAgregarDin;
+    
+    @FXML
+    private TextField txtAgregarDin;
 
+    //_____________________________________________________________________
+    @FXML
+    void agregarDin(ActionEvent event) {
+    	
+    	
+    	singleton.guardaRegistroLog("El usuario: (nombre usuario) agrego dinero", 1, "MenuAnunciante");
     }
 
 	//____________________________________________________________________ 
@@ -58,7 +66,26 @@ public class MenuAnuncianteController{
      */
     @FXML
     void btnCrearAnuncioEvent(ActionEvent event) {
-
+    	try {
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/ViewCrudAnuncio.fxml"));
+			Parent root = loader.load();
+	
+			CrudAnuncioController controlador = loader.getController();
+	
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			
+			stage.setScene(scene);
+			stage.setOnCloseRequest(e -> controlador.volver(event));
+			//stage.initStyle(StageStyle.UNDECORATED);
+			stage.show();
+			Stage myStage = (Stage) this.btnCrearAnuncio.getScene().getWindow();
+			myStage.close();
+    	}catch(IOException ex) {
+    		ex.printStackTrace();
+    	}
+    	
+		
     }
     //____________________________________________________________________ 
 
@@ -68,7 +95,23 @@ public class MenuAnuncianteController{
      */
     @FXML
     void btnCrearProductoEvent(ActionEvent event) {
-
+    	try {
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/ViewCrudArticulo.fxml"));
+			Parent root = loader.load();
+	
+			CrudArticuloController controlador = loader.getController();
+	
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			
+			stage.setScene(scene);
+			stage.setOnCloseRequest(e -> controlador.volver(event));
+			stage.show();
+			Stage myStage = (Stage) this.btnCrearProducto.getScene().getWindow();
+			myStage.close();
+    	}catch(IOException ex) {
+    		ex.printStackTrace();
+    	}
     }
     //____________________________________________________________________ 
     
@@ -77,9 +120,14 @@ public class MenuAnuncianteController{
      * Metodo que permite devolverse a la ventana principal
      */
     @FXML
-    void btnMostrarVentanaPrincipal(ActionEvent event) {
+    void btnMostrarVentanaPrincipal(ActionEvent event) throws Exception {
   
     	try {
+    		
+    		
+    		singleton.guardarXML();
+			singleton.guardarBinario();
+			System.out.println("Se guardaron");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
 	
@@ -90,6 +138,7 @@ public class MenuAnuncianteController{
 			
 			stage.setScene(scene);
 			stage.show();
+			
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
 			myStage.close();
     	}catch(IOException ex) {

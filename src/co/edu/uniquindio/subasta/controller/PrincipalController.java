@@ -19,6 +19,10 @@ import javafx.stage.Stage;
 public class PrincipalController{
 
 	/*
+	 * Instanciamos el singleton
+	 */
+	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
+	/*
 	 * Atributos
 	 */
     @FXML
@@ -53,6 +57,7 @@ public class PrincipalController{
 			
 			stage.setScene(scene);
 			stage.show();
+			stage.setTitle("Login Anunciante");
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -86,6 +91,7 @@ public class PrincipalController{
 			
 			stage.setScene(scene);
 			stage.show();
+			stage.setTitle("Login Comprador");
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -120,6 +126,7 @@ public class PrincipalController{
 			
 			stage.setScene(scene);
 			stage.show();
+			stage.setTitle("Registro del Anunciante");
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -154,6 +161,7 @@ public class PrincipalController{
 			
 			stage.setScene(scene);
 			stage.show();
+			stage.setTitle("Registro del Comprador");
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();

@@ -42,8 +42,8 @@ public class Persistencia {
 		String contenido = "";
 
 		for (Anunciante anunciantes : listaAnunciantes) {
-			contenido += anunciantes.getNombre() + "," + anunciantes.getIdUsuario() + "," + anunciantes.getEdad() + "," +
-					anunciantes.getDinero() + "," + anunciantes.getCantAnuncios() +"\n";
+			contenido += anunciantes.getNombre() + "@@" + anunciantes.getIdUsuario() + "@@" + anunciantes.getEdad() + "@@" +
+					anunciantes.getDinero() + "@@" + anunciantes.getCantAnuncios() +"\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIANTES, contenido, true);
@@ -62,8 +62,8 @@ public class Persistencia {
 		String contenido = "";
 
 		for (Comprador compradores : listacompradores) {
-			contenido += compradores.getNombre() + "," + compradores.getIdUsuario() + "," + compradores.getEdad() + "," +
-					compradores.getDinero() + "," + compradores.getCantPujas() +"\n";
+			contenido += compradores.getNombre() + "@@" + compradores.getIdUsuario() + "@@" + compradores.getEdad() + "@@" +
+					compradores.getDinero() + "@@" + compradores.getCantPujas() +"\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_COMPRADORES, contenido, true);
@@ -84,11 +84,11 @@ public class Persistencia {
 		for (int i = 0; i < contenido.size(); i++) {
 			linea = contenido.get(i);
 			Anunciante anunciante = new Anunciante();
-			anunciante.setNombre(linea.split(",")[0]);
-			anunciante.setIdUsuario(linea.split(",")[1]);
-			anunciante.setEdad(Integer.parseInt(linea.split(",")[2]));
-			anunciante.setDinero(Float.parseFloat(linea.split(",")[3]));
-			anunciante.setCantAnuncios(Integer.parseInt(linea.split(",")[4]));
+			anunciante.setNombre(linea.split("@@")[0]);
+			anunciante.setIdUsuario(linea.split("@@")[1]);
+			anunciante.setEdad(Integer.parseInt(linea.split("@@")[2]));
+			anunciante.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			anunciante.setCantAnuncios(Integer.parseInt(linea.split("@@")[4]));
 			//Dudas de como maneja el array de articulos
 			anunciante.setListaArticulos(null);
 			anunciantes.add(anunciante);
@@ -112,11 +112,11 @@ public class Persistencia {
 		for (int i = 0; i < contenido.size(); i++) {
 			linea = contenido.get(i);
 			Comprador comprador = new Comprador();
-			comprador.setNombre(linea.split(",")[0]);
-			comprador.setIdUsuario(linea.split(",")[1]);
-			comprador.setEdad(Integer.parseInt(linea.split(",")[2]));
-			comprador.setDinero(Float.parseFloat(linea.split(",")[3]));
-			comprador.setCantPujas(Integer.parseInt(linea.split(",")[4]));
+			comprador.setNombre(linea.split("@@")[0]);
+			comprador.setIdUsuario(linea.split("@@")[1]);
+			comprador.setEdad(Integer.parseInt(linea.split("@@")[2]));
+			comprador.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			comprador.setCantPujas(Integer.parseInt(linea.split("@@")[4]));
 			//Dudas de como maneja el array de articulos
 			comprador.setListaArticulos(null);
 			compradors.add(comprador);

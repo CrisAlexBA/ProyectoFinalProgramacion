@@ -32,9 +32,10 @@ public class Aplication extends Application{
 			// Seteo la scene y la muestro
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Proyecto Subastas del Quindio");
-			//primaryStage.initStyle(StageStyle.UNDECORATED); ---> linea que permite ocultar la barra superior de la ventana
+			//primaryStage.initStyle(StageStyle.UNDECORATED); //---> linea que permite ocultar la barra superior de la ventana
 //			primaryStage.setOnCloseRequest(event ->{
 //				try {
+//					
 //					singleton.guardarXML();
 //					singleton.guardarBinario();
 //					System.out.println("Se guardaron");
@@ -42,7 +43,8 @@ public class Aplication extends Application{
 //					// TODO Auto-generated catch block
 //					e.printStackTrace();
 //				}
-//			}); -------> Linea que permite guardar todos los datos cuando se la en la x de la parte superior
+//			}); 
+//			-------> Linea que permite guardar todos los datos cuando se la en la x de la parte superior
 			primaryStage.show();
 		} catch (IOException e) {
 			//System.out.println(e.getMessage());
