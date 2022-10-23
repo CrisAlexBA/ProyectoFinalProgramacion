@@ -1,6 +1,6 @@
 package co.edu.uniquindio.subasta.controller;
 
-import java.awt.TextField;
+import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,15 +26,16 @@ public class MenuCompradorController implements Initializable{
 	/*
 	 * Atributos
 	 */
+	
+    @FXML
+    private TextField txtAgregar;
+	
     @FXML
     private Button btnAtras;
 
 
     @FXML
     private Button btnVerAnuncios;
-
-    @FXML
-    private Label label;
     
     @FXML
     private Button btnVerPujas;
@@ -42,8 +43,7 @@ public class MenuCompradorController implements Initializable{
     @FXML
     private Button btnAgregarDin;
     
-    @FXML
-    private TextField txtAgregarDin;
+    
 
     //_____________________________________________________________________
     @FXML
@@ -54,8 +54,7 @@ public class MenuCompradorController implements Initializable{
     }
     //____________________________________________________________________ 
 
-    	
-    public static Label static_Label;
+   
     
     /*
      * Metodo que permite mostrar la ventana principal
@@ -134,8 +133,6 @@ public class MenuCompradorController implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-		static_Label = label;
 		
 	}
 

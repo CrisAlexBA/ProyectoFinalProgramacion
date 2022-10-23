@@ -68,12 +68,11 @@
             <Separator layoutX="461.0" layoutY="6.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="0.0" />
             <Separator layoutX="467.0" layoutY="197.0" prefHeight="4.0" prefWidth="247.0" />
             <Label layoutX="475.0" layoutY="218.0" text="Ingrese la cantidad de dinero que tiene:" textFill="#f4f4f4" />
-            <TextField fx:id="txtAgregarDin" layoutX="513.0" layoutY="259.0" />
+            <TextField fx:id="txtAgregar" layoutX="513.0" layoutY="259.0" />
             <Button fx:id="btnAgregarDin" layoutX="539.0" layoutY="304.0" mnemonicParsing="false" onAction="#agregarDin" style="-fx-background-color: #5c76cc;" text="Agregar Dinero" textFill="#f4f4f4">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Label fx:id="label" layoutX="491.0" layoutY="67.0" text="label del nombre" />
          </children>
       </AnchorPane>
    </left>
