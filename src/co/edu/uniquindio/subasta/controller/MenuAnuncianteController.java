@@ -3,6 +3,8 @@ package co.edu.uniquindio.subasta.controller;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
+import co.edu.uniquindio.subasta.model.Anunciante;
+import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,8 +48,9 @@ public class MenuAnuncianteController{
     //_____________________________________________________________________
     @FXML
     void agregarDin(ActionEvent event) {
+    	usuario.setDinero(Float.parseFloat(txtAgregar.getText()));
+    	singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuAnunciante");
     	
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) agrego dinero", 1, "MenuAnunciante");
     }
 
 	//____________________________________________________________________ 
@@ -63,7 +66,7 @@ public class MenuAnuncianteController{
 			Parent root = loader.load();
 	
 			CrudAnuncioController controlador = loader.getController();
-	
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			
@@ -92,7 +95,7 @@ public class MenuAnuncianteController{
 			Parent root = loader.load();
 	
 			CrudArticuloController controlador = loader.getController();
-	
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			
@@ -116,15 +119,14 @@ public class MenuAnuncianteController{
   
     	try {
     		
-    		
+    		singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" cerró sesión", 1, "MenuAnunciante");
     		singleton.guardarResourceXML();
-			//singleton.guardarResourceBinario();
-			System.out.println("Se guardaron");
+			singleton.guardarResourceBinario();
+			System.out.println("Se guardaron los datos");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
 	
 			PrincipalController controlador = loader.getController();
-	
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			
@@ -145,9 +147,16 @@ public class MenuAnuncianteController{
      */
     @FXML
     void btnVerListaVentasEvent(ActionEvent event) {
-
+    	singleton.guardaRegistroLog("El usuario: " + usuario.getNombre()+ " abrió la ventana lista de ventas", 1, "MenuAnunciante");
     }
     //____________________________________________________________________ 
+    
+    private Anunciante usuario;
+    
+	public void init(Anunciante usuario) {
+		this.usuario = usuario;
+		
+	}
 
     //____________________________________________________________________ 
 

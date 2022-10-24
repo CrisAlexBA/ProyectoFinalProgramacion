@@ -52,9 +52,13 @@ public class MenuCompradorController{
     //_____________________________________________________________________
     @FXML
     void agregarDin(ActionEvent event) {
-    	
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) agrego dinero", 1, "MenuAnunciante");
-    	
+    	usuario.setDinero(Float.parseFloat(txtAgregar.getText()));
+    	singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuComprador");
+    	try {
+			singleton.agregarComprador(usuario);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
     //____________________________________________________________________ 
 
@@ -67,10 +71,10 @@ public class MenuCompradorController{
     void btnMostrarVentanaPrincipal(ActionEvent event) throws Exception {
 
     	try {
-    		singleton.guardaRegistroLog("El usuario: (nombre usuario) cerró sesión", 1, "MenuAnunciante");
+    		singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" cerró sesión", 1, "MenuComprador");
     		singleton.guardarResourceXML();
-			//singleton.guardarResourceBinario();
-			System.out.println("Se guardaron");
+			singleton.guardarResourceBinario();
+			System.out.println("Se guardaron los datos");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
 	
@@ -101,7 +105,7 @@ public class MenuCompradorController{
 			Parent root = loader.load();
 
 			GestionAnunciosController controlador = loader.getController();
-
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			
@@ -130,19 +134,15 @@ public class MenuCompradorController{
      */
     @FXML
     void btnVerPujasEvent(ActionEvent event) {
-
+    	singleton.guardaRegistroLog("El usuario: " +usuario.getNombre()+" abrió la ventana de ver pujas", 1, "MenuComprador");
     }
     //____________________________________________________________________ 
-
+    //Atributo global del comprador que inicio sesión
     private Comprador usuario;
 	public void init(Comprador comprador) {
 		lblNombre.setText(comprador.getNombre());
 		this.usuario = comprador;
 	}
-//    public void init(String idUsuario, CrudCompradorRegistroController crudCompradorRegistroController) {
-//		this.crudCompradorRegistroController = crudCompradorRegistroController;
-//		usuario = singleton.traerComprador(idUsuario);
-//		lblNombre.setText(usuario.getNombre());
-//	}
+
 
 }

@@ -12,3 +12,65 @@ oct 23, 2022 4:50:44 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guard
 INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
 oct 23, 2022 4:50:46 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 5:01:07 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: koral inicio sesion,2022-10-23
+oct 23, 2022 5:01:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) agrego dinero,2022-10-23
+oct 23, 2022 5:01:34 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: (nombre usuario) cerró sesión,2022-10-23
+oct 23, 2022 8:35:43 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-10-23
+oct 23, 2022 8:35:48 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-23
+oct 23, 2022 8:35:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: Jox intento hacer una puja menor a la indicada, PujaMenorException,2022-10-23
+oct 23, 2022 8:35:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: Jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-10-23
+oct 23, 2022 8:35:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: Jox intento hacer más pujas de las posibles, CantidadPujaException,2022-10-23
+oct 23, 2022 8:35:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: Jox hizo una puja por un producto,2022-10-23
+oct 23, 2022 8:36:15 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:Jox agrego dinero,2022-10-23
+oct 23, 2022 8:36:22 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox abrió la ventana de ver pujas,2022-10-23
+oct 23, 2022 8:36:29 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox cerró sesión,2022-10-23
+oct 23, 2022 8:36:44 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-23
+oct 23, 2022 8:36:56 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario:Carl agrego dinero,2022-10-23
+oct 23, 2022 8:37:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-10-23
+oct 23, 2022 8:37:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio con fecha erronea, FechaException,2022-10-23
+oct 23, 2022 8:37:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio sin datos, AnuncioExcepcion,2022-10-23
+oct 23, 2022 8:37:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-23
+oct 23, 2022 8:37:24 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl abrio la lista de los articulos,2022-10-23
+oct 23, 2022 8:40:18 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-23
+oct 23, 2022 8:40:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-10-23
+oct 23, 2022 8:40:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio con fecha erronea, FechaException,2022-10-23
+oct 23, 2022 8:40:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio sin datos, AnuncioExcepcion,2022-10-23
+oct 23, 2022 8:40:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-23
+oct 23, 2022 8:40:54 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario:Carl agrego dinero,2022-10-23
+oct 23, 2022 8:46:00 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-23
+oct 23, 2022 8:46:50 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-23
+oct 23, 2022 8:46:58 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudArticulo,El usuario: creo un nuevo articulo,2022-10-23
+oct 23, 2022 8:49:17 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-23
+oct 23, 2022 8:49:35 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudArticulo,El usuario: Carlcreo un nuevo articulo,2022-10-23
+oct 23, 2022 8:49:45 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-23

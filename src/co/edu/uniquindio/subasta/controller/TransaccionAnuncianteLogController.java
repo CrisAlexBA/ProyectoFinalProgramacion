@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.model.Anunciante;
+import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -69,7 +70,7 @@ public class TransaccionAnuncianteLogController{
     }
     // _____________________________________________________________________
  
-    
+    private Anunciante usuario;
     /*
      * Metodo que permite hacer el login de los anunciantes
      */
@@ -84,12 +85,12 @@ public class TransaccionAnuncianteLogController{
 			
 			try {
 				singleton.guardaRegistroLog("Usuario: "+nombre+" inicio sesion", 1, "LoginAnunciante");
-				
+				this.usuario = singleton.traerAnunciante(idUsuario);
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 				Parent root = loader.load();
 
 				MenuAnuncianteController controlador = loader.getController();
-
+				controlador.init(usuario);
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
 				

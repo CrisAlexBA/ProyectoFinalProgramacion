@@ -2,6 +2,7 @@ package co.edu.uniquindio.subasta.controller;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,7 +57,7 @@ public class GestionAnunciosController {
 			Parent root = loader.load();
 
 			TransaccionPujaCompraController controlador = loader.getController();
-
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			
@@ -84,7 +85,7 @@ public class GestionAnunciosController {
 			Parent root = loader.load();
 	
 			MenuCompradorController controlador = loader.getController();
-	
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			
@@ -97,6 +98,18 @@ public class GestionAnunciosController {
     		ex.printStackTrace();
     	}
     }
+
+    
+    //  ____________________________________________________________________
+    /*
+     * Metodo que inicializa datos de la ventana anterior
+     */
+  //Atributo global del comprador que inicio sesión
+    private Comprador usuario;
+	public void init(Comprador usuario) {
+		this.usuario = usuario;
+		
+	}
 
 
 	

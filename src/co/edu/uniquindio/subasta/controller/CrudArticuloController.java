@@ -47,8 +47,6 @@ public class CrudArticuloController implements Initializable{
     @FXML
     private ComboBox<TipoArticulo> tipoProducto;
     
-    private Anunciante usuario;
-    
     @FXML
     void CrearArticulo(ActionEvent event) throws ArticuloException, IOException {
     	
@@ -61,8 +59,8 @@ public class CrudArticuloController implements Initializable{
     	crearNuevoArticulo(articuloNuevo);
     	
     
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) intento agregar un articulo sin datos, ArticuloException", 2, "CrudArticulo");
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) creÃ³ un nuevo articulo", 1, "CrudArticulo");
+
+    	
     }
 
     private void crearNuevoArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
@@ -70,7 +68,7 @@ public class CrudArticuloController implements Initializable{
     	if(articuloNuevo.getNombreArticulo().equals("") || articuloNuevo.getIdArticulo().equals("") ||
     			articuloNuevo.getTipoArticulo().equals(null)){
     		
-    		singleton.guardaRegistroLog("Se intento registrar un articulo erroneamente", 2, "RegistroArticulo");
+        	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" intento agregar un articulo sin datos, ArticuloException", 2, "CrudArticulo");
     		
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
@@ -80,6 +78,7 @@ public class CrudArticuloController implements Initializable{
 			//Excepcion propia
 			throw new ArticuloException("Falta informacion para agregar el articulo.");
     	}else{
+    		singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+"creo un nuevo articulo", 1, "CrudArticulo");
     		singleton.agregarArticulo(articuloNuevo);
     		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
@@ -117,7 +116,7 @@ public class CrudArticuloController implements Initializable{
 			Parent root = loader.load();
 	
 			MenuAnuncianteController controlador = loader.getController();
-	
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Proyecto Subastas del Quindio");
@@ -144,6 +143,11 @@ public class CrudArticuloController implements Initializable{
 		
 		tipoProducto.getItems().addAll(tipoArticulo.DEPORTES, tipoArticulo.HOGAR, tipoArticulo.TECNOLOGIA, tipoArticulo.VEHICULOS,
 			tipoArticulo.VIENESRAIZ);
+	}
+	private Anunciante usuario;
+	public void init(Anunciante usuario) {
+		this.usuario = usuario;
+		
 	}
 
 }

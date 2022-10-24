@@ -74,7 +74,28 @@ public class Persistencia {
 	}
 	//	 _________________________________________________________________________________	
 
+	public static Anunciante cargarAnunciante(String idUsuario) throws IOException {
 
+		ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ANUNCIANTES);
+		Anunciante anunciante = new Anunciante();
+		String linea = "";
+
+		for (int i = 0; i < contenido.size(); i++) {
+			linea = contenido.get(i);
+			Anunciante anuncianteCom = new Anunciante();
+			anuncianteCom.setNombre(linea.split("@@")[0]);
+			anuncianteCom.setIdUsuario(linea.split("@@")[1]);
+			anuncianteCom.setEdad(Integer.parseInt(linea.split("@@")[2]));
+			anuncianteCom.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			anuncianteCom.setCantAnuncios(Integer.parseInt(linea.split("@@")[4]));
+			if(anuncianteCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
+				anunciante = anuncianteCom;
+				return anunciante;
+			}
+
+		}
+		return null;
+	}
 	/*
 	 * Metodo que permite cargar los anunciantes
 	 */
@@ -343,7 +364,7 @@ public class Persistencia {
 			String contenido = "";
 
 			for (Articulo arituiculos : listaArticulos) {
-				contenido += arituiculos.getNombreArticulo() + "@@" + arituiculos.getIdArticulo() + "@@" + arituiculos.getTipoArticulo()  +"\n";
+				contenido += arituiculos.getUsuario() +"@@"+arituiculos.getNombreArticulo() + "@@" + arituiculos.getIdArticulo() + "@@" + arituiculos.getTipoArticulo()  +"\n";
 
 			}
 			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIOS, contenido, true);

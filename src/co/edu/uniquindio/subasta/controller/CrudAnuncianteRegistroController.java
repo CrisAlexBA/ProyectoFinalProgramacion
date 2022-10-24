@@ -8,6 +8,7 @@ import co.edu.uniquindio.subasta.aplication.Aplication;
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.EdadException;
 import co.edu.uniquindio.subasta.model.Anunciante;
+import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -94,7 +95,7 @@ public class CrudAnuncianteRegistroController{
 	}
     // ____________________________________________________________________
     
-
+    private Anunciante usuario;
 	/*
 	 * Metodo que se encargar de ir al de confirmar que no hayan espacios vacios, o de que el anunciante
 	 *  sea mayor de edad para luego, agregar ese anunciante a la lista
@@ -140,12 +141,12 @@ public class CrudAnuncianteRegistroController{
 				try {
 					modelFactoryController.agregarAnunciante(anunciante);
 					modelFactoryController.guardaRegistroLog("Se registro el usuario: "+this.txtNombre.getText(), 1, "RegistroAnunciante");
-
+					this.usuario = anunciante;
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 					Parent root = loader.load();
 
 					MenuAnuncianteController controlador = loader.getController();
-
+					controlador.init(usuario);
 					Scene scene = new Scene(root);
 					Stage stage = new Stage();
 					

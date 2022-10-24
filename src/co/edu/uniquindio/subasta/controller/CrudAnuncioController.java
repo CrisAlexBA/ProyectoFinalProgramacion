@@ -2,6 +2,7 @@ package co.edu.uniquindio.subasta.controller;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.subasta.model.Anunciante;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,15 +57,15 @@ public class CrudAnuncioController {
 
     @FXML
     void CargarMenuArticulos(ActionEvent event) {
-
+    	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" abrio la lista de los articulos", 1, "CrudAnuncio");
     }
 
     @FXML
     void CrearAnuncio(ActionEvent event) {
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) intento agregar más anuncios de los posibles, CantidadAnunciosException", 2, "CrudAnuncio");
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) intento agregar un anuncio con fecha erronea, FechaException", 2, "CrudAnuncio");
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) intento agregar un anuncio sin datos, AnuncioExcepcion", 2, "CrudAnuncio");
-    	singleton.guardaRegistroLog("El usuario: (nombre usuario) Creo un anuncio", 1, "CrudAnuncio");
+    	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" intento agregar más anuncios de los posibles, CantidadAnunciosException", 2, "CrudAnuncio");
+    	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" intento agregar un anuncio con fecha erronea, FechaException", 2, "CrudAnuncio");
+    	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" intento agregar un anuncio sin datos, AnuncioExcepcion", 2, "CrudAnuncio");
+    	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" Creo un anuncio", 1, "CrudAnuncio");
     }
 
     @FXML
@@ -79,7 +80,7 @@ public class CrudAnuncioController {
 			Parent root = loader.load();
 	
 			MenuAnuncianteController controlador = loader.getController();
-	
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			
@@ -91,5 +92,10 @@ public class CrudAnuncioController {
 			ex.printStackTrace();
 		}
     }
+    private Anunciante usuario;
+	public void init(Anunciante usuario) {
+		this.usuario = usuario;
+		
+	}
 
 }

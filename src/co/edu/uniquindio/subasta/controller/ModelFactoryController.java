@@ -194,6 +194,16 @@ public class ModelFactoryController {
 		}
 		return null;
 	}
+	
+	public Anunciante traerAnunciante(String idUsuario) {
+		try {
+			return Persistencia.cargarAnunciante(idUsuario);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
 	//  _________________________________________________________________________
 	
 	//Nueva parte de la carga de datos
@@ -242,6 +252,7 @@ public class ModelFactoryController {
 	public static void copiaSeguridad() {
 		Persistencia.copiaSeguridad();
 	}
+
 
 	
     
