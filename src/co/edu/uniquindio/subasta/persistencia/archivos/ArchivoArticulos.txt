@@ -1,1 +1,2 @@
 co.edu.uniquindio.subasta.model.Anunciante@6ee24b38@@carro@@3@@VEHICULOS
+co.edu.uniquindio.subasta.model.Anunciante@7096d037@@Optra@@975@@VEHICULOS

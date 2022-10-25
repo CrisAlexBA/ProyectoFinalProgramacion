@@ -15,6 +15,95 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Anunciante" id="Anunciante0">
+     <void property="edad">
+      <int>20</int>
+     </void>
+     <void property="idUsuario">
+      <string>345</string>
+     </void>
+     <void property="nombre">
+      <string>Andres</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Anunciante" id="Anunciante1">
+     <void property="edad">
+      <int>40</int>
+     </void>
+     <void property="idUsuario">
+      <string>78979</string>
+     </void>
+     <void property="nombre">
+      <string>Andres</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaArticulo">
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Articulo">
+     <void property="idArticulo">
+      <string>3</string>
+     </void>
+     <void property="nombreArticulo">
+      <string>carro</string>
+     </void>
+     <void property="tipoArticulo">
+      <object class="java.lang.Enum" id="TipoArticulo0" method="valueOf">
+       <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+       <string>VEHICULOS</string>
+      </object>
+     </void>
+     <void property="usuario">
+      <object class="co.edu.uniquindio.subasta.model.Anunciante">
+       <void property="edad">
+        <int>21</int>
+       </void>
+       <void property="idUsuario">
+        <string>123</string>
+       </void>
+       <void property="nombre">
+        <string>Carl</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Articulo">
+     <void property="idArticulo">
+      <string>3456</string>
+     </void>
+     <void property="nombreArticulo">
+      <string>Optra</string>
+     </void>
+     <void property="tipoArticulo">
+      <object idref="TipoArticulo0"/>
+     </void>
+     <void property="usuario">
+      <object idref="Anunciante0"/>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Articulo">
+     <void property="idArticulo">
+      <string>67867</string>
+     </void>
+     <void property="nombreArticulo">
+      <string>volvo</string>
+     </void>
+     <void property="tipoArticulo">
+      <object idref="TipoArticulo0"/>
+     </void>
+     <void property="usuario">
+      <object idref="Anunciante1"/>
+     </void>
+    </object>
+   </void>
   </void>
   <void property="listaCompradores">
    <void method="add">
@@ -53,6 +142,45 @@
      </void>
      <void property="nombre">
       <string>alex</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Comprador">
+     <void property="edad">
+      <int>25</int>
+     </void>
+     <void property="idUsuario">
+      <string>0987</string>
+     </void>
+     <void property="nombre">
+      <string>Robinson</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Comprador">
+     <void property="edad">
+      <int>24</int>
+     </void>
+     <void property="idUsuario">
+      <string>4568</string>
+     </void>
+     <void property="nombre">
+      <string>Robinson</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Comprador">
+     <void property="edad">
+      <int>24</int>
+     </void>
+     <void property="idUsuario">
+      <string>5978</string>
+     </void>
+     <void property="nombre">
+      <string>Robinson</string>
      </void>
     </object>
    </void>

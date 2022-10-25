@@ -35,6 +35,7 @@ public class Persistencia {
 //	public static final String RUTA_ARCHIVO_SUBASTA = "C:/td/persistencia/Subasta.xml";
 //	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "C:/td/persistencia/Subasta.txt";
 //	public static final String RUTA_ARCHIVO_LOG = "C:/td/persistencia/log/SubastaLog.txt";
+//	public static final String RUTA_ARCHIVO_COPIASEGURIDAD = "C:/td/persistencia/respaldo/CopiaSeguridadSubasta.xml";
 	/**
 	 * Guarda toda la informacion de los anunciantes
 	 * @param listaEmpleados
