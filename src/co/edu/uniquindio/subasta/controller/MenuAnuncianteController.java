@@ -88,26 +88,26 @@ public class MenuAnuncianteController{
     /*
      * Metodo que permite crear un producto con sus diferentes propiedades
      */
-    @FXML
-    void btnCrearProductoEvent(ActionEvent event) {
-    	try {
-	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/ViewCrudArticulo.fxml"));
-			Parent root = loader.load();
-	
-			CrudArticuloController controlador = loader.getController();
-			controlador.init(usuario);
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			
-			stage.setScene(scene);
-			stage.setOnCloseRequest(e -> controlador.volver(event));
-			stage.show();
-			Stage myStage = (Stage) this.btnCrearProducto.getScene().getWindow();
-			myStage.close();
-    	}catch(IOException ex) {
-    		ex.printStackTrace();
-    	}
-    }
+//    @FXML
+//    void btnCrearProductoEvent(ActionEvent event) {
+//    	try {
+//	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/ViewCrudArticulo.fxml"));
+//			Parent root = loader.load();
+//	
+//			CrudArticuloController controlador = loader.getController();
+//			controlador.init(usuario);
+//			Scene scene = new Scene(root);
+//			Stage stage = new Stage();
+//			
+//			stage.setScene(scene);
+//			stage.setOnCloseRequest(e -> controlador.volver(event));
+//			stage.show();
+//			Stage myStage = (Stage) this.btnCrearProducto.getScene().getWindow();
+//			myStage.close();
+//    	}catch(IOException ex) {
+//    		ex.printStackTrace();
+//    	}
+//    }
     //____________________________________________________________________ 
     
 

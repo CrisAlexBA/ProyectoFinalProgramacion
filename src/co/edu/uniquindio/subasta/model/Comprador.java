@@ -6,6 +6,7 @@ public class Comprador extends Usuario{
 
 	// Atributos
 	private int cantPujas;
+	private ArrayList<Anuncio> listaCompras;
 	// ------------------------
 
 	
@@ -14,13 +15,15 @@ public class Comprador extends Usuario{
 		super();
 	}
 	
-	// ------------------------
-	
-	
 	public Comprador(String nombre, String idUsuario, int edad) {
 		super(nombre, idUsuario, edad, 0);
 		this.cantPujas = 0;
+		this.listaCompras = new ArrayList<Anuncio>();
 	}
+	// ------------------------
+	
+	
+
 	// Metodos Get and Set
 	public int getCantPujas() {
 		return cantPujas;
@@ -28,6 +31,15 @@ public class Comprador extends Usuario{
 	public void setCantPujas(int cantPujas) {
 		this.cantPujas = cantPujas;
 	}
+
+	public ArrayList<Anuncio> getListaCompras() {
+		return listaCompras;
+	}
+
+	public void setListaCompras(ArrayList<Anuncio> listaCompras) {
+		this.listaCompras = listaCompras;
+	}
+
 	// ------------------------
 	
 }

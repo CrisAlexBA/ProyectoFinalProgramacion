@@ -46,3 +46,29 @@ oct 23, 2022 9:45:21 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guard
 INFORMACIÓN: CrudArticulo,El usuario: Andrescreo un nuevo articulo,2022-10-23
 oct 23, 2022 9:45:31 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: MenuAnunciante,El usuario: Andres cerró sesión,2022-10-23
+oct 28, 2022 10:22:05 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: RegistroAnunciante,Se registro el usuario: Paco,2022-10-28
+oct 28, 2022 10:41:51 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-28
+oct 28, 2022 10:41:55 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-28
+oct 28, 2022 11:47:17 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-28
+oct 28, 2022 11:49:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-28
+oct 28, 2022 11:49:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-10-28
+oct 28, 2022 11:49:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio con fecha erronea, FechaException,2022-10-28
+oct 28, 2022 11:49:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio sin datos, AnuncioExcepcion,2022-10-28
+oct 28, 2022 11:49:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-28
+oct 28, 2022 11:49:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-28
+oct 29, 2022 12:11:58 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-29
+oct 29, 2022 12:13:24 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-29
+oct 29, 2022 12:13:33 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-29

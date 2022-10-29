@@ -5,70 +5,57 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.CrudAnuncioController">
-   <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="612.0" style="-fx-background-color: #f4f4f4;">
-          <children>
-              <DatePicker fx:id="fechaInicial" layoutX="42.0" layoutY="224.0" prefHeight="26.0" prefWidth="204.0" />
-              <SplitPane layoutX="380.0" layoutY="87.0" prefHeight="180.0" prefWidth="204.0">
-                  <items>
-                      <ImageView fx:id="campoImagen" fitHeight="174.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true" />
-                  </items>
-              </SplitPane>
-              <TextField fx:id="txtNombreUsuario" layoutX="39.0" layoutY="74.0" onKeyTyped="#ValidarText" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" />
-              <TextArea fx:id="descripsion" layoutX="373.0" layoutY="289.0" prefHeight="115.0" prefWidth="218.0" />
-              <TextField fx:id="precioArticulo" layoutX="39.0" layoutY="378.0" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" />
-              <ComboBox fx:id="tipoProducto" layoutX="39.0" layoutY="142.0" prefHeight="28.0" prefWidth="204.0" promptText="Artículo" />
-              <Label layoutX="41.0" layoutY="50.0" text="Nombre Usuario:" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" />
-              <Label layoutX="379.0" layoutY="272.0" text="Descripción" />
-              <Label layoutX="379.0" layoutY="50.0" text="Adjuntar Fotografía" />
-              <Label layoutX="35.0" layoutY="347.0" text="Precio del Articulo:" />
-              <Label layoutX="36.0" layoutY="227.0" style="-fx-text-fill: White;" />
-              <Label layoutX="37.0" layoutY="197.0" text="Fecha de iniciación:" />
-              <DatePicker fx:id="fechaFinal" layoutX="42.0" layoutY="304.0" prefHeight="26.0" prefWidth="204.0" />
-              <Label layoutX="35.0" layoutY="302.0" style="-fx-text-fill: White;" />
-              <Label layoutX="37.0" layoutY="277.0" text="Fecha de Culminación:" />
-            <Button fx:id="crearAnuncio" layoutX="216.0" layoutY="425.0" mnemonicParsing="false" onAction="#CrearAnuncio" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #7097f3;" text="Crear Anuncio" textFill="#f4f4f4">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Roboto" size="13.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnVolver" layoutX="35.0" layoutY="465.0" mnemonicParsing="false" onAction="#volver" style="-fx-background-color: #7097f3;" text="Volver" textFill="#f4f4f4">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="btnListaArticulos" layoutX="483.0" layoutY="465.0" mnemonicParsing="false" onAction="#CargarMenuArticulos" style="-fx-background-color: #7097f3;" text="Lista Artículos" textFill="#f4f4f4">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-          </children>
-      </Pane>
-   </center>
-   <top>
-      <Pane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7097f3;" BorderPane.alignment="CENTER">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="716.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.CrudAnuncioController">
+   <children>
+      <Pane prefHeight="30.0" prefWidth="716.0" style="-fx-background-color: #759eff;">
          <children>
-            <Label layoutX="14.0" layoutY="13.0" text="Crear Anuncio" textFill="#f4f4f4">
+            <Label layoutX="14.0" layoutY="2.0" text="Crear Anuncio" textFill="#f4f4f4">
                <font>
-                  <Font name="Roboto Black" size="20.0" />
+                  <Font name="Roboto Black" size="18.0" />
                </font>
             </Label>
          </children>
       </Pane>
-   </top>
-   <bottom>
-      <Pane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #7097f3;" BorderPane.alignment="CENTER" />
-   </bottom>
-</BorderPane>
+      <DatePicker fx:id="fechaInicial" layoutX="53.0" layoutY="142.0" prefHeight="26.0" prefWidth="204.0" AnchorPane.leftAnchor="53.0" />
+      <TextField fx:id="txtNombreArticulo" layoutX="49.0" layoutY="84.0" onKeyTyped="#ValidarText" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" AnchorPane.leftAnchor="53.0" />
+      <TextField fx:id="txtPrecioArticulo" layoutX="53.0" layoutY="254.0" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="53.0" />
+      <ComboBox fx:id="tipoProducto" layoutX="279.0" layoutY="83.0" prefHeight="28.0" prefWidth="204.0" promptText="Artículo" />
+      <Label layoutX="51.0" layoutY="60.0" text="Nombre Artículo:" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.leftAnchor="53.0" />
+      <Label layoutX="53.0" layoutY="235.0" text="Precio del Articulo:" AnchorPane.leftAnchor="53.0" />
+      <Label layoutX="53.0" layoutY="124.0" text="Fecha de iniciación:" AnchorPane.leftAnchor="53.0" />
+      <DatePicker fx:id="fechaFinal" layoutX="52.0" layoutY="194.0" prefHeight="26.0" prefWidth="204.0" AnchorPane.leftAnchor="53.0" />
+      <Label layoutX="53.0" layoutY="176.0" text="Fecha de Culminación:" AnchorPane.leftAnchor="53.0" />
+      <AnchorPane layoutX="589.9000244140625" layoutY="66.9000015258789" />
+      <Label fx:id="lblFoto" alignment="CENTER" layoutX="534.0" layoutY="65.0" prefHeight="135.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" text="Agregar foto" textFill="#8b8b8b" AnchorPane.rightAnchor="53.0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtDescripcion" layoutX="275.0" layoutY="134.0" prefHeight="145.0" prefWidth="207.0" AnchorPane.bottomAnchor="89.66666666666663" />
+      <Label layoutX="279.0" layoutY="124.0" text="Descripción:" />
+      <Button fx:id="crearAnuncio" layoutX="276.0" layoutY="308.6666666666667" mnemonicParsing="false" onAction="#CrearAnuncio" prefHeight="35.0" prefWidth="153.0" style="-fx-background-color: #7097f3;" text="Crear Anuncio" textFill="#f4f4f4" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="287.0">
+         <font>
+            <Font name="Roboto Condensed Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnVolver" layoutX="14.0" layoutY="324.0" mnemonicParsing="false" onAction="#volver" style="-fx-background-color: #759eff;" text="Volver" textFill="#f4f4f4">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnAgregarFoto" layoutX="547.0" layoutY="229.0" mnemonicParsing="false" onAction="#AdjuntarFoto" style="-fx-background-color: #7097f3;" text="Adjuntar Foto" textFill="#f4f4f4">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

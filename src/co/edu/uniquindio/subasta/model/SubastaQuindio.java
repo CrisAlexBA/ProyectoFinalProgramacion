@@ -13,7 +13,8 @@ public class SubastaQuindio {
 	private String nombre;
 	private ArrayList<Anunciante> listaAnunciantes = new ArrayList<Anunciante>();
 	private ArrayList<Comprador> listaCompradores = new ArrayList<Comprador>();
-	private ArrayList<Articulo> listaArticulos = new ArrayList<Articulo>();
+	//private ArrayList<Articulo> listaArticulos = new ArrayList<Articulo>();
+	private ArrayList<Anuncio> listaAnuncios = new ArrayList<Anuncio>();
 	// ----------------------
 
 	
@@ -22,15 +23,6 @@ public class SubastaQuindio {
 		super();
 		this.nombre = nombre;
 	}
-	
-	public ArrayList<Articulo> getListaArticulo() {
-		return listaArticulos;
-	}
-
-	public void setListaArticulo(ArrayList<Articulo> listaArticulo) {
-		this.listaArticulos = listaArticulo;
-	}
-
 	public SubastaQuindio() {
 		super();
 	}
@@ -41,9 +33,18 @@ public class SubastaQuindio {
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public ArrayList<Anuncio> getListaAnuncios() {
+		return listaAnuncios;
+	}
+	public void setListaAnuncios(ArrayList<Anuncio> listaAnuncios) {
+		this.listaAnuncios = listaAnuncios;
+	}
+	
 	public ArrayList<Anunciante> getListaAnunciantes() {
 		return listaAnunciantes;
 	}
@@ -109,7 +110,7 @@ public class SubastaQuindio {
 		if(bandera == 0){
 			listaAnunciantes.add(anunciante);
 			Persistencia.guardarAnunciante(listaAnunciantes);
-			System.out.println("Se agregO un nuevo usuario.");
+			System.out.println("Se agregO un nuevo anunciante .");
 		}else{
 			System.out.println("Este usuario ya existe");
 		}
@@ -127,7 +128,7 @@ public class SubastaQuindio {
 		if(bandera == 0){
 			listaCompradores.add(comprador);
 			Persistencia.guardarComprador(listaCompradores);
-			System.out.println("Se agregO un nuevo usuario.");
+			System.out.println("Se agrego un nuevo comprador.");
 		}else{
 			System.out.println("Este usuario ya existe");
 		}
@@ -143,24 +144,44 @@ public class SubastaQuindio {
         }
         return null;
     }
-
-	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
-int bandera = 0;
+    
+    public void agregarAnuncio(Anuncio anuncioNuevo) throws IOException {
 		
-		for (int i = 0; i < listaArticulos.size(); i++) {
-			if(listaArticulos.get(i).getIdArticulo().equals(articuloNuevo.getIdArticulo())){
+		int bandera = 0;
+		for(int i = 0; i < listaAnuncios.size() && bandera == 0; i++) {
+			if(listaAnuncios.get(i).getNombreArticulo().equals(anuncioNuevo.getNombreArticulo())) {
 				bandera = 1;
 			}
 		}
 		if(bandera == 0){
-			listaArticulos.add(articuloNuevo);
-			Persistencia.guardarArticulo(listaArticulos);
+			listaAnuncios.add(anuncioNuevo);
+			Persistencia.guardarAnuncio(listaAnuncios);
+			System.out.println("Se agrego un nuevo anuncio.");
 		}else{
-			System.out.println("Este articulo ya existe");
-			throw new ArticuloException("Articulo ya existe");
+			System.out.println("Este usuario ya existe");
 		}
-		
 	}
+
+    /*
+     * Posible metodo que se cambiara a anuncio
+     */
+//	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
+//		int bandera = 0;
+//		
+//		for (int i = 0; i < listaArticulos.size(); i++) {
+//			if(listaArticulos.get(i).getIdArticulo().equals(articuloNuevo.getIdArticulo())){
+//				bandera = 1;
+//			}
+//		}
+//		if(bandera == 0){
+//			listaArticulos.add(articuloNuevo);
+//			Persistencia.guardarArticulo(listaArticulos);
+//		}else{
+//			System.out.println("Este articulo ya existe");
+//			throw new ArticuloException("Articulo ya existe");
+//		}
+//		
+//	}
 
 	
 	

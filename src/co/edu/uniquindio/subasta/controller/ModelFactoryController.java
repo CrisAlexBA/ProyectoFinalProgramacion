@@ -7,7 +7,7 @@ import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.ArticuloException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
-import co.edu.uniquindio.subasta.model.Articulo;
+import co.edu.uniquindio.subasta.model.Anuncio;
 import co.edu.uniquindio.subasta.model.Comprador;
 import co.edu.uniquindio.subasta.model.SubastaQuindio;
 import co.edu.uniquindio.subasta.persistencia.Persistencia;
@@ -41,7 +41,7 @@ public class ModelFactoryController {
 		//cargarResourceBinario();
 
 		// 4. Guardar y Cargar el recurso serializable XML
-		//cargarResourceXML();
+		cargarResourceXML();
 		//guardarResourceXML();
 		// Siempre se debe verificar si la raiz del recurso es null
 		if (subasta == null) {
@@ -244,13 +244,17 @@ public class ModelFactoryController {
 		
 	    Persistencia.guardarRecursoSubastaQuindioXML(subasta);
 	}
-	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
-		subasta.agregarArticulo(articuloNuevo);
-		
-	}
+//	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
+//		subasta.agregarArticulo(articuloNuevo);
+//		
+//	}
 	
 	public static void copiaSeguridad() {
 		Persistencia.copiaSeguridad();
+	}
+	public void agregarAnuncio(Anuncio anuncioNuevo) throws IOException {
+		subasta.agregarAnuncio(anuncioNuevo);
+		
 	}
 
 

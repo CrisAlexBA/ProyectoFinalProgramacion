@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
-import co.edu.uniquindio.subasta.model.Articulo;
+import co.edu.uniquindio.subasta.model.Anuncio;
 import co.edu.uniquindio.subasta.model.Comprador;
 import co.edu.uniquindio.subasta.model.SubastaQuindio;
 
@@ -48,7 +48,7 @@ public class Persistencia {
 
 		for (Anunciante anunciantes : listaAnunciantes) {
 			contenido += anunciantes.getNombre() + "@@" + anunciantes.getIdUsuario() + "@@" + anunciantes.getEdad() + "@@" +
-					anunciantes.getDinero() + "@@" + anunciantes.getCantAnuncios() +"\n";
+					anunciantes.getDinero() + "@@" + anunciantes.getCantAnuncios() + "@@" + anunciantes.getListaAnuncios() +"\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIANTES, contenido, true);
@@ -68,7 +68,7 @@ public class Persistencia {
 
 		for (Comprador compradores : listacompradores) {
 			contenido += compradores.getNombre() + "@@" + compradores.getIdUsuario() + "@@" + compradores.getEdad() + "@@" +
-					compradores.getDinero() + "@@" + compradores.getCantPujas() +"\n";
+					compradores.getDinero() + "@@" + compradores.getCantPujas() + "@@" + compradores.getListaCompras() +"\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_COMPRADORES, contenido, true);
@@ -89,6 +89,7 @@ public class Persistencia {
 			anuncianteCom.setEdad(Integer.parseInt(linea.split("@@")[2]));
 			anuncianteCom.setDinero(Float.parseFloat(linea.split("@@")[3]));
 			anuncianteCom.setCantAnuncios(Integer.parseInt(linea.split("@@")[4]));
+			anuncianteCom.setListaAnunciosString(linea.split("@@")[5]);
 			if(anuncianteCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
 				anunciante = anuncianteCom;
 				return anunciante;
@@ -359,22 +360,38 @@ public class Persistencia {
 		}
 
 
-
-		public static void guardarArticulo(ArrayList<Articulo> listaArticulos) throws IOException {
-			
-			String contenido = "";
-
-			for (Articulo arituiculos : listaArticulos) {
-				contenido += arituiculos.getUsuario() +"@@"+arituiculos.getNombreArticulo() + "@@" + arituiculos.getIdArticulo() + "@@" + arituiculos.getTipoArticulo()  +"\n";
-
-			}
-			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIOS, contenido, true);
-			
-		}
+/*
+ * Posible modificación del codigo para guardar un anuncio
+ */
+//		public static void guardarArticulo(ArrayList<Articulo> listaArticulos) throws IOException {
+//			
+//			String contenido = "";
+//
+//			for (Articulo arituiculos : listaArticulos) {
+//				contenido += arituiculos.getUsuario() +"@@"+arituiculos.getNombreArticulo() + "@@" + arituiculos.getIdArticulo() + "@@" + arituiculos.getTipoArticulo()  +"\n";
+//
+//			}
+//			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIOS, contenido, true);
+//			
+//		}
 		/**
 		 * Metodo que llama a archivo Util CopiadeseguridadArchivo enviandole la ruta donde se va a almacenar la copia
 		 */
 		public static void copiaSeguridad (){
 			ArchivoUtil.copiaSeguridadArchivo(RUTA_ARCHIVO_SUBASTA, RUTA_ARCHIVO_COPIASEGURIDAD);
+		}
+
+
+		public static void guardarAnuncio(ArrayList<Anuncio> listaAnuncios) throws IOException {
+			String contenido = "";
+
+			for (Anuncio anuncios : listaAnuncios) {
+				contenido += anuncios.getNombreArticulo() + "@@" + anuncios.getNombreAnunciante() + "@@" + anuncios.getEstado() + "@@" +
+						anuncios.getDescripcion() + "@@" + anuncios.getIdAnuncio() + "@@" + anuncios.getTipoArticulo() + "@@" +
+						anuncios.getFechaPublicacion() + "@@" + anuncios.getFechaCumlinacion() + "@@" + anuncios.getValor() + "@@" + anuncios.getFoto() + "\n";
+
+			}
+			ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ARTICULOS, contenido, true);
+			
 		}
 }

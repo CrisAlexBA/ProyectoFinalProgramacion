@@ -161,10 +161,10 @@ public  class ArchivoUtil {
 	 * @param rutaArchivo
 	 *            path del fichero que se quiere escribir
 	 * @throws IOException
+	 * @throws ClassNotFoundException 
 	 */
 	
-	@SuppressWarnings("unchecked")
-	public static Object cargarRecursoSerializado(String rutaArchivo)throws Exception 
+	public static Object cargarRecursoSerializado(String rutaArchivo)throws IOException, ClassNotFoundException 
 	{
 		Object aux = null;
 //		Empresa empresa = null;
@@ -175,7 +175,7 @@ public  class ArchivoUtil {
 
 			aux = ois.readObject();
 
-		} catch (Exception e2) {
+		} catch (IOException e2) {
 			throw e2;
 		} finally {
 			if (ois != null)
