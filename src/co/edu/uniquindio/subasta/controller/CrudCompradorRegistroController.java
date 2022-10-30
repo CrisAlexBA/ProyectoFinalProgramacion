@@ -26,6 +26,9 @@ public class CrudCompradorRegistroController{
 	 */
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
 	
+	// ________________________________________________________________________________
+	
+	//Atributos
 	@FXML
     private Button btnRegistro;
 	
@@ -56,7 +59,7 @@ public class CrudCompradorRegistroController{
 	
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Proyecto Subastas del Quindio");
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnVolver.getScene().getWindow();
@@ -86,8 +89,6 @@ public class CrudCompradorRegistroController{
 		
     }
     // ______________________________________________________________________
-
-    private Comprador usuario;
     /*
      * Metodo que permite hacer las respectivas validaciones para posterior, crear un comprador
      */
@@ -130,7 +131,7 @@ public class CrudCompradorRegistroController{
 				try {
 					modelFactoryController.agregarComprador(comprador);
 					modelFactoryController.guardaRegistroLog("Se registro el usuario: "+this.txtNombre.getText(), 1, "RegistroComprador");
-					this.usuario = comprador;
+					modelFactoryController.setComprador(comprador);
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuComprador.fxml"));
 					Parent root = loader.load();
 
@@ -138,10 +139,9 @@ public class CrudCompradorRegistroController{
 
 					Scene scene = new Scene(root);
 					Stage stage = new Stage();
-					
+					stage.setTitle("Menú Comprador");
 					stage.setScene(scene);
-					//controlador.init(txtNombre.getText(), txtIdUsuario.getText(), this);
-					controlador.init(usuario);
+					controlador.init();
 					stage.show();
 					stage.setOnCloseRequest(e -> {
 						try {
@@ -167,5 +167,15 @@ public class CrudCompradorRegistroController{
 		}
 		
 	}
-    // ______________________________________________________________________
+    
+	// ____________________________________________________________________
+	
+	/*
+	 * Método que permite inicializar los datos de la ventana
+	 */
+	public void init() {
+	}
+	// ____________________________________________________________________
+    
+    
 }

@@ -28,39 +28,5 @@ public class PujaArticulo {
 	// -------------------------------
 
 
-	// Metodo toString
-	@Override
-	public String toString() {
-		return "PujaArticulo [valorPuja=" + valorPuja + "]";
-	}
-	// -------------------------------
-
-
-	// Metodo hasCode and equals
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Float.floatToIntBits(valorPuja);
-		return result;
-	}
-	// -------------------------------
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		PujaArticulo other = (PujaArticulo) obj;
-		if (Float.floatToIntBits(valorPuja) != Float.floatToIntBits(other.valorPuja))
-			return false;
-		return true;
-	}
-
-
-
 
 }

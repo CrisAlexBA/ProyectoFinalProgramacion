@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Aplication extends Application{
-
+	//Inicialización del singleton
 	static ModelFactoryController singleton = ModelFactoryController.getInstance();
 	
 	
@@ -33,34 +33,17 @@ public class Aplication extends Application{
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Proyecto Subastas del Quindio");
 			//primaryStage.initStyle(StageStyle.UNDECORATED); //---> linea que permite ocultar la barra superior de la ventana
-//			primaryStage.setOnCloseRequest(event ->{
-//				try {
-//					
-//					singleton.guardarXML();
-//					singleton.guardarBinario();
-//					System.out.println("Se guardaron");
-//				} catch (Exception e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}); 
-//			-------> Linea que permite guardar todos los datos cuando se la en la x de la parte superior
 			primaryStage.show();
 		} catch (IOException e) {
-			//System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 	}
-
-//	public static void loadAnunciantes() throws IOException{
-//		instancia.cargarAnunciantes();
-//	}
 	
 	public static void main(String[] args) throws IOException {
+		//Saca la copia de seguridad
 		singleton.copiaSeguridad();
 		launch(args);
 		
-//		instancia.cargarAnunciantes
 
 	}
 }

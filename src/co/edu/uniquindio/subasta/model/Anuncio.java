@@ -6,15 +6,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.image.Image;
 
 public class Anuncio{
-
-	// Atributos
-//	private String nombreAnuncio;
-//	private String descripcion;
-////	private image foto;
-//	private DatePicker  fechaPublicacion;
-// 	private DatePicker  fechaCumlinacion;
-//	private float valor;
 	
+	//Atributos
 	private String nombreArticulo;
 	private String nombreAnunciante;	
 	private String estado; // venta, noComprado, comprado
@@ -26,8 +19,11 @@ public class Anuncio{
 	private float valor;
 	private Image foto;
 
-	// ---------------------------------- 
+	//____________________________________________________________________ 
 
+	// Metodos constructor
+	
+	//Constructor 1
 	public Anuncio(String nombreArticulo, String nombreAnunciante, String estado, String descripcion, String idAnuncio,
 			TipoArticulo tipoArticulo, LocalDate fechaPublicacion, LocalDate fechaCumlinacion, float valor,
 			Image foto) {
@@ -44,6 +40,25 @@ public class Anuncio{
 		this.foto = foto;
 	}
 
+	//Constructor 2
+	public Anuncio(String nombreArticulo, String nombreAnunciante, TipoArticulo tipoArticulo,
+			LocalDate fechaPublicacion, LocalDate fechaCumlinacion, float valor) {
+		super();
+		this.nombreArticulo = nombreArticulo;
+		this.nombreAnunciante = nombreAnunciante;
+		this.tipoArticulo = tipoArticulo;
+		this.fechaPublicacion = fechaPublicacion;
+		this.fechaCumlinacion = fechaCumlinacion;
+		this.valor = valor;
+	}
+	
+	//Constructor 3
+	public Anuncio() {
+	}
+	
+//____________________________________________________________________ 
+
+	// Metodos Getters and Setters
 	public String getNombreArticulo() {
 		return nombreArticulo;
 	}
@@ -123,80 +138,9 @@ public class Anuncio{
 	public void setFoto(Image foto) {
 		this.foto = foto;
 	}
+	
+//____________________________________________________________________ 
 
-
-
 	
-	// ---------------------------------- 
-	
-	
-
-	// ---------------------------------- 
-	
-	
-	// Metodos Constructor
-	
-	
-//	public Anuncio(Articulo articulo, String nombreAnuncio, DatePicker fechaInicial, DatePicker fechaFin, String descripcion, float precio) {
-//		super(articulo.getUsuario(), articulo.getNombreArticulo(), articulo.getIdArticulo(), articulo.getTipoArticulo());
-//		this.nombreAnuncio = nombreAnuncio;
-//		this.fechaPublicacion = fechaInicial;
-//		this.fechaCumlinacion = fechaFin;
-//		this.descripcion = descripcion;
-//		this.valor = precio;
-//	}
-//
-//	public String getNombreAnuncio() {
-//		return nombreAnuncio;
-//	}
-//	
-//	public void setNombreAnuncio(String nombreAnuncio) {
-//		this.nombreAnuncio = nombreAnuncio;
-//	}
-//
-//
-//	public String getDescripcion() {
-//		return descripcion;
-//	}
-//
-//
-//	public void setDescripcion(String descripcion) {
-//		this.descripcion = descripcion;
-//	}
-//
-//
-//	public DatePicker getFechaPublicacion() {
-//		return fechaPublicacion;
-//	}
-//
-//
-//	public void setFechaPublicacion(DatePicker fechaPublicacion) {
-//		this.fechaPublicacion = fechaPublicacion;
-//	}
-//
-//
-//	public DatePicker getFechaCumlinacion() {
-//		return fechaCumlinacion;
-//	}
-//
-//
-//	public void setFechaCumlinacion(DatePicker fechaCumlinacion) {
-//		this.fechaCumlinacion = fechaCumlinacion;
-//	}
-//
-//
-//	public float getValor() {
-//		return valor;
-//	}
-//
-//
-//	public void setValor(float valor) {
-//		this.valor = valor;
-//	}
-//
-//
-//	public Anuncio() {
-//		super();
-//	}
 	
 }

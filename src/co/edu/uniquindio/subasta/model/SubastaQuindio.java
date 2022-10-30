@@ -13,23 +13,24 @@ public class SubastaQuindio {
 	private String nombre;
 	private ArrayList<Anunciante> listaAnunciantes = new ArrayList<Anunciante>();
 	private ArrayList<Comprador> listaCompradores = new ArrayList<Comprador>();
-	//private ArrayList<Articulo> listaArticulos = new ArrayList<Articulo>();
 	private ArrayList<Anuncio> listaAnuncios = new ArrayList<Anuncio>();
-	// ----------------------
+//____________________________________________________________________ 
 
-	
 	// Metodos constructor
+	
+	//Constructor 1
 	public SubastaQuindio(String nombre) {
 		super();
 		this.nombre = nombre;
 	}
+	
+	//Constructor 2
 	public SubastaQuindio() {
 		super();
 	}
-	// ----------------------
-	
-	
-	// Metodos Get and Set
+//____________________________________________________________________ 
+
+	// Metodos Getters and Setters
 	public String getNombre() {
 		return nombre;
 	}
@@ -41,6 +42,7 @@ public class SubastaQuindio {
 	public ArrayList<Anuncio> getListaAnuncios() {
 		return listaAnuncios;
 	}
+	
 	public void setListaAnuncios(ArrayList<Anuncio> listaAnuncios) {
 		this.listaAnuncios = listaAnuncios;
 	}
@@ -50,56 +52,20 @@ public class SubastaQuindio {
 	}
 	
 	public void setListaAnunciantes(ArrayList<Anunciante> listaAnunciantes) {
-		listaAnunciantes = listaAnunciantes;
+		this.listaAnunciantes = listaAnunciantes;
 	}
 	public ArrayList<Comprador> getListaCompradores() {
 		return listaCompradores;
 	}
 
 	public void setListaCompradores(ArrayList<Comprador> listaCompradores) {
-		listaCompradores = listaCompradores;
+		this.listaCompradores = listaCompradores;
 	}
-	// -------------------------------
-	
-	
-	
+//____________________________________________________________________ 
 
-	// Metodo toString
-	@Override
-	public String toString() {
-		return "SubastaQuindio [nombre=" + nombre + "]";
-	}
-	// -------------------------------
-	
-	
-	// Metodo hasCode y equals
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		SubastaQuindio other = (SubastaQuindio) obj;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
-	}
-	// ------------------------------
-
-	
-
+	/*
+	 * Método que permite agregar un anunciante a la lista y mandarlo a persistencia
+	 */
 	public void agregarAnunciante(Anunciante anunciante) throws IOException {
 		int bandera = 0;
 		for(int i = 0; i < listaAnunciantes.size() && bandera == 0; i++) {
@@ -117,6 +83,11 @@ public class SubastaQuindio {
 		
 	}
 
+//____________________________________________________________________ 
+
+	/*
+	 * Método que permite agregar un comprador a la lista y mandarlo a persistencia
+	 */
 	public void agregarComprador(Comprador comprador) throws IOException {
 		
 		int bandera = 0;
@@ -135,16 +106,11 @@ public class SubastaQuindio {
 		
 	}
 	
-    public Comprador leerComprador(String id) {
-        if (id != null) {
-            for (Comprador c :listaCompradores) {
-                if (c.getIdUsuario().equals(id))
-                    return c;
-            }
-        }
-        return null;
-    }
-    
+//____________________________________________________________________ 
+
+	/*
+	 * Método que permite agregar un anuncio a la lista y mandarlo a persistencia
+	 */
     public void agregarAnuncio(Anuncio anuncioNuevo) throws IOException {
 		
 		int bandera = 0;
@@ -161,28 +127,62 @@ public class SubastaQuindio {
 			System.out.println("Este usuario ya existe");
 		}
 	}
+    
+ //____________________________________________________________________ 
 
     /*
-     * Posible metodo que se cambiara a anuncio
-     */
-//	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
-//		int bandera = 0;
-//		
-//		for (int i = 0; i < listaArticulos.size(); i++) {
-//			if(listaArticulos.get(i).getIdArticulo().equals(articuloNuevo.getIdArticulo())){
-//				bandera = 1;
-//			}
-//		}
-//		if(bandera == 0){
-//			listaArticulos.add(articuloNuevo);
-//			Persistencia.guardarArticulo(listaArticulos);
-//		}else{
-//			System.out.println("Este articulo ya existe");
-//			throw new ArticuloException("Articulo ya existe");
-//		}
-//		
-//	}
+	 * Método que permite actualizar un anunciante de la lista y mandarlo a persistencia
+	 */
+    public boolean actualizarAnunciante(String nombre, String idUsuario, int edad, float dinero, int canAnuncios, ArrayList<Anuncio> listaAnuncios) throws IOException {
+		Anunciante anuncianteNu = new Anunciante(nombre, idUsuario, edad, dinero, canAnuncios, listaAnuncios);
+		if (idUsuario != null) {
+            for (int i = 0 ; i < listaAnunciantes.size() ; i++) {
+                if (listaAnunciantes.get(i).getIdUsuario().equals(idUsuario)) {
+                	listaAnunciantes.set(i, anuncianteNu);
+        			Persistencia.guardarAnunciante(listaAnunciantes);
+                	return true;
+                }
+            }
+        }
+		return false;
+	}
+    
+ //____________________________________________________________________ 
 
-	
+    /*
+	 * Método que permite actualizar un comprador de la lista y mandarlo a persistencia
+	 */
+    public boolean actualizarComprador(String nombre, String idUsuario, int edad, float dinero, int canPujas, ArrayList<Anuncio> listaCompras) throws IOException {
+		Comprador compradorNu = new Comprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras);
+		if (idUsuario != null) {
+            for (int i = 0 ; i < listaCompradores.size() ; i++) {
+                if (listaCompradores.get(i).getIdUsuario().equals(idUsuario)) {
+                	listaCompradores.set(i, compradorNu);
+        			Persistencia.guardarComprador(listaCompradores);
+                	return true;
+                }
+            }
+        }
+		return false;
+	}
+
+//____________________________________________________________________ 
+
+    /*
+     * Método que permite buscar un comprador en especifico y retornarlo.
+     */
+    public Comprador leerComprador(String id) {
+        if (id != null) {
+            for (Comprador c :listaCompradores) {
+                if (c.getIdUsuario().equals(id))
+                    return c;
+            }
+        }
+        return null;
+    }
+//____________________________________________________________________ 
+    
+    
+    
 	
 }

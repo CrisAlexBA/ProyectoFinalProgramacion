@@ -37,7 +37,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <TextArea fx:id="txtDescripcion" layoutX="275.0" layoutY="134.0" prefHeight="145.0" prefWidth="207.0" AnchorPane.bottomAnchor="89.66666666666663" />
+      <TextArea fx:id="txtDescripcion" layoutX="275.0" layoutY="134.0" prefHeight="135.0" prefWidth="207.0" AnchorPane.bottomAnchor="90.0" />
       <Label layoutX="279.0" layoutY="124.0" text="Descripción:" />
       <Button fx:id="crearAnuncio" layoutX="276.0" layoutY="308.6666666666667" mnemonicParsing="false" onAction="#CrearAnuncio" prefHeight="35.0" prefWidth="153.0" style="-fx-background-color: #7097f3;" text="Crear Anuncio" textFill="#f4f4f4" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="287.0">
          <font>

@@ -20,7 +20,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
             <FontAwesomeIconView disable="true" fill="#759eff" focusTraversable="true" glyphName="HOME" layoutX="230.0" layoutY="325.0" size="30" text="" />
-            <Button fx:id="btnCrearAnuncio" layoutX="7.0" layoutY="85.0" mnemonicParsing="false" onAction="#btnCrearAnuncioEvent" prefHeight="50.0" prefWidth="447.0" style="-fx-background-color: transparent; -fx-text-fill: #FFFFFF;" text="Crear Anuncio">
+            <Button fx:id="btnCrearAnuncio" layoutX="7.0" layoutY="85.0" mnemonicParsing="false" onAction="#btnCrearAnuncioEvent" prefHeight="70.0" prefWidth="447.0" style="-fx-background-color: transparent; -fx-text-fill: #FFFFFF;" text="Crear Anuncio">
                <font>
                   <Font size="18.0" />
                </font>
@@ -33,9 +33,9 @@
                </font>
             </Label>
             <FontAwesomeIconView fill="WHITE" glyphName="CUBE" layoutX="15.0" layoutY="120.0" size="30" text="" />
-            <Separator layoutX="-1.0" layoutY="85.0" prefHeight="0.0" prefWidth="453.0" />
-            <Separator layoutX="-2.0" layoutY="135.0" prefHeight="0.0" prefWidth="453.0" />
-            <Button layoutX="2.0" layoutY="138.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="453.0" style="-fx-background-color: transparent; -fx-text-fill: #FFFFFF;" text="Crear un Producto">
+            <Separator layoutX="1.0" layoutY="85.0" prefHeight="0.0" prefWidth="453.0" />
+            <Separator layoutX="1.0" layoutY="155.0" prefHeight="0.0" prefWidth="453.0" />
+            <Button fx:id="btnVerListaVentas" layoutX="4.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnVerListaVentasEvent" prefHeight="70.0" prefWidth="453.0" style="-fx-background-color: transparent; -fx-text-fill: #FFFFFF;" text="Ver mis Anuncios">
                <font>
                   <Font size="18.0" />
                </font>
@@ -43,37 +43,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Separator layoutX="-2.0" layoutY="188.0" prefHeight="3.0" prefWidth="453.0" />
-            <FontAwesomeIconView fill="WHITE" glyphName="CUBES" layoutX="11.0" layoutY="173.0" size="30" />
-            <Button fx:id="btnVerListaVentas" layoutY="189.0" mnemonicParsing="false" onAction="#btnVerListaVentasEvent" prefHeight="50.0" prefWidth="453.0" style="-fx-background-color: transparent; -fx-text-fill: #FFFFFF;" text="Ver mi Lista de Ventas">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <FontAwesomeIconView fill="WHITE" glyphName="LIST_UL" layoutX="16.0" layoutY="224.0" size="28" />
-            <Separator layoutX="-1.0" layoutY="237.0" prefHeight="0.0" prefWidth="453.0" />
-            <Label layoutX="499.0" layoutY="29.0" prefHeight="26.0" prefWidth="90.0" style="-fx-text-fill: #FFFFFF;" text="Nombre:">
-               <font>
-                  <Font name="Berlin Sans FB" size="21.0" />
-               </font>
-               <effect>
-                  <Glow level="0.29" />
-               </effect>
-            </Label>
-            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="475.0" layoutY="49.0" size="20" />
-            <Label layoutX="497.0" layoutY="92.0" prefHeight="26.0" prefWidth="185.0" style="-fx-text-fill: #FFFFFF;" text="Cantidad de Dinero:">
-               <font>
-                  <Font name="Berlin Sans FB" size="21.0" />
-               </font>
-               <effect>
-                  <Glow level="0.29" />
-               </effect>
-            </Label>
-            <FontAwesomeIconView fill="WHITE" glyphName="MONEY" layoutX="471.0" layoutY="112.0" size="20" text="" />
-            <Separator layoutX="6.0" layoutY="2.0" prefHeight="3.0" prefWidth="708.0" />
+            <FontAwesomeIconView fill="WHITE" glyphName="LIST_UL" layoutX="16.0" layoutY="199.0" size="28" />
+            <Separator layoutX="1.0" layoutY="223.0" prefHeight="0.0" prefWidth="453.0" />
+            <Separator layoutX="-2.0" layoutY="2.0" prefHeight="3.0" prefWidth="716.0" />
             <Separator layoutX="456.0" layoutY="5.0" orientation="VERTICAL" prefHeight="383.0" prefWidth="1.0" />
             <Button fx:id="btnAgregarDin" layoutX="537.0" layoutY="313.0" mnemonicParsing="false" onAction="#agregarDin" style="-fx-background-color: #5c76cc;" text="Agregar Dinero" textFill="#f4f4f4">
                <cursor>
@@ -87,6 +59,34 @@
                </font>
             </Label>
             <TextField fx:id="txtAgregar" layoutX="511.0" layoutY="263.0" />
+            <Label layoutX="509.0" layoutY="48.0" prefHeight="26.0" prefWidth="90.0" style="-fx-text-fill: #FFFFFF;" text="Nombre:">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.29" />
+               </effect>
+            </Label>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="485.0" layoutY="68.0" size="20" />
+            <Label layoutX="510.0" layoutY="108.0" prefHeight="26.0" prefWidth="185.0" style="-fx-text-fill: #FFFFFF;" text="Cantidad de Dinero:">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <effect>
+                  <Glow level="0.29" />
+               </effect>
+            </Label>
+            <FontAwesomeIconView fill="WHITE" glyphName="MONEY" layoutX="484.0" layoutY="128.0" size="20" text="" />
+            <Label fx:id="lblNombre" layoutX="485.0" layoutY="77.0" prefHeight="19.0" prefWidth="201.0" textFill="#f4f4f4">
+               <font>
+                  <Font name="Roboto Black Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDinero" layoutX="489.0" layoutY="141.0" prefHeight="29.0" prefWidth="201.0" textFill="#f4f4f4">
+               <font>
+                  <Font name="Roboto Black Italic" size="23.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </top>

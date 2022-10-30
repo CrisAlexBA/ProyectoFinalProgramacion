@@ -58,7 +58,7 @@ public class TransaccionAnuncianteLogController{
 	
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Proyecto Subastas del Quindio");
 			stage.setScene(scene);
 			stage.show();
 			
@@ -70,7 +70,6 @@ public class TransaccionAnuncianteLogController{
     }
     // _____________________________________________________________________
  
-    private Anunciante usuario;
     /*
      * Metodo que permite hacer el login de los anunciantes
      */
@@ -85,23 +84,20 @@ public class TransaccionAnuncianteLogController{
 			
 			try {
 				singleton.guardaRegistroLog("Usuario: "+nombre+" inicio sesion", 1, "LoginAnunciante");
-				this.usuario = singleton.traerAnunciante(idUsuario);
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 				Parent root = loader.load();
 
 				MenuAnuncianteController controlador = loader.getController();
-				controlador.init(usuario);
+				controlador.init();
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
-				
+				stage.setTitle("Menú Anunciante");
 				stage.setScene(scene);
 				stage.show();
-				stage.setTitle("Menu del Anunciante");
 				stage.setOnCloseRequest(e -> {
 					try {
 						controlador.btnMostrarVentanaPrincipal(event);
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				});
@@ -127,6 +123,13 @@ public class TransaccionAnuncianteLogController{
 		}
 		
 	}
-	//___________________________________________________________________________
+	// ____________________________________________________________________
+	
+	/*
+	 * Método que permite inicializar los datos de la ventana
+	 */
+	public void init() {
+	}
+	// ____________________________________________________________________
 }
 

@@ -4,19 +4,9 @@
   <void property="listaAnunciantes">
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
-     <void property="edad">
-      <int>21</int>
+     <void property="dinero">
+      <float>6000.0</float>
      </void>
-     <void property="idUsuario">
-      <string>123</string>
-     </void>
-     <void property="nombre">
-      <string>Carl</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.subasta.model.Anunciante">
      <void property="edad">
       <int>21</int>
      </void>
@@ -54,49 +44,131 @@
      </void>
     </object>
    </void>
-  </void>
-  <void property="listaCompradores">
    <void method="add">
-    <object class="co.edu.uniquindio.subasta.model.Comprador">
-     <void property="edad">
-      <int>21</int>
+    <object class="co.edu.uniquindio.subasta.model.Anunciante">
+     <void property="dinero">
+      <float>10000.0</float>
      </void>
-     <void property="idUsuario">
-      <string>123</string>
-     </void>
-     <void property="nombre">
-      <string>Jox</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.subasta.model.Comprador">
-     <void property="edad">
-      <int>20</int>
-     </void>
-     <void property="idUsuario">
-      <string>234</string>
-     </void>
-     <void property="nombre">
-      <string>Koral</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.subasta.model.Comprador">
      <void property="edad">
       <int>23</int>
      </void>
      <void property="idUsuario">
-      <string>678</string>
+      <string>456</string>
      </void>
      <void property="nombre">
-      <string>alex</string>
+      <string>Alex</string>
      </void>
     </object>
    </void>
    <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Anunciante">
+     <void property="dinero">
+      <float>560.0</float>
+     </void>
+     <void property="edad">
+      <int>34</int>
+     </void>
+     <void property="idUsuario">
+      <string>3456</string>
+     </void>
+     <void property="nombre">
+      <string>JuanMa</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaAnuncios">
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Anuncio">
+     <void property="descripcion">
+      <string>Carro en perfectas condiciones con papeles al dia, en perfecto estado, precio negociable</string>
+     </void>
+     <void property="estado">
+      <string>venta</string>
+     </void>
+     <void property="idAnuncio">
+      <string>123</string>
+     </void>
+     <void property="nombreAnunciante">
+      <string>Carl</string>
+     </void>
+     <void property="nombreArticulo">
+      <string>Carro Optra</string>
+     </void>
+     <void property="tipoArticulo">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+       <string>VEHICULOS</string>
+      </object>
+     </void>
+     <void property="valor">
+      <float>20000.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Anuncio">
+     <void property="descripcion">
+      <string>Se vende casa al sur de la ciudad en zona preferencial, con buenas vías, colegios y centros comerciales cerca, negociable</string>
+     </void>
+     <void property="estado">
+      <string>venta</string>
+     </void>
+     <void property="idAnuncio">
+      <string>123</string>
+     </void>
+     <void property="nombreAnunciante">
+      <string>Carl</string>
+     </void>
+     <void property="nombreArticulo">
+      <string>Casa sur de armenia </string>
+     </void>
+     <void property="tipoArticulo">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+       <string>VIENESRAIZ</string>
+      </object>
+     </void>
+     <void property="valor">
+      <float>2.0E8</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.subasta.model.Anuncio">
+     <void property="descripcion">
+      <string>mesa de noche en perfecto estado</string>
+     </void>
+     <void property="estado">
+      <string>venta</string>
+     </void>
+     <void property="idAnuncio">
+      <string>123</string>
+     </void>
+     <void property="nombreAnunciante">
+      <string>Carl</string>
+     </void>
+     <void property="nombreArticulo">
+      <string>Mesa de Noche</string>
+     </void>
+     <void property="tipoArticulo">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+       <string>HOGAR</string>
+      </object>
+     </void>
+     <void property="valor">
+      <float>50000.0</float>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaCompradores">
+   <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Comprador">
+     <void property="dinero">
+      <float>1350.0</float>
+     </void>
      <void property="edad">
       <int>21</int>
      </void>

@@ -28,6 +28,8 @@ public class CrudAnuncianteRegistroController{
 	 * Instanciamos el singleton
 	 */
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
+	
+	
 	// _________________________________________________________________
 	
 	
@@ -84,7 +86,7 @@ public class CrudAnuncianteRegistroController{
 	
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Proyecto Subastas del Quindio");
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnVolver.getScene().getWindow();
@@ -95,7 +97,6 @@ public class CrudAnuncianteRegistroController{
 	}
     // ____________________________________________________________________
     
-    private Anunciante usuario;
 	/*
 	 * Metodo que se encargar de ir al de confirmar que no hayan espacios vacios, o de que el anunciante
 	 *  sea mayor de edad para luego, agregar ese anunciante a la lista
@@ -141,15 +142,15 @@ public class CrudAnuncianteRegistroController{
 				try {
 					modelFactoryController.agregarAnunciante(anunciante);
 					modelFactoryController.guardaRegistroLog("Se registro el usuario: "+this.txtNombre.getText(), 1, "RegistroAnunciante");
-					this.usuario = anunciante;
+					modelFactoryController.setAnunciante(anunciante);
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 					Parent root = loader.load();
 
 					MenuAnuncianteController controlador = loader.getController();
-					controlador.init(usuario);
+					controlador.init();
 					Scene scene = new Scene(root);
 					Stage stage = new Stage();
-					
+					stage.setTitle("Menú Anunciante");
 					stage.setScene(scene);
 					stage.show();
 					
@@ -157,7 +158,6 @@ public class CrudAnuncianteRegistroController{
 						try {
 							controlador.btnMostrarVentanaPrincipal(null);
 						} catch (Exception e1) {
-							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
 					});
@@ -166,16 +166,18 @@ public class CrudAnuncianteRegistroController{
 
 				} catch (IOException ex) {
 					ex.printStackTrace();
-//					Alert alert = new Alert(Alert.AlertType.ERROR);
-//					alert.setHeaderText(null);
-//					alert.setTitle("Error");
-//					alert.setContentText(ex.getMessage());
-//					alert.showAndWait();
 				}
 			}
 
 		}
 
+	}
+	// ____________________________________________________________________
+	
+	/*
+	 * Método que permite inicializar los datos de la ventana
+	 */
+	public void init() {
 	}
 	// ____________________________________________________________________
 	

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +24,8 @@ public class MenuCompradorController{
 	 * Instanciamos el singleton
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
+	
+    private Comprador usuario = singleton.getComprador();
 	// _________________________________________________________________
 	/*
 	 * Atributos
@@ -48,22 +51,34 @@ public class MenuCompradorController{
     @FXML
     private Label lblNombre;
     
+    @FXML
+    private Label lblDinero;
+    
 
     //_____________________________________________________________________
+    
+    /*
+     * Método que permite modificar el usuario para que agregue dinero a su cuenta
+     */
     @FXML
     void agregarDin(ActionEvent event) {
-    	usuario.setDinero(Float.parseFloat(txtAgregar.getText()));
-    	singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuComprador");
+    	//usuario.setDinero(Float.parseFloat(txtAgregar.getText()));
     	try {
-			singleton.agregarComprador(usuario);
-		} catch (IOException e) {
+    		//Actualiza el usuario para modificar el dinero
+			singleton.actualizarComprador(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(), usuario.getDinero() + Float.parseFloat(txtAgregar.getText()), usuario.getCantPujas(), usuario.getListaCompras());
+			//Trae el "nuevo" usuario
+			usuario = singleton.getComprador();
+			//Envia los datos al lbl
+			lblDinero.setText(usuario.getDinero()+"");
+			txtAgregar.setText("");
+	    	//Log
+			singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuComprador");
+		} catch (NumberFormatException | IOException e) {
 			e.printStackTrace();
 		}
     }
     //____________________________________________________________________ 
 
-   
-    
     /*
      * Metodo que permite mostrar la ventana principal
      */
@@ -73,7 +88,7 @@ public class MenuCompradorController{
     	try {
     		singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" cerró sesión", 1, "MenuComprador");
     		singleton.guardarResourceXML();
-			singleton.guardarResourceBinario();
+			singleton.guardarResourceBinario(); // ----> error a la hora de guardar comentar
 			System.out.println("Se guardaron los datos");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
@@ -82,7 +97,7 @@ public class MenuCompradorController{
 	
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Proyecto Subastas del Quindio");
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
@@ -93,9 +108,8 @@ public class MenuCompradorController{
     }
     //____________________________________________________________________ 
     
-    
     /*
-     * Metodo que permite ver los anuncios
+     * Metodo que permite abrir la ventana para ver los anuncios
      */
     @FXML
     void btnVerAnunciosEvent(ActionEvent event) {
@@ -105,13 +119,13 @@ public class MenuCompradorController{
 			Parent root = loader.load();
 
 			GestionAnunciosController controlador = loader.getController();
-			controlador.init(usuario);
+			controlador.init();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+
+			stage.setTitle("Lista de anuncios");
 			stage.setScene(scene);
 			stage.show();
-			stage.setTitle("Login Anunciante");
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
 			myStage.close();
 
@@ -130,19 +144,21 @@ public class MenuCompradorController{
 
     
     /*
-     * Metodo que permite ver las pujas
+     * Metodo que permite abrir la ventana para ver las pujas
      */
     @FXML
     void btnVerPujasEvent(ActionEvent event) {
     	singleton.guardaRegistroLog("El usuario: " +usuario.getNombre()+" abrió la ventana de ver pujas", 1, "MenuComprador");
     }
     //____________________________________________________________________ 
-    //Atributo global del comprador que inicio sesión
-    private Comprador usuario;
-	public void init(Comprador comprador) {
-		lblNombre.setText(comprador.getNombre());
-		this.usuario = comprador;
+    
+	/*
+	 * Método que permite inicializar los datos de la ventana
+	 */
+	public void init() {
+		lblNombre.setText(usuario.getNombre().toUpperCase());
+		lblDinero.setText(usuario.getDinero()+"");
 	}
-
+	// ____________________________________________________________________
 
 }

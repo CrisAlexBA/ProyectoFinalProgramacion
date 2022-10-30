@@ -11,19 +11,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class MenuAnuncianteController{
 
 	/*
-	 * Atributos
+	 * Instanciamos el singleton
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
-    
-    Stage primaryStage;
+	
+    private Anunciante usuario = singleton.getAnunciante();
 
     //__________________________________________________________
     
+    //Atributos
     @FXML
     private Button btnAtras;
     
@@ -44,20 +46,40 @@ public class MenuAnuncianteController{
     
     @FXML
     private TextField txtAgregar;
+    
+    @FXML
+    private Label lblDinero;
+
+    @FXML
+    private Label lblNombre;
 
     //_____________________________________________________________________
+    
+    /*
+     * Método que permite modificar el usuario para que agregue dinero a su cuenta
+     */
     @FXML
     void agregarDin(ActionEvent event) {
-    	usuario.setDinero(Float.parseFloat(txtAgregar.getText()));
-    	singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuAnunciante");
-    	
+    	try {
+    		//Actualiza el usuario para modificar el dinero
+			singleton.actualizarAnunciante(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(), usuario.getDinero() + Float.parseFloat(txtAgregar.getText()), usuario.getCantAnuncios(), usuario.getListaAnuncios());
+			//Trae el "nuevo" usuario
+			usuario = singleton.getAnunciante();
+			//Envia los datos al lbl
+			lblDinero.setText(usuario.getDinero()+"");
+			txtAgregar.setText("");
+			//Log
+	    	singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuAnunciante");
+		} catch (NumberFormatException | IOException e) {
+			e.printStackTrace();
+		}
     }
 
 	//____________________________________________________________________ 
 
     
     /*
-     * Metodo que permite crear un anuncio
+     * Metodo que permite abrir la ventana para crear un anuncio
      */
     @FXML
     void btnCrearAnuncioEvent(ActionEvent event) {
@@ -66,10 +88,10 @@ public class MenuAnuncianteController{
 			Parent root = loader.load();
 	
 			CrudAnuncioController controlador = loader.getController();
-			controlador.init(usuario);
+			controlador.init();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Registro Anuncios");
 			stage.setScene(scene);
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			//stage.initStyle(StageStyle.UNDECORATED);
@@ -84,33 +106,6 @@ public class MenuAnuncianteController{
     }
     //____________________________________________________________________ 
 
-    
-    /*
-     * Metodo que permite crear un producto con sus diferentes propiedades
-     */
-//    @FXML
-//    void btnCrearProductoEvent(ActionEvent event) {
-//    	try {
-//	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/ViewCrudArticulo.fxml"));
-//			Parent root = loader.load();
-//	
-//			CrudArticuloController controlador = loader.getController();
-//			controlador.init(usuario);
-//			Scene scene = new Scene(root);
-//			Stage stage = new Stage();
-//			
-//			stage.setScene(scene);
-//			stage.setOnCloseRequest(e -> controlador.volver(event));
-//			stage.show();
-//			Stage myStage = (Stage) this.btnCrearProducto.getScene().getWindow();
-//			myStage.close();
-//    	}catch(IOException ex) {
-//    		ex.printStackTrace();
-//    	}
-//    }
-    //____________________________________________________________________ 
-    
-
     /*
      * Metodo que permite devolverse a la ventana principal
      */
@@ -121,7 +116,7 @@ public class MenuAnuncianteController{
     		
     		singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" cerró sesión", 1, "MenuAnunciante");
     		singleton.guardarResourceXML();
-			singleton.guardarResourceBinario();
+			singleton.guardarResourceBinario(); // -----> Error en la consola a la hora de guardar, comentar error
 			System.out.println("Se guardaron los datos");
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
@@ -129,7 +124,7 @@ public class MenuAnuncianteController{
 			PrincipalController controlador = loader.getController();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Proyecto Subastas del Quindio");
 			stage.setScene(scene);
 			stage.show();
 			
@@ -143,7 +138,7 @@ public class MenuAnuncianteController{
 
     
     /*
-     * Metodo que permite ver la lista de ventas
+     * Metodo que permite abrir la ventana para ver la lista de ventas
      */
     @FXML
     void btnVerListaVentasEvent(ActionEvent event) {
@@ -151,11 +146,12 @@ public class MenuAnuncianteController{
     }
     //____________________________________________________________________ 
     
-    private Anunciante usuario;
-    
-	public void init(Anunciante usuario) {
-		this.usuario = usuario;
-		
+	/*
+	 * Método que permite inicializar los datos de la ventana
+	 */
+	public void init() {
+		lblNombre.setText(usuario.getNombre().toUpperCase());
+		lblDinero.setText(usuario.getDinero()+"");
 	}
 
     //____________________________________________________________________ 

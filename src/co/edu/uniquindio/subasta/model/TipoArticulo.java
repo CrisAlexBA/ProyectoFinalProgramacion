@@ -7,10 +7,16 @@ public enum TipoArticulo {
 	
 	// Atributos
 	private int tipoProducto;
-	// ----------------------------
 	
-	
-	// Metodos Get and Set
+//____________________________________________________________________ 
+
+	// Metodo Constructor
+	private TipoArticulo(int tipoProducto) {
+		this.tipoProducto = tipoProducto;
+	}
+//____________________________________________________________________ 
+
+	// Metodos Getters and Setters
 	public int getTipoProducto() {
 		return tipoProducto;
 	}
@@ -18,11 +24,8 @@ public enum TipoArticulo {
 	public void setTipoProducto(int tipoProducto) {
 		this.tipoProducto = tipoProducto;
 	}
-	// --------------------------------
 	
+//____________________________________________________________________ 
+
 	
-	// Metodo Constructor
-	private TipoArticulo(int tipoProducto) {
-		this.tipoProducto = tipoProducto;
-	}
 }

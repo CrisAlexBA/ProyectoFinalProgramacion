@@ -14,9 +14,14 @@ import co.edu.uniquindio.subasta.persistencia.Persistencia;
 
 public class ModelFactoryController {
 
+	
+	//Atributos
 	SubastaQuindio subasta;
-	// ------------------------------ Singleton
-	// ------------------------------------------------
+	Anunciante anunciante;
+	Comprador comprador;
+
+	
+	// ------------------------------ Singleton ------------------------------
 	// Clase estatica oculta. Tan solo se instanciara el singleton una vez
 	private static class SingletonHolder {
 		// El constructor de Singleton puede ser llamado desde aqu� al ser
@@ -41,7 +46,7 @@ public class ModelFactoryController {
 		//cargarResourceBinario();
 
 		// 4. Guardar y Cargar el recurso serializable XML
-		cargarResourceXML();
+		//cargarResourceXML();
 		//guardarResourceXML();
 		// Siempre se debe verificar si la raiz del recurso es null
 		if (subasta == null) {
@@ -50,28 +55,35 @@ public class ModelFactoryController {
 
 	}
 	
-	
 	/*
 	 * Metodos Get and Set
 	 */
 	public SubastaQuindio getSubasta() {
 		return subasta;
 	}
+	
 	public void setSubasta(SubastaQuindio subasta) {
 		this.subasta = subasta;
 	}
-	//____________________________________________________________________ 
-
 	
-	/*
-	 * Metodo que permite agregar un anunciante a la lista
-	 */
-	public void agregarAnunciante(Anunciante anunciante) throws IOException {
-		subasta.agregarAnunciante(anunciante);
+	public Comprador getComprador() {
+		return comprador;
 	}
-	//____________________________________________________________________ 
-
 	
+	public void setComprador(Comprador comprador) {
+		this.comprador = comprador;
+	}
+	
+	public Anunciante getAnunciante() {
+		return anunciante;
+	}
+	
+	public void setAnunciante(Anunciante anunciante) {
+		this.anunciante = anunciante;
+	}
+	
+//----------------------------------     Métodos Comprador     ----------------------------------
+
 	/*
 	 * Metodo que permite agregar un comprador a la lista
 	 */
@@ -80,27 +92,210 @@ public class ModelFactoryController {
 		subasta.agregarComprador(comprador);
 		
 	}
-	//____________________________________________________________________ 
-
+//____________________________________________________________________ 
 	
 	/*
-	 * Metodo que permite cargar los datos de la aplicacion recien se ejecuta
+	 * Metodo que permite iniciar la sesion del comprador
 	 */
-//	public void cargarDatos() throws IOException{
-//		
-//		subasta = (SubastaQuindio) Persistencia.cargarXML();
-//	}
-	//____________________________________________________________________ 
+	public boolean inicioSesionComprador(String nombre, String contrasenia) {
+		try {
+			this.comprador = Persistencia.iniciarSesionComprador(nombre, contrasenia);
+			return comprador != null;
+		} catch (IOException | CompradorException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+//____________________________________________________________________ 
+	
+	/*
+	 * Método que permite enviar los datos del controlador al modelo para modificar un comprador
+	 */
+	public void actualizarComprador(String nombre, String idUsuario, int edad, float dinero, int canPujas, ArrayList<Anuncio> listaCompras) throws IOException {
+		boolean bandera = getSubasta().actualizarComprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras);
+		if(bandera == true) {
+			this.comprador = new Comprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras);
+		}
+	}
+//____________________________________________________________________ 
 
+	/*
+	 * Método que trae un comprador en especifico de persistencia con el id
+	 */
+	public Comprador traerComprador(String idUsuario) {
+		
+		try {
+			return Persistencia.cargarComprador(idUsuario);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+//  _________________________________________________________________________
+	
+	
+//----------------------------------     Métodos Anunciante     ----------------------------------
+	
+	/*
+	 * Metodo que permite agregar un anunciante a la lista
+	 */
+	public void agregarAnunciante(Anunciante anunciante) throws IOException {
+		subasta.agregarAnunciante(anunciante);
+	}
+//____________________________________________________________________ 
+	
+	/*
+	 * Metodo que permite hacer el inicio de sesion de un anunciante
+	 */
+	public boolean inicioSesionAnunciante(String nombre, String idUsuario) throws AnuncianteException {
+		try {
+			this.anunciante = Persistencia.iniciarSesionAnunciante(nombre, idUsuario);
+			
+			return anunciante != null;
+			
+		} catch (IOException | AnuncianteException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+//____________________________________________________________________ 
+	
+	/*
+	 * Método que permite enviar los datos del controlador al modelo para modificar un anunciante
+	 */
+	public void actualizarAnunciante(String nombre, String idUsuario, int edad, float dinero, int canAnuncios, ArrayList<Anuncio> listaAnuncios) throws IOException {
+		boolean bandera = getSubasta().actualizarAnunciante(nombre, idUsuario, edad, dinero, canAnuncios, listaAnuncios);
+		if(bandera == true) {
+			this.anunciante = new Anunciante(nombre, idUsuario, edad, dinero, canAnuncios, listaAnuncios);
+		}
+	}
+	
+//____________________________________________________________________ 
+	
+	/*
+	 * Método que trae un anunciante en especifico de persistencia con el id
+	 */
+	public Anunciante traerAnunciante(String idUsuario) {
+		try {
+			return Persistencia.cargarAnunciante(idUsuario);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
+//____________________________________________________________________ 
 	
 	/*
 	 * Metodo que permite traer la lista de los anunciantes
 	 */
-	ArrayList<Anunciante> traerListaAnunciantes() {
-		return subasta.getListaAnunciantes();
-	}
-	//____________________________________________________________________ 
+	public ArrayList<Anunciante> traerListaAnunciantes() {
+			return subasta.getListaAnunciantes();
+		}
+
+//____________________________________________________________________ 
+
 	
+//-----------------------------------     Métodos Anuncio     -----------------------------------
+	
+	/*
+	 * Método que conecta al contructor con el modelo para agregar un anuncio
+	 */
+	public void agregarAnuncio(Anuncio anuncioNuevo) throws IOException {
+		subasta.agregarAnuncio(anuncioNuevo);
+		
+	}
+	
+//____________________________________________________________________ 
+
+	/*
+	 * Método que permite traer la lista de los anuncios para ser manejada
+	 */
+	public ArrayList<Anuncio> traerListaAnuncios() {
+		return subasta.getListaAnuncios();
+	}
+	
+//____________________________________________________________________ 
+	
+
+//-------------------------------     Métodos Guardado Datos     -------------------------------
+//____________________________________________________________________ 
+	
+	/*
+	 * Método que permite cargar el programa de los archivos txt
+	 */
+	private void cargarDatosDesdeArchivos() {
+		
+		subasta = new SubastaQuindio();
+		
+		try {
+
+			Persistencia.cargarDatosArchivos(getSubasta());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+//____________________________________________________________________ 	
+	
+	/*
+	 * Método que permite generar un registro de todo lo que hacen los usuarios en el programa y lo manda a persistencia para que lo guarde
+	 */
+	public void guardaRegistroLog(String mensajeLog, int nivel, String accion)
+	{
+		Persistencia.guardaRegistroLog(mensajeLog, nivel, accion);
+	}
+//____________________________________________________________________ 
+	
+	/*
+	 * Metodo que permite cargar la app del archivo dat
+	 */
+	public void cargarResourceBinario() {
+		subasta = new SubastaQuindio();
+		subasta = Persistencia.cargarRecursoSubastaQuindioBinario();
+	}
+//____________________________________________________________________ 
+
+	/*
+	 * Metodo que permite guardar lo que pase en la app en un archivo binario
+	 */
+	public void guardarResourceBinario() {
+		
+	    Persistencia.guardarRecursoSubastaQuindioBinario(subasta);
+	}
+//____________________________________________________________________ 
+
+	/*
+	 * Metodo que permite cargar la app del archivo xml
+	 */
+	public void cargarResourceXML() {
+		subasta = new SubastaQuindio();
+		subasta = Persistencia.cargarRecursoSubastaQuindioXML();
+	}
+//____________________________________________________________________ 
+
+	/*
+	 * Metodo que permite guardar lo que pase en la app en un archivo xml
+	 */
+	public void guardarResourceXML() {
+		
+	    Persistencia.guardarRecursoSubastaQuindioXML(subasta);
+	}
+//____________________________________________________________________ 
+
+	/*
+	 * Método que permite mandar a guardar a persistencia una copia del programa en archivo xml
+	 */
+	public static void copiaSeguridad() {
+		Persistencia.copiaSeguridad();
+	}
+//____________________________________________________________________ 
+
+	/*
+	 * Método utilizado para hacer pruebas de escritorio del programa
+	 */
 	public void inicializarDatos(){
 		
 //		SubastaQuindio subasta = new SubastaQuindio();
@@ -119,145 +314,17 @@ public class ModelFactoryController {
 //			e.printStackTrace();
 //		}
 	}
-//	public boolean ingresarAnunciante(String nombre, String idUsuario, int edad) {
-//
-//		
-//		return false;
-//	}
-	
-	
-	// El obejto anunciante (que contiene el nombre, la id y la edad) se va para el modelo
-
 	// ______________________________________________________________
 	
 	
-	/*
-	 * Metodo que permite iniciar la sesion del comprador
-	 */
-	public boolean inicioSesionComprador(String nombre, String contrasenia) {
-		try {
-			return Persistencia.iniciarSesionComprador(nombre, contrasenia);
-		} catch (IOException | CompradorException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-	//____________________________________________________________________ 
+	//-----------------------------------------------------------------------------------------------------
 	
 	
-	/*
-	 * Metodo que permite guardar lo que pase en la app en un archivo xml
-	 */
-//	public void guardarXML() throws IOException {
-//
-//		Persistencia.guardarXML(subasta);
-//		
-//	}
-//	//____________________________________________________________________ 
-//	
-//	
-//	/*
-//	 * Metodo que permite guardar lo que pase en la app en un archivo binario
-//	 */
-//	public void guardarBinario() throws Exception {
-//
-//		Persistencia.guardarBinario(subasta);
-//		
-//	}
-	//____________________________________________________________________ 
 
 	
-	/*
-	 * Metodo que permite hacer el inicio de sesion de un anunciante
-	 */
-	public boolean inicioSesionAnunciante(String nombre, String idUsuario) throws AnuncianteException {
-		try {
-			return Persistencia.iniciarSesionAnunciante(nombre, idUsuario);
-		} catch (IOException | AnuncianteException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-	//____________________________________________________________________ 
+
+
 	
-	public void guardaRegistroLog(String mensajeLog, int nivel, String accion)
-	{
-		Persistencia.guardaRegistroLog(mensajeLog, nivel, accion);
-	}
-	public Comprador traerComprador(String idUsuario) {
-		
-		try {
-			return Persistencia.cargarComprador(idUsuario);
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	public Anunciante traerAnunciante(String idUsuario) {
-		try {
-			return Persistencia.cargarAnunciante(idUsuario);
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-		return null;
-	}
-	//  _________________________________________________________________________
-	
-	//Nueva parte de la carga de datos
-	
-	
-	private void cargarDatosDesdeArchivos() {
-		
-		subasta = new SubastaQuindio();
-		
-		try {
-
-			Persistencia.cargarDatosArchivos(getSubasta());
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void cargarResourceBinario() {
-		subasta = new SubastaQuindio();
-		subasta = Persistencia.cargarRecursoSubastaQuindioBinario();
-	}
-
-
-	public void guardarResourceBinario() {
-		
-	    Persistencia.guardarRecursoSubastaQuindioBinario(subasta);
-	}
-
-
-	public void cargarResourceXML() {
-		subasta = new SubastaQuindio();
-		subasta = Persistencia.cargarRecursoSubastaQuindioXML();
-	}
-
-
-	public void guardarResourceXML() {
-		
-	    Persistencia.guardarRecursoSubastaQuindioXML(subasta);
-	}
-//	public void agregarArticulo(Articulo articuloNuevo) throws ArticuloException, IOException {
-//		subasta.agregarArticulo(articuloNuevo);
-//		
-//	}
-	
-	public static void copiaSeguridad() {
-		Persistencia.copiaSeguridad();
-	}
-	public void agregarAnuncio(Anuncio anuncioNuevo) throws IOException {
-		subasta.agregarAnuncio(anuncioNuevo);
-		
-	}
-
-
 	
     
 }

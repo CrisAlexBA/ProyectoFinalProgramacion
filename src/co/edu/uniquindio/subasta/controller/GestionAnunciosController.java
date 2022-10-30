@@ -1,8 +1,12 @@
 package co.edu.uniquindio.subasta.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
+import co.edu.uniquindio.subasta.model.Anuncio;
 import co.edu.uniquindio.subasta.model.Comprador;
+import co.edu.uniquindio.subasta.model.TipoArticulo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,41 +16,59 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 public class GestionAnunciosController {
 	
 	/*
 	 * Instanciamos el singleton
 	 */
-	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
+	ModelFactoryController singleton = ModelFactoryController.getInstance();
+    
+    private ArrayList<Anuncio> listaAnuncios = singleton.traerListaAnuncios();
+    
+    //  ____________________________________________________________________________________________
+
+    //Atributos
+    private ObservableList<Anuncio> anuncios = FXCollections.observableArrayList();
 
     @FXML
-    private Button btnPujar;
+    private TableView<Anuncio> tblDatos;
 
     @FXML
-    private TableColumn colCategoria;
+    private TableColumn<Anuncio, TipoArticulo> colCategoria;
 
     @FXML
-    private TableColumn colFechaFin;
+    private TableColumn<Anuncio, LocalDate> colFechaFin;
 
     @FXML
-    private TableColumn colFechaInicio;
+    private TableColumn<Anuncio, LocalDate> colFechaInicio;
 
     @FXML
-    private TableColumn colNombreAnunciante;
+    private TableColumn<Anuncio, String> colNombreAnunciante;
 
     @FXML
-    private TableColumn colNombreProducto;
+    private TableColumn<Anuncio, String> colNombreProducto;
 
     @FXML
-    private TableColumn colPrecio;
-
-    @FXML
-    private TableView<?> tblDatos;
+    private TableColumn<Anuncio, Float> colPrecio;
 
     @FXML
     private Button btnAtras;
+    
+    @FXML
+    private Button btnPujar;
+
+    
+	// ____________________________________________________________________________________
+    
+    /*
+     * Método que permite seleccionar un anuncio y abrir una pestaña de puja 
+     */
     
     @FXML
     void btnPujarEvent(ActionEvent event) {
@@ -57,13 +79,12 @@ public class GestionAnunciosController {
 			Parent root = loader.load();
 
 			TransaccionPujaCompraController controlador = loader.getController();
-			controlador.init(usuario);
+			controlador.init();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Pestaña de pujar Anuncio");
 			stage.setScene(scene);
 			stage.show();
-			stage.setTitle("Login Anunciante");
 			Stage myStage = (Stage) this.btnPujar.getScene().getWindow();
 			myStage.close();
 
@@ -76,7 +97,11 @@ public class GestionAnunciosController {
 			alert.showAndWait();
 		}
     }
-
+	// ______________________________________________________________________________________
+    
+    /*
+     * Método que permite volver al menú principal del comprador.
+     */
     @FXML
     void btnMostrarVentanaPrincipal(ActionEvent event) {
 
@@ -85,10 +110,10 @@ public class GestionAnunciosController {
 			Parent root = loader.load();
 	
 			MenuCompradorController controlador = loader.getController();
-			controlador.init(usuario);
+			controlador.init();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Menú Comprador");
 			stage.setScene(scene);
 			stage.show();
 			
@@ -101,15 +126,32 @@ public class GestionAnunciosController {
 
     
     //  ____________________________________________________________________
+    
     /*
      * Metodo que inicializa datos de la ventana anterior
      */
-  //Atributo global del comprador que inicio sesión
-    private Comprador usuario;
-	public void init(Comprador usuario) {
-		this.usuario = usuario;
-		
+	@SuppressWarnings("unchecked")
+	public void init() {
+		colNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombreArticulo"));
+		colNombreAnunciante.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));
+		colCategoria.setCellValueFactory(new PropertyValueFactory<>("tipoArticulo"));
+		colFechaInicio.setCellValueFactory(new PropertyValueFactory<>("fechaPublicacion"));
+		colFechaFin.setCellValueFactory(new PropertyValueFactory<>("fechaCumlinacion"));
+		colPrecio.setCellValueFactory(new PropertyValueFactory<>("valor"));
+
+		for(int i = 0; i < listaAnuncios.size();i++) {
+			if(listaAnuncios.get(i).getEstado().equals("venta")) {
+				Anuncio anuncio = new Anuncio(listaAnuncios.get(i).getNombreArticulo(), listaAnuncios.get(i).getNombreAnunciante(),
+						listaAnuncios.get(i).getTipoArticulo(), listaAnuncios.get(i).getFechaPublicacion(), listaAnuncios.get(i).getFechaCumlinacion(),
+						listaAnuncios.get(i).getValor());
+				
+				anuncios.add(anuncio);
+			}
+		}
+		tblDatos.setItems(anuncios);
+		tblDatos.refresh();
 	}
+	
 
 
 	

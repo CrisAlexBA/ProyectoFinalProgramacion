@@ -20,7 +20,10 @@ public class TransaccionPujaCompraController {
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
 	
-	//________________________________________________________________________________________
+    private Comprador usuario = singleton.getComprador();
+	
+//________________________________________________________________________________________
+    //Atributos
     @FXML
     private Button btnAtras;
 
@@ -33,6 +36,10 @@ public class TransaccionPujaCompraController {
     @FXML
     private TextField txtMontoPujar;
 
+//____________________________________________________________________ 
+	/*
+	 * Método que permite volver al menu del comprador
+	 */
     @FXML
     void btnMostrarVentanaPrincipal(ActionEvent event) {
     	try {
@@ -40,10 +47,10 @@ public class TransaccionPujaCompraController {
 			Parent root = loader.load();
 	
 			MenuCompradorController controlador = loader.getController();
-			controlador.init(usuario);
+			controlador.init();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			
+			stage.setTitle("Menú Comprador");
 			stage.setScene(scene);
 			stage.show();
 			
@@ -53,7 +60,12 @@ public class TransaccionPujaCompraController {
     		ex.printStackTrace();
     	}
     }
+    
+  //____________________________________________________________________ 
 
+    /*
+     * Método que permite realizar una puja por el anuncio que esta visualizando
+     */
     @FXML
     void btnPujasEvent(ActionEvent event) {
     	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" intento hacer una puja menor a la indicada, PujaMenorException", 2, "TransaccionPuja");
@@ -61,12 +73,13 @@ public class TransaccionPujaCompraController {
     	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" intento hacer más pujas de las posibles, CantidadPujaException", 2, "TransaccionPuja");
     	singleton.guardaRegistroLog("El usuario: "+usuario.getNombre()+" hizo una puja por un producto", 1, "TransaccionPuja");
     }
-    //  ____________________________________________________________________________________________________________________________________________________
-    //Atributo global del comprador que inicio sesión
-    private Comprador usuario;
-	public void init(Comprador usuario) {
-		this.usuario = usuario;
-		
+	// ____________________________________________________________________
+	
+	/*
+	 * Método que permite inicializar los datos de la ventana
+	 */
+	public void init() {
 	}
+	// ____________________________________________________________________
 
 }

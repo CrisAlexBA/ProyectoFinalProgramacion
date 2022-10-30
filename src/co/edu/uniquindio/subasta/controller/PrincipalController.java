@@ -126,7 +126,7 @@ public class PrincipalController{
 			
 			stage.setScene(scene);
 			stage.show();
-			stage.setTitle("Registro del Anunciante");
+			stage.setTitle("Registro Anunciante");
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -161,7 +161,7 @@ public class PrincipalController{
 			
 			stage.setScene(scene);
 			stage.show();
-			stage.setTitle("Registro del Comprador");
+			stage.setTitle("Registro Comprador");
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -175,6 +175,12 @@ public class PrincipalController{
 			alert.showAndWait();
 		}
     }
-    //____________________________________________________________________ 
-
+	// ____________________________________________________________________
+	
+	/*
+	 * Método que permite inicializar los datos de la ventana
+	 */
+	public void init() {
+	}
+	// ____________________________________________________________________
 }

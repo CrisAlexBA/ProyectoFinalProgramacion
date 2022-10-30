@@ -7,24 +7,32 @@ public class Comprador extends Usuario{
 	// Atributos
 	private int cantPujas;
 	private ArrayList<Anuncio> listaCompras;
-	// ------------------------
-
 	
+//____________________________________________________________________ 
+
 	// Metodos Constructor
-	public Comprador() {
-		super();
+	
+	//Constructor 1
+	public Comprador(String nombre, String idUsuario, int edad, float dinero, int canPujas, ArrayList<Anuncio> listaCompras) {
+		super(nombre, idUsuario, edad, dinero);
+		this.cantPujas = canPujas;
+		this.listaCompras = listaCompras;
 	}
 	
+	//Constructor 2
 	public Comprador(String nombre, String idUsuario, int edad) {
 		super(nombre, idUsuario, edad, 0);
 		this.cantPujas = 0;
 		this.listaCompras = new ArrayList<Anuncio>();
 	}
-	// ------------------------
 	
-	
+	//Constructor 3
+	public Comprador() {
+	}
 
-	// Metodos Get and Set
+//____________________________________________________________________ 
+
+	// Metodos Getters and Setters
 	public int getCantPujas() {
 		return cantPujas;
 	}
@@ -40,6 +48,7 @@ public class Comprador extends Usuario{
 		this.listaCompras = listaCompras;
 	}
 
-	// ------------------------
+//____________________________________________________________________ 
+
 	
 }
