@@ -142,6 +142,23 @@ public class MenuAnuncianteController{
      */
     @FXML
     void btnVerListaVentasEvent(ActionEvent event) {
+    	try {
+			FXMLLoader loader = new FXMLLoader(
+					getClass().getResource("/co/edu/uniquindio/subasta/view/GestionAnunciosAnunciante.fxml"));
+			Parent root = loader.load();
+
+			GestionAnunciosAnuncianteController controlador = loader.getController();
+
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			stage.setTitle("Lista de anuncios comprados");
+			stage.setScene(scene);
+			stage.show();
+			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
+			myStage.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
     	singleton.guardaRegistroLog("El usuario: " + usuario.getNombre()+ " abrió la ventana lista de ventas", 1, "MenuAnunciante");
     }
     //____________________________________________________________________ 

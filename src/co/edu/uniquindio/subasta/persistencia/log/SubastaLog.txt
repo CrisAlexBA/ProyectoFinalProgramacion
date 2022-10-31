@@ -312,3 +312,105 @@ oct 29, 2022 10:17:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guar
 INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-29
 oct 29, 2022 10:50:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: MenuComprador,El usuario: Jox cerró sesión,2022-10-29
+oct 31, 2022 9:10:20 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:10:27 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 9:11:20 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:11:41 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 9:11:56 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-31
+oct 31, 2022 9:12:03 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:Jox agrego dinero,2022-10-31
+oct 31, 2022 9:12:40 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox cerró sesión,2022-10-31
+oct 31, 2022 9:12:47 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:12:52 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario:Carl agrego dinero,2022-10-31
+oct 31, 2022 9:13:59 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-31
+oct 31, 2022 9:13:59 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-10-31
+oct 31, 2022 9:13:59 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio con fecha erronea, FechaException,2022-10-31
+oct 31, 2022 9:13:59 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio sin datos, AnuncioExcepcion,2022-10-31
+oct 31, 2022 9:13:59 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-31
+oct 31, 2022 9:14:03 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 9:14:09 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-31
+oct 31, 2022 9:15:58 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox cerró sesión,2022-10-31
+oct 31, 2022 9:16:18 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: RegistroAnunciante,Se registro el usuario: Aracely,2022-10-31
+oct 31, 2022 9:16:31 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Aracely cerró sesión,2022-10-31
+oct 31, 2022 9:23:55 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:24:34 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-31
+oct 31, 2022 9:24:34 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-10-31
+oct 31, 2022 9:24:34 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio con fecha erronea, FechaException,2022-10-31
+oct 31, 2022 9:24:34 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar un anuncio sin datos, AnuncioExcepcion,2022-10-31
+oct 31, 2022 9:24:34 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-10-31
+oct 31, 2022 9:24:37 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 9:29:14 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:29:18 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 9:31:57 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:31:58 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 9:47:38 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:47:39 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-10-31
+oct 31, 2022 9:47:41 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 9:47:46 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-31
+oct 31, 2022 9:47:48 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox abrió la ventana de ver pujas,2022-10-31
+oct 31, 2022 9:47:51 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox cerró sesión,2022-10-31
+oct 31, 2022 9:50:03 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 9:50:20 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario:Carl agrego dinero,2022-10-31
+oct 31, 2022 9:50:33 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario:Carl agrego dinero,2022-10-31
+oct 31, 2022 9:50:47 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario:Carl agrego dinero,2022-10-31
+oct 31, 2022 9:50:51 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31
+oct 31, 2022 10:06:50 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-31
+oct 31, 2022 10:16:10 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-31
+oct 31, 2022 12:12:46 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-31
+oct 31, 2022 12:12:49 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox abrió la ventana de ver pujas,2022-10-31
+oct 31, 2022 12:14:47 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-10-31
+oct 31, 2022 12:14:48 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox abrió la ventana de ver pujas,2022-10-31
+oct 31, 2022 12:14:51 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Jox cerró sesión,2022-10-31
+oct 31, 2022 12:14:57 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: carl inicio sesion,2022-10-31
+oct 31, 2022 12:14:58 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-10-31
+oct 31, 2022 12:15:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-10-31

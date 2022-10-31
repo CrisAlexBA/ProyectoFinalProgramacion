@@ -5,33 +5,30 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.GestionAnunciosController">
-   <right>
-      <BorderPane prefHeight="393.0" prefWidth="937.0" style="-fx-background-color: #759eff;" BorderPane.alignment="CENTER">
-         <center>
-            <AnchorPane prefHeight="369.0" prefWidth="937.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TableView fx:id="tblDatos" layoutX="14.0" layoutY="14.0" prefHeight="299.0" prefWidth="906.0">
-                    <columns>
-                      <TableColumn fx:id="colNombreProducto" prefWidth="148.0" text="Nombre del Producto" />
-                      <TableColumn fx:id="colCategoria" prefWidth="122.0" text="Categoria" />
-                        <TableColumn fx:id="colNombreAnunciante" prefWidth="158.0" text="Nombre del Anunciante" />
-                        <TableColumn fx:id="colPrecio" prefWidth="158.0" text="Precio" />
-                        <TableColumn fx:id="colFechaInicio" prefWidth="134.0" text="Fecha Inicio" />
-                        <TableColumn fx:id="colFechaFin" prefWidth="185.0" text="Fecha Fin" />
-                    </columns>
-                  </TableView>
-                  <Button fx:id="btnPujar" layoutX="149.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnPujarEvent" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: white;" text="Pujar" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="636.0" AnchorPane.topAnchor="330.0" />
-                  <Button fx:id="btnAtras" layoutX="634.0" layoutY="334.0" mnemonicParsing="false" onAction="#btnMostrarVentanaPrincipal" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: white;" />
-                  <FontAwesomeIconView fill="#759eff" glyphName="HOME" layoutX="701.0" layoutY="353.0" size="20" />
-               </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
-   </right>
-   <left>
-      <AnchorPane prefHeight="363.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
-   </left>
-</BorderPane>
+<Pane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.GestionAnunciosController">
+   <children>
+      <AnchorPane prefHeight="369.0" prefWidth="716.0" style="-fx-background-color: #7097f3;">
+         <children>
+            <TableView fx:id="tblDatos" layoutX="4.0" layoutY="14.0" prefHeight="299.0" prefWidth="707.0">
+              <columns>
+                <TableColumn fx:id="colNombreProducto" prefWidth="138.0" text="Nombre del Producto" />
+                <TableColumn fx:id="colCategoria" prefWidth="102.0" text="Categoria" />
+                  <TableColumn fx:id="colNombreAnunciante" prefWidth="151.0" text="Nombre del Anunciante" />
+                  <TableColumn fx:id="colPrecio" prefWidth="128.0" text="Precio" />
+                  <TableColumn fx:id="colFechaInicio" prefWidth="100.0" text="Fecha Inicio" />
+                  <TableColumn fx:id="colFechaFin" prefWidth="87.0" text="Fecha Fin" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnPujar" layoutX="57.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnPujarEvent" prefHeight="27.0" prefWidth="152.0" style="-fx-background-color: white;" text="Pujar" textFill="#759eff" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="331.0">
+               <font>
+                  <Font name="System Bold" size="12.666666984558105" />
+               </font></Button>
+            <Button fx:id="btnAtras" layoutX="398.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnMostrarVentanaPrincipal" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="331.0" />
+            <FontAwesomeIconView fill="#759eff" glyphName="HOME" layoutX="481.0" layoutY="353.0" size="20" text="" AnchorPane.rightAnchor="216.4285717010498" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

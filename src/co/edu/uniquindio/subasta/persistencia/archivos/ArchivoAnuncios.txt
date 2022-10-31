@@ -1,3 +1,5 @@
 Carro Optra@@Carl@@venta@@Carro en perfectas condiciones con papeles al dia, en perfecto estado, precio negociable@@123@@VEHICULOS@@2022-10-28@@2022-10-29@@20000.0@@null
 Casa sur de armenia @@Carl@@comprado@@Se vende casa al sur de la ciudad en zona preferencial, con buenas vías, colegios y centros comerciales cerca, negociable@@123@@VIENESRAIZ@@2022-10-29@@2022-11-01@@2.0E8@@null
 Mesa de Noche@@Carl@@venta@@mesa de noche en perfecto estado@@123@@HOGAR@@2022-10-29@@2022-10-30@@50000.0@@null
+Casa Salamanca@@Carl@@venta@@Bonita casa@@123@@VIENESRAIZ@@2022-10-31@@2022-11-01@@2.0E8@@null
+ComputadoraGamer@@Carl@@venta@@Hermosa compu, comprala@@123@@TECNOLOGIA@@2022-10-31@@2022-11-03@@2000000.0@@null

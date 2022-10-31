@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="386.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.GestionAnunciosAnuncianteController">
+   <children>
+      <AnchorPane prefHeight="369.0" prefWidth="1046.0" style="-fx-background-color: #7097f3;">
+         <children>
+            <TableView fx:id="tblDatos" layoutX="14.0" layoutY="14.0" prefHeight="299.0" prefWidth="1018.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0">
+               <columns>
+                  <TableColumn fx:id="colNombreProducto" prefWidth="138.0" text="Nombre del Producto" />
+                  <TableColumn fx:id="colNombreAnunciante" prefWidth="151.0" text="Nombre del Anunciante" />
+                  <TableColumn prefWidth="85.0" text="Estado" />
+                  <TableColumn prefWidth="85.0" text="Descripción" />
+                  <TableColumn prefWidth="75.0" text="IdAnuncio" />
+                  <TableColumn fx:id="colCategoria" prefWidth="100.0" text="Categoria" />
+                  <TableColumn fx:id="colFechaInicio" prefWidth="88.0" text="Fecha Inicio" />
+                  <TableColumn fx:id="colFechaFin" prefWidth="88.0" text="Fecha Fin" />
+                  <TableColumn fx:id="colPrecio" prefWidth="100.0" text="Precio" />
+                  <TableColumn prefWidth="106.0" text="Foto" />
+               </columns>
+            </TableView>
+            <Button fx:id="btnBorrar" layoutX="150.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnBorrarEvent" prefHeight="27.0" prefWidth="152.0" style="-fx-background-color: white;" text="Borrar" textFill="#759eff" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="331.0">
+               <font>
+                  <Font name="System Bold" size="12.666666984558105" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="446.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnMostrarVentanaPrincipal" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.topAnchor="331.0" />
+            <FontAwesomeIconView fill="#759eff" glyphName="HOME" layoutX="513.0" layoutY="353.0" size="20" text="" AnchorPane.rightAnchor="514.4285717010498" />
+            <Button fx:id="btnEditar" layoutX="744.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnEditarEvent" prefHeight="27.0" prefWidth="152.0" style="-fx-background-color: white;" text="Editar" textFill="#759eff" AnchorPane.rightAnchor="150.0">
+               <font>
+                  <Font name="System Bold" size="12.666666984558105" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

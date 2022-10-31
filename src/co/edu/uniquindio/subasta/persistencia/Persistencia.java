@@ -394,6 +394,7 @@ public class Persistencia {
 			ArchivoUtil.salvarRecursoSerializado(RUTA_ARCHIVO_SUBASTABINARIO, subastaQuindio);
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Hay un error al guardar el archivo en binario");
 		}
 	}
 // _______________________________________________________________________________
