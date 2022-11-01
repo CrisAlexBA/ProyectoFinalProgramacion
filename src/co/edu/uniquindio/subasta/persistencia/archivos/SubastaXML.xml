@@ -5,7 +5,7 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
      <void property="dinero">
-      <float>1000.0</float>
+      <double>2000.0</double>
      </void>
      <void property="edad">
       <int>21</int>
@@ -47,7 +47,7 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
      <void property="dinero">
-      <float>10000.0</float>
+      <double>10000.0</double>
      </void>
      <void property="edad">
       <int>23</int>
@@ -63,7 +63,7 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
      <void property="dinero">
-      <float>560.0</float>
+      <double>560.0</double>
      </void>
      <void property="edad">
       <int>34</int>
@@ -100,7 +100,7 @@
       <string>venta</string>
      </void>
      <void property="idAnuncio">
-      <string>123</string>
+      <string>CP0001</string>
      </void>
      <void property="nombreAnunciante">
       <string>Carl</string>
@@ -115,7 +115,7 @@
       </object>
      </void>
      <void property="valor">
-      <float>20000.0</float>
+      <double>20000.0</double>
      </void>
     </object>
    </void>
@@ -128,7 +128,7 @@
       <string>comprado</string>
      </void>
      <void property="idAnuncio">
-      <string>123</string>
+      <string>CP0002</string>
      </void>
      <void property="nombreAnunciante">
       <string>Carl</string>
@@ -143,7 +143,7 @@
       </object>
      </void>
      <void property="valor">
-      <float>2.0E8</float>
+      <double>2.0E8</double>
      </void>
     </object>
    </void>
@@ -156,7 +156,7 @@
       <string>venta</string>
      </void>
      <void property="idAnuncio">
-      <string>123</string>
+      <string>CP0003</string>
      </void>
      <void property="nombreAnunciante">
       <string>Carl</string>
@@ -171,7 +171,7 @@
       </object>
      </void>
      <void property="valor">
-      <float>50000.0</float>
+      <double>50000.0</double>
      </void>
     </object>
    </void>
@@ -184,7 +184,7 @@
       <string>venta</string>
      </void>
      <void property="idAnuncio">
-      <string>123</string>
+      <string>CP0004</string>
      </void>
      <void property="nombreAnunciante">
       <string>Carl</string>
@@ -196,35 +196,7 @@
       <object idref="TipoArticulo0"/>
      </void>
      <void property="valor">
-      <float>2.0E8</float>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.subasta.model.Anuncio">
-     <void property="descripcion">
-      <string>Hermosa compu, comprala</string>
-     </void>
-     <void property="estado">
-      <string>venta</string>
-     </void>
-     <void property="idAnuncio">
-      <string>123</string>
-     </void>
-     <void property="nombreAnunciante">
-      <string>Carl</string>
-     </void>
-     <void property="nombreArticulo">
-      <string>ComputadoraGamer</string>
-     </void>
-     <void property="tipoArticulo">
-      <object class="java.lang.Enum" method="valueOf">
-       <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
-       <string>TECNOLOGIA</string>
-      </object>
-     </void>
-     <void property="valor">
-      <float>2000000.0</float>
+      <double>2.0E8</double>
      </void>
     </object>
    </void>
@@ -233,7 +205,7 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Comprador">
      <void property="dinero">
-      <float>3350.0</float>
+      <double>3350.0</double>
      </void>
      <void property="edad">
       <int>21</int>

@@ -16,10 +16,11 @@
               <columns>
                 <TableColumn fx:id="colNombreProducto" prefWidth="138.0" text="Nombre del Producto" />
                 <TableColumn fx:id="colCategoria" prefWidth="102.0" text="Categoria" />
-                  <TableColumn fx:id="colNombreAnunciante" prefWidth="151.0" text="Nombre del Anunciante" />
-                  <TableColumn fx:id="colPrecio" prefWidth="128.0" text="Precio" />
-                  <TableColumn fx:id="colFechaInicio" prefWidth="100.0" text="Fecha Inicio" />
-                  <TableColumn fx:id="colFechaFin" prefWidth="87.0" text="Fecha Fin" />
+                  <TableColumn fx:id="colNombreAnunciante" prefWidth="124.66664123535156" text="Nombre Anunciante" />
+                  <TableColumn fx:id="colPrecio" prefWidth="104.666748046875" text="Precio" />
+                  <TableColumn fx:id="colFechaInicio" text="Fecha Inicio" />
+                  <TableColumn fx:id="colFechaFin" text="Fecha Fin" />
+                  <TableColumn fx:id="colIdArticulo" prefWidth="75.0" text="IdArtículo" />
               </columns>
             </TableView>
             <Button fx:id="btnPujar" layoutX="57.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnPujarEvent" prefHeight="27.0" prefWidth="152.0" style="-fx-background-color: white;" text="Pujar" textFill="#759eff" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="331.0">

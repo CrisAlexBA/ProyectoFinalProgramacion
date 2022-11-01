@@ -133,7 +133,7 @@ public class SubastaQuindio {
     /*
 	 * Método que permite actualizar un anunciante de la lista y mandarlo a persistencia
 	 */
-    public boolean actualizarAnunciante(String nombre, String idUsuario, int edad, float dinero, int canAnuncios, ArrayList<Anuncio> listaAnuncios) throws IOException {
+    public boolean actualizarAnunciante(String nombre, String idUsuario, int edad, double dinero, int canAnuncios, ArrayList<Anuncio> listaAnuncios) throws IOException {
 		Anunciante anuncianteNu = new Anunciante(nombre, idUsuario, edad, dinero, canAnuncios, listaAnuncios);
 		if (idUsuario != null) {
             for (int i = 0 ; i < listaAnunciantes.size() ; i++) {
@@ -152,7 +152,7 @@ public class SubastaQuindio {
     /*
 	 * Método que permite actualizar un comprador de la lista y mandarlo a persistencia
 	 */
-    public boolean actualizarComprador(String nombre, String idUsuario, int edad, float dinero, int canPujas, ArrayList<Anuncio> listaCompras) throws IOException {
+    public boolean actualizarComprador(String nombre, String idUsuario, int edad, double dinero, int canPujas, ArrayList<Anuncio> listaCompras) throws IOException {
 		Comprador compradorNu = new Comprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras);
 		if (idUsuario != null) {
             for (int i = 0 ; i < listaCompradores.size() ; i++) {

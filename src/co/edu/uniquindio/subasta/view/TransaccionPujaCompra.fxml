@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.TransaccionPujaCompraController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.TransaccionPujaCompraController">
    <top>
       <AnchorPane prefHeight="48.0" prefWidth="787.0" style="-fx-background-color: #759eff;" BorderPane.alignment="CENTER" />
    </top>
@@ -27,57 +27,57 @@
                   <ImageView fitHeight="191.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </items>
             </SplitPane>
-            <Label layoutX="255.0" layoutY="22.0" text="Nombre">
+            <Label layoutX="255.0" layoutY="22.0" prefHeight="21.0" prefWidth="149.0" text="Nombre Anunciante:">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="255.0" layoutY="47.0" text="Label del Nombre">
+            <Label fx:id="lblNomAnunciante" layoutX="255.0" layoutY="47.0" text="Label del Nombre">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="54.0" layoutY="22.0" text="Nombre del Producto">
+            <Label fx:id="lblArticulo" alignment="CENTER" layoutX="28.0" layoutY="22.0" prefHeight="21.0" prefWidth="201.0" text="Nombre del Producto">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="255.0" layoutY="77.0" text="Categoría">
+            <Label layoutX="255.0" layoutY="77.0" text="Categoría:">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="255.0" layoutY="98.0" text="Label de la categoría">
+            <Label fx:id="lblCategoria" layoutX="255.0" layoutY="98.0" text="Label de la categoría">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="255.0" layoutY="130.0" text="Fecha Inicio">
+            <Label layoutX="255.0" layoutY="130.0" text="Fecha Inicio:">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="255.0" layoutY="151.0" text="Label de la fecha inicio">
+            <Label fx:id="lblFechaInicio" layoutX="255.0" layoutY="151.0" text="Label de la fecha inicio">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="258.0" layoutY="182.0" text="Fecha Fin">
+            <Label layoutX="258.0" layoutY="182.0" text="Fecha Fin:">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="258.0" layoutY="203.0" text="Label de la fecha fin">
+            <Label fx:id="lblFechaFin" layoutX="258.0" layoutY="203.0" text="Label de la fecha fin">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="258.0" layoutY="240.0" text="Precio del Articulo">
+            <Label layoutX="258.0" layoutY="240.0" text="Precio del Articulo:">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="258.0" layoutY="261.0" text="Label del precio del articulo">
+            <Label fx:id="lblPrecio" layoutX="258.0" layoutY="261.0" text="Label del precio del articulo">
                <font>
                   <Font size="15.0" />
                </font>
@@ -99,12 +99,12 @@
             <Separator layoutX="821.0" layoutY="171.0" prefHeight="1.0" prefWidth="227.0" />
             <Button fx:id="btnAtras" layoutX="831.0" layoutY="217.0" mnemonicParsing="false" onAction="#btnMostrarVentanaPrincipal" prefHeight="46.0" prefWidth="200.0" style="-fx-background-color: #759eff;" />
             <FontAwesomeIconView disable="true" fill="WHITE" glyphName="HOME" layoutX="921.0" layoutY="250.0" size="30" />
-            <Label layoutX="489.0" layoutY="240.0" text="Pujado Por">
+            <Label layoutX="489.0" layoutY="240.0" text="Pujado Por:">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="491.0" layoutY="261.0" text="Label del pujante">
+            <Label fx:id="lblComprador" layoutX="491.0" layoutY="261.0" prefHeight="21.0" prefWidth="41.0">
                <font>
                   <Font size="15.0" />
                </font>

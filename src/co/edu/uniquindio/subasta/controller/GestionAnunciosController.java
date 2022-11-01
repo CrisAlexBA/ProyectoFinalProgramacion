@@ -56,6 +56,9 @@ public class GestionAnunciosController {
 
     @FXML
     private TableColumn<Anuncio, Float> colPrecio;
+    
+    @FXML
+    private TableColumn<Anuncio, String> colIdArticulo;
 
     @FXML
     private Button btnAtras;
@@ -74,12 +77,14 @@ public class GestionAnunciosController {
     void btnPujarEvent(ActionEvent event) {
 
     	try {
-
+    		Anuncio anuncioSelec = this.tblDatos.getSelectionModel().getSelectedItem();
+    		String codAnuncio = anuncioSelec.getIdAnuncio();
+    		Anuncio anuncioCompleto = singleton.traerAnuncio(codAnuncio);
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/TransaccionPujaCompra.fxml"));
 			Parent root = loader.load();
 
 			TransaccionPujaCompraController controlador = loader.getController();
-			controlador.init();
+			controlador.init(anuncioCompleto);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Pestaña de pujar Anuncio");
@@ -138,12 +143,13 @@ public class GestionAnunciosController {
 		colFechaInicio.setCellValueFactory(new PropertyValueFactory<>("fechaPublicacion"));
 		colFechaFin.setCellValueFactory(new PropertyValueFactory<>("fechaCumlinacion"));
 		colPrecio.setCellValueFactory(new PropertyValueFactory<>("valor"));
+		colIdArticulo.setCellValueFactory(new PropertyValueFactory<>("idAnuncio"));
 
 		for(int i = 0; i < listaAnuncios.size();i++) {
 			if(listaAnuncios.get(i).getEstado().equals("venta")) {
 				Anuncio anuncio = new Anuncio(listaAnuncios.get(i).getNombreArticulo(), listaAnuncios.get(i).getNombreAnunciante(),
 						listaAnuncios.get(i).getTipoArticulo(), listaAnuncios.get(i).getFechaPublicacion(), listaAnuncios.get(i).getFechaCumlinacion(),
-						listaAnuncios.get(i).getValor());
+						listaAnuncios.get(i).getValor(), listaAnuncios.get(i).getIdAnuncio());
 				
 				anuncios.add(anuncio);
 			}

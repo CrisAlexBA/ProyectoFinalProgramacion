@@ -16,7 +16,7 @@ public class Anuncio{
 	private TipoArticulo tipoArticulo;	
 	private LocalDate  fechaPublicacion;
  	private LocalDate fechaCumlinacion;
-	private float valor;
+	private double valor;
 	private Image foto;
 
 	//____________________________________________________________________ 
@@ -25,7 +25,7 @@ public class Anuncio{
 	
 	//Constructor 1
 	public Anuncio(String nombreArticulo, String nombreAnunciante, String estado, String descripcion, String idAnuncio,
-			TipoArticulo tipoArticulo, LocalDate fechaPublicacion, LocalDate fechaCumlinacion, float valor,
+			TipoArticulo tipoArticulo, LocalDate fechaPublicacion, LocalDate fechaCumlinacion, double valor,
 			Image foto) {
 		super();
 		this.nombreArticulo = nombreArticulo;
@@ -42,7 +42,7 @@ public class Anuncio{
 
 	//Constructor 2
 	public Anuncio(String nombreArticulo, String nombreAnunciante, TipoArticulo tipoArticulo,
-			LocalDate fechaPublicacion, LocalDate fechaCumlinacion, float valor) {
+			LocalDate fechaPublicacion, LocalDate fechaCumlinacion, double valor, String idAnuncio) {
 		super();
 		this.nombreArticulo = nombreArticulo;
 		this.nombreAnunciante = nombreAnunciante;
@@ -50,6 +50,7 @@ public class Anuncio{
 		this.fechaPublicacion = fechaPublicacion;
 		this.fechaCumlinacion = fechaCumlinacion;
 		this.valor = valor;
+		this.idAnuncio = idAnuncio;
 	}
 	
 	//Constructor 3
@@ -123,11 +124,11 @@ public class Anuncio{
 		this.fechaCumlinacion = fechaCumlinacion;
 	}
 
-	public float getValor() {
+	public double getValor() {
 		return valor;
 	}
 
-	public void setValor(float valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 

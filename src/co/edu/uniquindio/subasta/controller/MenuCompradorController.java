@@ -63,7 +63,7 @@ public class MenuCompradorController {
 		try {
 			// Actualiza el usuario para modificar el dinero
 			singleton.actualizarComprador(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(),
-					usuario.getDinero() + Float.parseFloat(txtAgregar.getText()), usuario.getCantPujas(),
+					usuario.getDinero() + Double.parseDouble(txtAgregar.getText()), usuario.getCantPujas(),
 					usuario.getListaCompras());
 			// Trae el "nuevo" usuario
 			usuario = singleton.getComprador();

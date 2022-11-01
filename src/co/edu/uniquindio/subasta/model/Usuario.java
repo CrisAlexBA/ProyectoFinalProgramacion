@@ -7,13 +7,13 @@ public class Usuario {
 	private String nombre;
 	private String idUsuario;
 	private int edad;
-	private float dinero;
+	private double dinero;
 //____________________________________________________________________ 
 	
 	// Metodo constructor
 	
 	//Constructor 1
-	public Usuario(String nombre, String idUsuario, int edad, float dinero) {
+	public Usuario(String nombre, String idUsuario, int edad, double dinero) {
 		super();
 		this.nombre = nombre;
 		this.idUsuario = idUsuario;
@@ -53,11 +53,11 @@ public class Usuario {
 		this.edad = edad;
 	}
 	
-	public float getDinero() {
+	public double getDinero() {
 		return dinero;
 	}
 	
-	public void setDinero(float dinero) {
+	public void setDinero(double dinero) {
 		this.dinero = dinero;
 	}
 	

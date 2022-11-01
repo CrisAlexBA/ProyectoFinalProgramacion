@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -61,15 +62,27 @@ public class MenuAnuncianteController{
     @FXML
     void agregarDin(ActionEvent event) {
     	try {
-    		//Actualiza el usuario para modificar el dinero
-			singleton.actualizarAnunciante(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(), usuario.getDinero() + Float.parseFloat(txtAgregar.getText()), usuario.getCantAnuncios(), usuario.getListaAnuncios());
-			//Trae el "nuevo" usuario
-			usuario = singleton.getAnunciante();
-			//Envia los datos al lbl
-			lblDinero.setText(usuario.getDinero()+"");
-			txtAgregar.setText("");
-			//Log
-	    	singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuAnunciante");
+
+        	double dineroIngresar = Double.parseDouble(txtAgregar.getText());
+	    	if(dineroIngresar >= 0) {
+	    		//Actualiza el usuario para modificar el dinero
+				singleton.actualizarAnunciante(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(), usuario.getDinero() + dineroIngresar, usuario.getCantAnuncios(), usuario.getListaAnuncios());
+				//Trae el "nuevo" usuario
+				usuario = singleton.getAnunciante();
+				//Envia los datos al lbl
+				lblDinero.setText(usuario.getDinero()+"");
+				txtAgregar.setText("");
+				//Log
+		    	singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuAnunciante");
+    		}else {
+
+    			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    			alert.setHeaderText(null);
+    			alert.setTitle("Notificacion");
+    			alert.setContentText("Debe ingresar dinero de manera positiva.");
+    			alert.showAndWait();
+				txtAgregar.setText("");
+    		}
 		} catch (NumberFormatException | IOException e) {
 			e.printStackTrace();
 		}

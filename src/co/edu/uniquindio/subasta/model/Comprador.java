@@ -13,7 +13,7 @@ public class Comprador extends Usuario{
 	// Metodos Constructor
 	
 	//Constructor 1
-	public Comprador(String nombre, String idUsuario, int edad, float dinero, int canPujas, ArrayList<Anuncio> listaCompras) {
+	public Comprador(String nombre, String idUsuario, int edad, double dinero, int canPujas, ArrayList<Anuncio> listaCompras) {
 		super(nombre, idUsuario, edad, dinero);
 		this.cantPujas = canPujas;
 		this.listaCompras = listaCompras;

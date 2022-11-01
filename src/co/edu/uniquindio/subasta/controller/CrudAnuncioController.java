@@ -92,7 +92,7 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio{
     	Image foto = null;
     	float precio = Float.parseFloat(txtPrecioArticulo.getText());
     	
-    	Anuncio anuncio = new Anuncio(nombre, usuario.getNombre(), "venta", descripcion, usuario.getIdUsuario(), tipoArticulo, fechaInicio, fechaFin, precio, foto);
+    	Anuncio anuncio = new Anuncio(nombre, usuario.getNombre(), "venta", descripcion, singleton.EnviarCodigo(), tipoArticulo, fechaInicio, fechaFin, precio, foto);
     	try {
 			CrearAnuncioNuevo(anuncio);
 		} catch (IOException | AnuncioException e) {

@@ -20,7 +20,7 @@ public class Anunciante extends Usuario{
 	}
 	
 	//Constructor 2
-	public Anunciante(String nombre, String idUsuario, int edad, float dinero, int cantAnuncios, ArrayList<Anuncio> listaAnuncios) {
+	public Anunciante(String nombre, String idUsuario, int edad, double dinero, int cantAnuncios, ArrayList<Anuncio> listaAnuncios) {
 		super(nombre, idUsuario, edad, dinero);
 		this.cantAnuncios = cantAnuncios;
 		this.listaAnuncios = listaAnuncios;

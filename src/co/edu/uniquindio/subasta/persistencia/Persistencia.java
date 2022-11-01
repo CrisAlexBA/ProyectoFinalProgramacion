@@ -75,7 +75,7 @@ public class Persistencia {
 			compradorCom.setNombre(linea.split("@@")[0]);
 			compradorCom.setIdUsuario(linea.split("@@")[1]);
 			compradorCom.setEdad(Integer.parseInt(linea.split("@@")[2]));
-			compradorCom.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			compradorCom.setDinero(Double.parseDouble(linea.split("@@")[3]));
 			compradorCom.setCantPujas(Integer.parseInt(linea.split("@@")[4]));
 			if(compradorCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
 				comprador = compradorCom;
@@ -104,7 +104,7 @@ public class Persistencia {
 			comprador.setNombre(linea.split("@@")[0]);
 			comprador.setIdUsuario(linea.split("@@")[1]);
 			comprador.setEdad(Integer.parseInt(linea.split("@@")[2]));
-			comprador.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			comprador.setDinero(Double.parseDouble(linea.split("@@")[3]));
 			comprador.setCantPujas(Integer.parseInt(linea.split("@@")[4]));
 			compradors.add(comprador);
 
@@ -184,7 +184,7 @@ public class Persistencia {
 			anuncianteCom.setNombre(linea.split("@@")[0]);
 			anuncianteCom.setIdUsuario(linea.split("@@")[1]);
 			anuncianteCom.setEdad(Integer.parseInt(linea.split("@@")[2]));
-			anuncianteCom.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			anuncianteCom.setDinero(Double.parseDouble(linea.split("@@")[3]));
 			anuncianteCom.setCantAnuncios(Integer.parseInt(linea.split("@@")[4]));
 			anuncianteCom.setListaAnunciosString(linea.split("@@")[5]);
 			if(anuncianteCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
@@ -213,7 +213,7 @@ public class Persistencia {
 			anunciante.setNombre(linea.split("@@")[0]);
 			anunciante.setIdUsuario(linea.split("@@")[1]);
 			anunciante.setEdad(Integer.parseInt(linea.split("@@")[2]));
-			anunciante.setDinero(Float.parseFloat(linea.split("@@")[3]));
+			anunciante.setDinero(Double.parseDouble(linea.split("@@")[3]));
 			anunciante.setCantAnuncios(Integer.parseInt(linea.split("@@")[4]));
 			anunciantes.add(anunciante);
 
@@ -295,7 +295,7 @@ public class Persistencia {
 			anuncio.setTipoArticulo((TipoArticulo.valueOf(linea.split("@@")[5])));
 			anuncio.setFechaPublicacion((LocalDate.parse(linea.split("@@")[6])));
 			anuncio.setFechaCumlinacion((LocalDate.parse(linea.split("@@")[7])));
-			anuncio.setValor(Float.parseFloat((linea.split("@@")[8])));
+			anuncio.setValor(Double.parseDouble((linea.split("@@")[8])));
 			anuncio.setFoto(null);
 			anuncios.add(anuncio);
 
@@ -304,7 +304,36 @@ public class Persistencia {
 	}
 	// _______________________________________________________________________________
 	
-	
+	/*
+	 * Metodo que permite cargar un comprador especifico del archivo txt y lo retorne
+	 */
+	public static Anuncio cargarAnuncio(String idUsuario) throws IOException {
+
+		ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_ANUNCIOS);
+		Anuncio anuncio = new Anuncio();
+		String linea = "";
+
+		for (int i = 0; i < contenido.size(); i++) {
+			linea = contenido.get(i);
+			Anuncio anuncioCom = new Anuncio();
+			anuncioCom.setNombreArticulo((linea.split("@@")[0]));
+			anuncioCom.setNombreAnunciante((linea.split("@@")[1]));
+			anuncioCom.setEstado((linea.split("@@")[2]));
+			anuncioCom.setDescripcion((linea.split("@@")[3]));
+			anuncioCom.setIdAnuncio((linea.split("@@")[4]));
+			anuncioCom.setTipoArticulo((TipoArticulo.valueOf(linea.split("@@")[5])));
+			anuncioCom.setFechaPublicacion((LocalDate.parse(linea.split("@@")[6])));
+			anuncioCom.setFechaCumlinacion((LocalDate.parse(linea.split("@@")[7])));
+			anuncioCom.setValor(Double.parseDouble((linea.split("@@")[8])));
+			anuncioCom.setFoto(null);
+			if(anuncioCom.getIdAnuncio().equalsIgnoreCase(idUsuario)) {
+				anuncio = anuncioCom;
+				return anuncio;
+			}
+
+		}
+		return null;
+	}
 	//----------------------------------     Métodos Carga Datos   ----------------------------------
 	
 	/*
