@@ -1,31 +1,31 @@
 package co.edu.uniquindio.subasta.model;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 
-import javafx.scene.control.DatePicker;
 import javafx.scene.image.Image;
 
-public class Anuncio{
-	
-	//Atributos
+@SuppressWarnings("serial")
+public class Anuncio implements Serializable {
+
+	// Atributos
 	private String nombreArticulo;
-	private String nombreAnunciante;	
+	private String nombreAnunciante;
 	private String estado; // venta, noComprado, comprado
 	private String descripcion;
 	private String idAnuncio;
-	private TipoArticulo tipoArticulo;	
-	private LocalDate  fechaPublicacion;
- 	private LocalDate fechaCumlinacion;
+	private TipoArticulo tipoArticulo;
+	private String fechaPublicacion;
+	private String fechaCumlinacion;
 	private double valor;
 	private Image foto;
 
-	//____________________________________________________________________ 
+	// ____________________________________________________________________
 
 	// Metodos constructor
-	
-	//Constructor 1
+
+	// Constructor 1
 	public Anuncio(String nombreArticulo, String nombreAnunciante, String estado, String descripcion, String idAnuncio,
-			TipoArticulo tipoArticulo, LocalDate fechaPublicacion, LocalDate fechaCumlinacion, double valor,
+			TipoArticulo tipoArticulo, String fechaPublicacion, String fechaCumlinacion, double valor,
 			Image foto) {
 		super();
 		this.nombreArticulo = nombreArticulo;
@@ -40,9 +40,10 @@ public class Anuncio{
 		this.foto = foto;
 	}
 
-	//Constructor 2
+	// Constructor 2
 	public Anuncio(String nombreArticulo, String nombreAnunciante, TipoArticulo tipoArticulo,
-			LocalDate fechaPublicacion, LocalDate fechaCumlinacion, double valor, String idAnuncio) {
+			String fechaPublicacion, String fechaCumlinacion, double valor, String idAnuncio,
+			String descripcion) {
 		super();
 		this.nombreArticulo = nombreArticulo;
 		this.nombreAnunciante = nombreAnunciante;
@@ -51,12 +52,24 @@ public class Anuncio{
 		this.fechaCumlinacion = fechaCumlinacion;
 		this.valor = valor;
 		this.idAnuncio = idAnuncio;
+		this.descripcion = descripcion;
 	}
-	
-	//Constructor 3
+
+	// Constructor 3
+	public Anuncio(String nombreArticulo, String nombreAnunciante, String estado, String idAnuncio,
+			TipoArticulo tipoArticulo, double valor, Image image) {
+		super();
+		this.nombreAnunciante = nombreAnunciante;
+		this.nombreArticulo = nombreArticulo;
+		this.estado = estado;
+		this.tipoArticulo = tipoArticulo;
+		this.valor = valor;
+		this.idAnuncio = idAnuncio;
+	}
+
 	public Anuncio() {
+
 	}
-	
 //____________________________________________________________________ 
 
 	// Metodos Getters and Setters
@@ -108,19 +121,19 @@ public class Anuncio{
 		this.tipoArticulo = tipoArticulo;
 	}
 
-	public LocalDate getFechaPublicacion() {
+	public String getFechaPublicacion() {
 		return fechaPublicacion;
 	}
 
-	public void setFechaPublicacion(LocalDate fechaPublicacion) {
+	public void setFechaPublicacion(String fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
 	}
 
-	public LocalDate getFechaCumlinacion() {
+	public String getFechaCumlinacion() {
 		return fechaCumlinacion;
 	}
 
-	public void setFechaCumlinacion(LocalDate fechaCumlinacion) {
+	public void setFechaCumlinacion(String fechaCumlinacion) {
 		this.fechaCumlinacion = fechaCumlinacion;
 	}
 
@@ -139,9 +152,7 @@ public class Anuncio{
 	public void setFoto(Image foto) {
 		this.foto = foto;
 	}
-	
+
 //____________________________________________________________________ 
 
-	
-	
 }

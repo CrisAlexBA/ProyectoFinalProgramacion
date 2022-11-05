@@ -1,7 +1,9 @@
 package co.edu.uniquindio.subasta.model;
 
+import java.io.Serializable;
 
-public class Usuario {
+@SuppressWarnings("serial")
+public class Usuario implements Serializable {
 
 	// Atributos
 	private String nombre;
@@ -9,10 +11,10 @@ public class Usuario {
 	private int edad;
 	private double dinero;
 //____________________________________________________________________ 
-	
+
 	// Metodo constructor
-	
-	//Constructor 1
+
+	// Constructor 1
 	public Usuario(String nombre, String idUsuario, int edad, double dinero) {
 		super();
 		this.nombre = nombre;
@@ -20,49 +22,47 @@ public class Usuario {
 		this.edad = edad;
 		this.dinero = dinero;
 	}
-	
-	//Constructor 2
+
+	// Constructor 2
 	public Usuario() {
 		super();
 	}
-	
+
 //____________________________________________________________________ 
 
 	// Metodos Getters and Setters
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public String getIdUsuario() {
 		return idUsuario;
 	}
-	
+
 	public void setIdUsuario(String idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	
+
 	public int getEdad() {
 		return edad;
 	}
-	
+
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	
+
 	public double getDinero() {
 		return dinero;
 	}
-	
+
 	public void setDinero(double dinero) {
 		this.dinero = dinero;
 	}
-	
+
 //____________________________________________________________________ 
 
-	
-	
 }

@@ -1,32 +1,36 @@
 package co.edu.uniquindio.subasta.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Anunciante extends Usuario{
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+@SuppressWarnings("serial")
+public class Anunciante extends Usuario implements Serializable {
 
 	// Atributo
 	private int cantAnuncios;
 	private ArrayList<Anuncio> listaAnuncios;
-	private String listaAnunciosString; //Duda para el manejo de la carga de datos
-	//____________________________________________________________________ 
+	// ____________________________________________________________________
 
 	// Metodos constructor
-	
-	//Constructor 1
+
+	// Constructor 1
 	public Anunciante(String nombre, String idUsuario, int edad) {
 		super(nombre, idUsuario, edad, 0);
 		this.cantAnuncios = 0;
 		this.listaAnuncios = new ArrayList<Anuncio>();
 	}
-	
-	//Constructor 2
-	public Anunciante(String nombre, String idUsuario, int edad, double dinero, int cantAnuncios, ArrayList<Anuncio> listaAnuncios) {
+
+	// Constructor 2
+	public Anunciante(String nombre, String idUsuario, int edad, double dinero, int cantAnuncios,
+			ArrayList<Anuncio> listaAnuncios) {
 		super(nombre, idUsuario, edad, dinero);
 		this.cantAnuncios = cantAnuncios;
 		this.listaAnuncios = listaAnuncios;
 	}
 
-	//Constructor 3
+	// Constructor 3
 	public Anunciante() {
 		super();
 	}
@@ -40,7 +44,7 @@ public class Anunciante extends Usuario{
 	public void setCantAnuncios(int cantAnuncios) {
 		this.cantAnuncios = cantAnuncios;
 	}
-	
+
 	public ArrayList<Anuncio> getListaAnuncios() {
 		return listaAnuncios;
 	}
@@ -48,17 +52,7 @@ public class Anunciante extends Usuario{
 	public void setListaAnuncios(ArrayList<Anuncio> listaAnuncios) {
 		this.listaAnuncios = listaAnuncios;
 	}
-	
-	public void setListaAnunciosString(String cadena) {
-		this.listaAnunciosString = cadena;
-	}
-	
-	public String getListaAnunciosString() {
-		return listaAnunciosString;
-	}
-	
+
 //____________________________________________________________________ 
 
-
-	
 }

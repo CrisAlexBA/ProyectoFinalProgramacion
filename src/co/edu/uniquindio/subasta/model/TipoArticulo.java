@@ -1,13 +1,14 @@
 package co.edu.uniquindio.subasta.model;
 
-public enum TipoArticulo {
+import java.io.Serializable;
+
+public enum TipoArticulo implements Serializable {
 
 	HOGAR(0), TECNOLOGIA(1), DEPORTES(2), VEHICULOS(3), VIENESRAIZ(4);
-	
-	
+
 	// Atributos
 	private int tipoProducto;
-	
+
 //____________________________________________________________________ 
 
 	// Metodo Constructor
@@ -24,8 +25,7 @@ public enum TipoArticulo {
 	public void setTipoProducto(int tipoProducto) {
 		this.tipoProducto = tipoProducto;
 	}
-	
+
 //____________________________________________________________________ 
 
-	
 }

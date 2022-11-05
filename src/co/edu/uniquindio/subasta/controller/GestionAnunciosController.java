@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.subasta.model.Anuncio;
-import co.edu.uniquindio.subasta.model.Comprador;
 import co.edu.uniquindio.subasta.model.TipoArticulo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,66 +20,68 @@ import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-
 public class GestionAnunciosController {
-	
+
 	/*
 	 * Instanciamos el singleton
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
-    
-    private ArrayList<Anuncio> listaAnuncios = singleton.traerListaAnuncios();
-    
-    //  ____________________________________________________________________________________________
 
-    //Atributos
-    private ObservableList<Anuncio> anuncios = FXCollections.observableArrayList();
+	private ArrayList<Anuncio> listaAnuncios = singleton.traerListaAnuncios();
 
-    @FXML
-    private TableView<Anuncio> tblDatos;
+	// ____________________________________________________________________________________________
 
-    @FXML
-    private TableColumn<Anuncio, TipoArticulo> colCategoria;
+	// Atributos
+	private ObservableList<Anuncio> anuncios = FXCollections.observableArrayList();
 
-    @FXML
-    private TableColumn<Anuncio, LocalDate> colFechaFin;
+	@FXML
+	private TableView<Anuncio> tblDatos;
 
-    @FXML
-    private TableColumn<Anuncio, LocalDate> colFechaInicio;
+	@FXML
+	private TableColumn<Anuncio, TipoArticulo> colCategoria;
 
-    @FXML
-    private TableColumn<Anuncio, String> colNombreAnunciante;
+	@FXML
+	private TableColumn<Anuncio, LocalDate> colFechaFin;
 
-    @FXML
-    private TableColumn<Anuncio, String> colNombreProducto;
+	@FXML
+	private TableColumn<Anuncio, String> colDescripcion;
 
-    @FXML
-    private TableColumn<Anuncio, Float> colPrecio;
-    
-    @FXML
-    private TableColumn<Anuncio, String> colIdArticulo;
+	@FXML
+	private TableColumn<Anuncio, LocalDate> colFechaInicio;
 
-    @FXML
-    private Button btnAtras;
-    
-    @FXML
-    private Button btnPujar;
+	@FXML
+	private TableColumn<Anuncio, String> colNombreAnunciante;
 
-    
+	@FXML
+	private TableColumn<Anuncio, String> colNombreProducto;
+
+	@FXML
+	private TableColumn<Anuncio, Float> colPrecio;
+
+	@FXML
+	private TableColumn<Anuncio, String> colIdArticulo;
+
+	@FXML
+	private Button btnAtras;
+
+	@FXML
+	private Button btnPujar;
+
 	// ____________________________________________________________________________________
-    
-    /*
-     * Método que permite seleccionar un anuncio y abrir una pestaña de puja 
-     */
-    
-    @FXML
-    void btnPujarEvent(ActionEvent event) {
 
-    	try {
-    		Anuncio anuncioSelec = this.tblDatos.getSelectionModel().getSelectedItem();
-    		String codAnuncio = anuncioSelec.getIdAnuncio();
-    		Anuncio anuncioCompleto = singleton.traerAnuncio(codAnuncio);
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/TransaccionPujaCompra.fxml"));
+	/*
+	 * Método que permite seleccionar un anuncio y abrir una pestaña de puja
+	 */
+
+	@FXML
+	void btnPujarEvent(ActionEvent event) {
+
+		try {
+			Anuncio anuncioSelec = this.tblDatos.getSelectionModel().getSelectedItem();
+			String codAnuncio = anuncioSelec.getIdAnuncio();
+			Anuncio anuncioCompleto = singleton.traerAnuncio(codAnuncio);
+			FXMLLoader loader = new FXMLLoader(
+					getClass().getResource("/co/edu/uniquindio/subasta/view/TransaccionPujaCompra.fxml"));
 			Parent root = loader.load();
 
 			TransaccionPujaCompraController controlador = loader.getController();
@@ -101,19 +102,20 @@ public class GestionAnunciosController {
 			alert.setContentText(ex.getMessage());
 			alert.showAndWait();
 		}
-    }
+	}
 	// ______________________________________________________________________________________
-    
-    /*
-     * Método que permite volver al menú principal del comprador.
-     */
-    @FXML
-    void btnMostrarVentanaPrincipal(ActionEvent event) {
 
-    	try {
-	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuComprador.fxml"));
+	/*
+	 * Método que permite volver al menú principal del comprador.
+	 */
+	@FXML
+	void btnMostrarVentanaPrincipal(ActionEvent event) {
+
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					getClass().getResource("/co/edu/uniquindio/subasta/view/MenuComprador.fxml"));
 			Parent root = loader.load();
-	
+
 			MenuCompradorController controlador = loader.getController();
 			controlador.init();
 			Scene scene = new Scene(root);
@@ -121,21 +123,19 @@ public class GestionAnunciosController {
 			stage.setTitle("Menú Comprador");
 			stage.setScene(scene);
 			stage.show();
-			
+
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
 			myStage.close();
-    	}catch(IOException ex) {
-    		ex.printStackTrace();
-    	}
-    }
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
 
-    
-    //  ____________________________________________________________________
-    
-    /*
-     * Metodo que inicializa datos de la ventana anterior
-     */
-	@SuppressWarnings("unchecked")
+	// ____________________________________________________________________
+
+	/*
+	 * Metodo que inicializa datos de la ventana anterior
+	 */
 	public void init() {
 		colNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombreArticulo"));
 		colNombreAnunciante.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));
@@ -144,21 +144,21 @@ public class GestionAnunciosController {
 		colFechaFin.setCellValueFactory(new PropertyValueFactory<>("fechaCumlinacion"));
 		colPrecio.setCellValueFactory(new PropertyValueFactory<>("valor"));
 		colIdArticulo.setCellValueFactory(new PropertyValueFactory<>("idAnuncio"));
+		colDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
 
-		for(int i = 0; i < listaAnuncios.size();i++) {
-			if(listaAnuncios.get(i).getEstado().equals("venta")) {
-				Anuncio anuncio = new Anuncio(listaAnuncios.get(i).getNombreArticulo(), listaAnuncios.get(i).getNombreAnunciante(),
-						listaAnuncios.get(i).getTipoArticulo(), listaAnuncios.get(i).getFechaPublicacion(), listaAnuncios.get(i).getFechaCumlinacion(),
-						listaAnuncios.get(i).getValor(), listaAnuncios.get(i).getIdAnuncio());
-				
+		for (int i = 0; i < listaAnuncios.size(); i++) {
+			if (listaAnuncios.get(i).getEstado().equals("venta")) {
+				Anuncio anuncio = new Anuncio(listaAnuncios.get(i).getNombreArticulo(),
+						listaAnuncios.get(i).getNombreAnunciante(), listaAnuncios.get(i).getTipoArticulo(),
+						listaAnuncios.get(i).getFechaPublicacion(), listaAnuncios.get(i).getFechaCumlinacion(),
+						listaAnuncios.get(i).getValor(), listaAnuncios.get(i).getIdAnuncio(),
+						listaAnuncios.get(i).getDescripcion());
+
 				anuncios.add(anuncio);
 			}
 		}
 		tblDatos.setItems(anuncios);
 		tblDatos.refresh();
 	}
-	
 
-
-	
 }

@@ -19,72 +19,71 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class TransaccionAnuncianteLogController{
+public class TransaccionAnuncianteLogController {
 
 	/*
 	 * Instancia del singleton
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
 	// _____________________________________________________________________
-	
-	
+
 	/*
 	 * Atributos
 	 */
 	@FXML
 	private Button btnLogin;
 
-    @FXML
-    private Button btnVolver;
+	@FXML
+	private Button btnVolver;
 
-    @FXML
-    private TextField txtIndentificacion;
+	@FXML
+	private TextField txtIndentificacion;
 
 	@FXML
 	private TextField txtNombre;
 	// _____________________________________________________________________
-	
-	
+
 	/*
 	 * Metodo que permite volver a la pantalla principal
 	 */
-    @FXML
-    void volver(ActionEvent event) {
-    	try {
-	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
+	@FXML
+	void volver(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
-	
+
 			PrincipalController controlador = loader.getController();
-	
+
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Proyecto Subastas del Quindio");
 			stage.setScene(scene);
 			stage.show();
-			
+
 			Stage myStage = (Stage) this.btnVolver.getScene().getWindow();
 			myStage.close();
-    	}catch(IOException ex) {
-    		ex.printStackTrace();
-    	}
-    }
-    // _____________________________________________________________________
- 
-    /*
-     * Metodo que permite hacer el login de los anunciantes
-     */
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
+	// _____________________________________________________________________
+
+	/*
+	 * Metodo que permite hacer el login de los anunciantes
+	 */
 	@FXML
 	void login(ActionEvent event) throws AnuncianteException {
 
 		String nombre = this.txtNombre.getText();
 		String idUsuario = this.txtIndentificacion.getText();
-		
-		
-		if(singleton.inicioSesionAnunciante(nombre, idUsuario) == true){
-			
+
+		if (singleton.inicioSesionAnunciante(nombre, idUsuario) == true) {
+
 			try {
-				singleton.guardaRegistroLog("Usuario: "+nombre+" inicio sesion", 1, "LoginAnunciante");
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
+				singleton.guardaRegistroLog("Usuario: " + nombre + " inicio sesion", 1, "LoginAnunciante");
+				FXMLLoader loader = new FXMLLoader(
+						getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 				Parent root = loader.load();
 
 				MenuAnuncianteController controlador = loader.getController();
@@ -112,7 +111,7 @@ public class TransaccionAnuncianteLogController{
 				alert.setContentText(ex.getMessage());
 				alert.showAndWait();
 			}
-		}else{
+		} else {
 			singleton.guardaRegistroLog("Se intento iniciar sesion sin cuenta", 2, "LoginAnunciante");
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setHeaderText(null);
@@ -121,10 +120,10 @@ public class TransaccionAnuncianteLogController{
 			alert.showAndWait();
 			throw new AnuncianteException("Anunciante no existe");
 		}
-		
+
 	}
 	// ____________________________________________________________________
-	
+
 	/*
 	 * Método que permite inicializar los datos de la ventana
 	 */
@@ -132,4 +131,3 @@ public class TransaccionAnuncianteLogController{
 	}
 	// ____________________________________________________________________
 }
-

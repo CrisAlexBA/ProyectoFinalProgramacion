@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
+import co.edu.uniquindio.subasta.exceptions.DineroException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Comprador;
 import javafx.event.ActionEvent;
@@ -58,22 +60,35 @@ public class MenuCompradorController {
 	 * Método que permite modificar el usuario para que agregue dinero a su cuenta
 	 */
 	@FXML
-	void agregarDin(ActionEvent event) {
+	void agregarDin(ActionEvent event) throws DineroException {
 		// usuario.setDinero(Float.parseFloat(txtAgregar.getText()));
 		try {
-			// Actualiza el usuario para modificar el dinero
-			singleton.actualizarComprador(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(),
-					usuario.getDinero() + Double.parseDouble(txtAgregar.getText()), usuario.getCantPujas(),
-					usuario.getListaCompras());
-			// Trae el "nuevo" usuario
-			usuario = singleton.getComprador();
-			// Envia los datos al lbl
-			lblDinero.setText(usuario.getDinero() + "");
-			txtAgregar.setText("");
-			// Log
-			singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuComprador");
+			double dineroIngresar = Double.parseDouble(txtAgregar.getText());
+			if (dineroIngresar >= 0) {
+				// Actualiza el usuario para modificar el dinero
+				singleton.actualizarComprador(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(),
+						usuario.getDinero() + Double.parseDouble(txtAgregar.getText()), usuario.getCantPujas(),
+						usuario.getListaCompras());
+				// Trae el "nuevo" usuario
+				usuario = singleton.getComprador();
+				// Envia los datos al lbl
+				lblDinero.setText(usuario.getDinero() + "");
+				txtAgregar.setText("");
+				// Log
+				singleton.guardaRegistroLog("El usuario:" + usuario.getNombre() + " agrego dinero", 1, "MenuComprador");
+			} else {
+
+				Alert alert = new Alert(Alert.AlertType.INFORMATION);
+				alert.setHeaderText(null);
+				alert.setTitle("Notificacion");
+				alert.setContentText("Debe ingresar dinero de manera positiva.");
+				alert.showAndWait();
+				txtAgregar.setText("");
+			}
 		} catch (NumberFormatException | IOException e) {
-			e.printStackTrace();
+
+			txtAgregar.setText("");
+			throw new DineroException("Trato de ingresar dinero erroneamente");
 		}
 	}
 	// ____________________________________________________________________
@@ -153,7 +168,7 @@ public class MenuCompradorController {
 			Parent root = loader.load();
 
 			GestionAnunciosCompradorController controlador = loader.getController();
-
+			controlador.init();
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Lista de anuncios comprados");

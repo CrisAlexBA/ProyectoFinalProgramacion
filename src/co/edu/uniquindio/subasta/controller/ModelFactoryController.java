@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
-import co.edu.uniquindio.subasta.exceptions.ArticuloException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Anuncio;
@@ -41,14 +40,14 @@ public class ModelFactoryController {
 		// iniciarSalvarDatosPrueba();
 
 		// 2. Cargar los datos de los archivos
-		cargarDatosDesdeArchivos();
+		// cargarDatosDesdeArchivos();
 
 		// 3. Guardar y Cargar el recurso serializable binario
 		// guardarResourceBinario();
 		// cargarResourceBinario();
 
 		// 4. Guardar y Cargar el recurso serializable XML
-		// cargarResourceXML();
+		cargarResourceXML();
 		// guardarResourceXML();
 		// Siempre se debe verificar si la raiz del recurso es null
 		if (subasta == null) {
@@ -101,7 +100,7 @@ public class ModelFactoryController {
 	 */
 	public boolean inicioSesionComprador(String nombre, String contrasenia) {
 		try {
-			this.comprador = Persistencia.iniciarSesionComprador(nombre, contrasenia);
+			this.comprador = subasta.iniciarSesionComprador(nombre, contrasenia);
 			return comprador != null;
 		} catch (IOException | CompradorException e) {
 			e.printStackTrace();
@@ -129,7 +128,7 @@ public class ModelFactoryController {
 	public Comprador traerComprador(String idUsuario) {
 
 		try {
-			return Persistencia.cargarComprador(idUsuario);
+			return subasta.cargarComprador(idUsuario);
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -154,7 +153,7 @@ public class ModelFactoryController {
 	 */
 	public boolean inicioSesionAnunciante(String nombre, String idUsuario) throws AnuncianteException {
 		try {
-			this.anunciante = Persistencia.iniciarSesionAnunciante(nombre, idUsuario);
+			this.anunciante = subasta.iniciarSesionAnunciante(nombre, idUsuario);
 
 			return anunciante != null;
 
@@ -185,7 +184,7 @@ public class ModelFactoryController {
 	 */
 	public Anunciante traerAnunciante(String idUsuario) {
 		try {
-			return Persistencia.cargarAnunciante(idUsuario);
+			return subasta.cargarAnunciante(idUsuario);
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -230,8 +229,14 @@ public class ModelFactoryController {
 
 	public void GenerarCodigo() {
 		generadorCodigo = new GeneradorCodigo();
-		int lastIdx = subasta.getListaAnuncios().size() - 1;
-		this.ultCodigo = subasta.getListaAnuncios().get(lastIdx).getIdAnuncio();
+		int lastIdx = 0;
+		if(subasta.getListaAnuncios().size() == 0) {
+			this.ultCodigo = subasta.getListaAnuncios().get(lastIdx).getIdAnuncio();
+		}else {
+			lastIdx = subasta.getListaAnuncios().size() - 1;
+			this.ultCodigo = subasta.getListaAnuncios().get(lastIdx).getIdAnuncio();
+		}
+		
 		if (ultCodigo == null) {
 			ultCodigo = "CP0001";
 		} else {
@@ -260,7 +265,7 @@ public class ModelFactoryController {
 	public Anuncio traerAnuncio(String idAnuncio) {
 
 		try {
-			return Persistencia.cargarAnuncio(idAnuncio);
+			return subasta.cargarAnuncio(idAnuncio);
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -363,6 +368,12 @@ public class ModelFactoryController {
 //		}
 	}
 	// ______________________________________________________________
+
+	public void elimarAnuncio(Anuncio anuncio) throws IOException {
+
+		subasta.eliminarAnuncio(anuncio);
+
+	}
 
 	// -----------------------------------------------------------------------------------------------------
 

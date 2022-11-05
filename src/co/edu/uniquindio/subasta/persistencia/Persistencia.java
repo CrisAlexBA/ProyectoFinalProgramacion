@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
 import co.edu.uniquindio.subasta.exceptions.AnuncianteException;
 import co.edu.uniquindio.subasta.exceptions.CompradorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
@@ -15,9 +14,7 @@ import co.edu.uniquindio.subasta.model.SubastaQuindio;
 import co.edu.uniquindio.subasta.model.TipoArticulo;
 import javafx.scene.image.Image;
 
-
 public class Persistencia {
-
 
 	/*
 	 * Las rutas de los archivos
@@ -29,7 +26,7 @@ public class Persistencia {
 	public static final String RUTA_ARCHIVO_SUBASTABINARIO = "src/co/edu/uniquindio/subasta/persistencia/archivos/SubastaBinario.dat";
 	public static final String RUTA_ARCHIVO_LOG = "src/co/edu/uniquindio/subasta/persistencia/log/SubastaLog.txt";
 	public static final String RUTA_ARCHIVO_COPIASEGURIDAD = "src/co/edu/uniquindio/subasta/persistencia/respaldo/CopiaSeguridadSubasta.xml";
-	
+
 //	public static final String RUTA_ARCHIVO_ANUNCIANTES = "C:/td/persistencia/archivos/ArchivoAnunciantes.txt";
 //	public static final String RUTA_ARCHIVO_COMPRADORES = "C:/td/persistencia//archivos/ArchivoCompradores.txt";
 //	public static final String RUTA_ARCHIVO_ANUNCIOS = "C:/td/persistencia/archivo/ArchivoArticulos.txt";
@@ -38,30 +35,32 @@ public class Persistencia {
 //	public static final String RUTA_ARCHIVO_LOG = "C:/td/persistencia/log/SubastaLog.txt";
 //	public static final String RUTA_ARCHIVO_COPIASEGURIDAD = "C:/td/persistencia/respaldo/CopiaSeguridadSubasta.xml";
 
-	
-	//----------------------------------     Métodos Comprador     ----------------------------------
-	
+	// ---------------------------------- Métodos Comprador
+	// ----------------------------------
+
 	/**
 	 * Metodo que permite guardar un comprador nuevo en el archivo txt
+	 * 
 	 * @param listacompradores
 	 * @throws IOException
 	 */
 	public static void guardarComprador(ArrayList<Comprador> listacompradores) throws IOException {
 
-
 		String contenido = "";
 
 		for (Comprador compradores : listacompradores) {
-			contenido += compradores.getNombre() + "@@" + compradores.getIdUsuario() + "@@" + compradores.getEdad() + "@@" +
-					compradores.getDinero() + "@@" + compradores.getCantPujas() + "@@" + compradores.getListaCompras() +"\n";
+			contenido += compradores.getNombre() + "@@" + compradores.getIdUsuario() + "@@" + compradores.getEdad()
+					+ "@@" + compradores.getDinero() + "@@" + compradores.getCantPujas() + "@@"
+					+ compradores.getListaCompras() + "\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_COMPRADORES, contenido, false);
 	}
-	//	 _________________________________________________________________________________	
-	
+	// _________________________________________________________________________________
+
 	/*
-	 * Metodo que permite cargar un comprador especifico del archivo txt y lo retorne
+	 * Metodo que permite cargar un comprador especifico del archivo txt y lo
+	 * retorne
 	 */
 	public static Comprador cargarComprador(String idUsuario) throws IOException {
 
@@ -77,7 +76,7 @@ public class Persistencia {
 			compradorCom.setEdad(Integer.parseInt(linea.split("@@")[2]));
 			compradorCom.setDinero(Double.parseDouble(linea.split("@@")[3]));
 			compradorCom.setCantPujas(Integer.parseInt(linea.split("@@")[4]));
-			if(compradorCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
+			if (compradorCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
 				comprador = compradorCom;
 				return comprador;
 			}
@@ -85,9 +84,8 @@ public class Persistencia {
 		}
 		return null;
 	}
-	//	 _________________________________________________________________________________
-	
-	
+	// _________________________________________________________________________________
+
 	/*
 	 * Metodo que permite cargar los compradores del archivo txt
 	 */
@@ -112,65 +110,65 @@ public class Persistencia {
 		return compradors;
 	}
 	// _______________________________________________________________________________
-	
+
 	/*
 	 * Metodo que permite iniciar la sesion del comprador
 	 */
 
-	public static Comprador iniciarSesionComprador(String comprador, String contrasenia) throws FileNotFoundException, IOException, CompradorException {
-		Comprador compradorIS = validarComprador(comprador,contrasenia);
-		if(compradorIS != null) {
+	public static Comprador iniciarSesionComprador(String comprador, String contrasenia)
+			throws FileNotFoundException, IOException, CompradorException {
+		Comprador compradorIS = validarComprador(comprador, contrasenia);
+		if (compradorIS != null) {
 			return compradorIS;
-		}else {
+		} else {
 			throw new CompradorException("comprador no existe");
 		}
 
 	}
 	// _______________________________________________________________________________
-	
-	
+
 	/*
-	 * Metodo que permite validar que los datos que ingreso el comprador en el login,
-	 * si sean verdaderos
+	 * Metodo que permite validar que los datos que ingreso el comprador en el
+	 * login, si sean verdaderos
 	 */
-	private static Comprador validarComprador(String comprador, String contrasenia) throws FileNotFoundException, IOException 
-	{
+	private static Comprador validarComprador(String comprador, String contrasenia)
+			throws FileNotFoundException, IOException {
 		ArrayList<Comprador> compradores = Persistencia.cargarCompradores();
 
-		for (int indicecomprador = 0; indicecomprador < compradores.size(); indicecomprador++) 
-		{
+		for (int indicecomprador = 0; indicecomprador < compradores.size(); indicecomprador++) {
 			Comprador compradorAux = compradores.get(indicecomprador);
-			if(compradorAux.getNombre().equalsIgnoreCase(comprador) && compradorAux.getIdUsuario().equalsIgnoreCase(contrasenia)) {
+			if (compradorAux.getNombre().equalsIgnoreCase(comprador)
+					&& compradorAux.getIdUsuario().equalsIgnoreCase(contrasenia)) {
 				return compradorAux;
 			}
 		}
 		return null;
 	}
 	// _______________________________________________________________________________
-	
-	
-	
-	//----------------------------------     Métodos Anunciante    ----------------------------------
-	
+
+	// ---------------------------------- Métodos Anunciante
+	// ----------------------------------
+
 	/**
 	 * Guarda toda la informacion de los anunciantes
 	 */
 	public static void guardarAnunciante(ArrayList<Anunciante> listaAnunciantes) throws IOException {
 
-
 		String contenido = "";
 
 		for (Anunciante anunciantes : listaAnunciantes) {
-			contenido += anunciantes.getNombre() + "@@" + anunciantes.getIdUsuario() + "@@" + anunciantes.getEdad() + "@@" +
-					anunciantes.getDinero() + "@@" + anunciantes.getCantAnuncios() + "@@" + anunciantes.getListaAnuncios() +"\n";
+			contenido += anunciantes.getNombre() + "@@" + anunciantes.getIdUsuario() + "@@" + anunciantes.getEdad()
+					+ "@@" + anunciantes.getDinero() + "@@" + anunciantes.getCantAnuncios() + "@@"
+					+ anunciantes.getListaAnuncios() + "\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIANTES, contenido, false);
 	}
 	// _______________________________________________________________________________
-	
+
 	/*
-	 * Metodo que permite cargar un anunciante especifico del archivo txt y lo retorne
+	 * Metodo que permite cargar un anunciante especifico del archivo txt y lo
+	 * retorne
 	 */
 	public static Anunciante cargarAnunciante(String idUsuario) throws IOException {
 
@@ -186,8 +184,7 @@ public class Persistencia {
 			anuncianteCom.setEdad(Integer.parseInt(linea.split("@@")[2]));
 			anuncianteCom.setDinero(Double.parseDouble(linea.split("@@")[3]));
 			anuncianteCom.setCantAnuncios(Integer.parseInt(linea.split("@@")[4]));
-			anuncianteCom.setListaAnunciosString(linea.split("@@")[5]);
-			if(anuncianteCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
+			if (anuncianteCom.getIdUsuario().equalsIgnoreCase(idUsuario)) {
 				anunciante = anuncianteCom;
 				return anunciante;
 			}
@@ -196,7 +193,7 @@ public class Persistencia {
 		return null;
 	}
 	// _______________________________________________________________________________
-	
+
 	/*
 	 * Metodo que permite cargar los anunciantes
 	 */
@@ -220,44 +217,45 @@ public class Persistencia {
 		}
 		return anunciantes;
 	}
-	//____________________________________________________________________________________
-	
+	// ____________________________________________________________________________________
+
 	/*
 	 * Metodo que permite iniciar la sesion del anunciante
 	 */
-	public static Anunciante iniciarSesionAnunciante(String anunciante, String contrasenia) throws FileNotFoundException, IOException, AnuncianteException {
-		Anunciante anuncianteIS = validarAnunciante(anunciante,contrasenia);
-		if( anuncianteIS != null) {
+	public static Anunciante iniciarSesionAnunciante(String anunciante, String contrasenia)
+			throws FileNotFoundException, IOException, AnuncianteException {
+		Anunciante anuncianteIS = validarAnunciante(anunciante, contrasenia);
+		if (anuncianteIS != null) {
 			return anuncianteIS;
-		}else {
+		} else {
 			throw new AnuncianteException("Usuario no existe");
 		}
 
 	}
 	// _______________________________________________________________________________
-	
+
 	/*
-	 * Metodo que permite validar que los datos que ingreso el anunciante en el login,
-	 * si sean verdaderos
+	 * Metodo que permite validar que los datos que ingreso el anunciante en el
+	 * login, si sean verdaderos
 	 */
-	private static Anunciante validarAnunciante(String anunciante, String contrasenia) throws FileNotFoundException, IOException 
-	{
+	private static Anunciante validarAnunciante(String anunciante, String contrasenia)
+			throws FileNotFoundException, IOException {
 		ArrayList<Anunciante> anunciantes = Persistencia.cargarAnunciantes();
 
-		for (int indiceAnunciante = 0; indiceAnunciante < anunciantes.size(); indiceAnunciante++) 
-		{
+		for (int indiceAnunciante = 0; indiceAnunciante < anunciantes.size(); indiceAnunciante++) {
 			Anunciante anuncianteAux = anunciantes.get(indiceAnunciante);
-			if(anuncianteAux.getNombre().equalsIgnoreCase(anunciante) && anuncianteAux.getIdUsuario().equalsIgnoreCase(contrasenia)) {
+			if (anuncianteAux.getNombre().equalsIgnoreCase(anunciante)
+					&& anuncianteAux.getIdUsuario().equalsIgnoreCase(contrasenia)) {
 				return anuncianteAux;
 			}
 		}
 		return null;
 	}
 	// _______________________________________________________________________________
-	
-	
-	//----------------------------------     Métodos Anuncio       ----------------------------------
-	
+
+	// ---------------------------------- Métodos Anuncio
+	// ----------------------------------
+
 	/*
 	 * Guarda toda la informacion de un anuncio
 	 */
@@ -265,16 +263,17 @@ public class Persistencia {
 		String contenido = "";
 
 		for (Anuncio anuncios : listaAnuncios) {
-			contenido += anuncios.getNombreArticulo() + "@@" + anuncios.getNombreAnunciante() + "@@" + anuncios.getEstado() + "@@" +
-					anuncios.getDescripcion() + "@@" + anuncios.getIdAnuncio() + "@@" + anuncios.getTipoArticulo() + "@@" +
-					anuncios.getFechaPublicacion() + "@@" + anuncios.getFechaCumlinacion() + "@@" + anuncios.getValor() + "@@" + anuncios.getFoto() + "\n";
+			contenido += anuncios.getNombreArticulo() + "@@" + anuncios.getNombreAnunciante() + "@@"
+					+ anuncios.getEstado() + "@@" + anuncios.getDescripcion() + "@@" + anuncios.getIdAnuncio() + "@@"
+					+ anuncios.getTipoArticulo() + "@@" + anuncios.getFechaPublicacion() + "@@"
+					+ anuncios.getFechaCumlinacion() + "@@" + anuncios.getValor() + "@@" + anuncios.getFoto() + "\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ANUNCIOS, contenido, false);
-		
+
 	}
 	// _______________________________________________________________________________
-	
+
 	/*
 	 * Metodo que permite cargar los anuncios del archivo txt
 	 */
@@ -293,8 +292,8 @@ public class Persistencia {
 			anuncio.setDescripcion((linea.split("@@")[3]));
 			anuncio.setIdAnuncio((linea.split("@@")[4]));
 			anuncio.setTipoArticulo((TipoArticulo.valueOf(linea.split("@@")[5])));
-			anuncio.setFechaPublicacion((LocalDate.parse(linea.split("@@")[6])));
-			anuncio.setFechaCumlinacion((LocalDate.parse(linea.split("@@")[7])));
+			anuncio.setFechaPublicacion(((linea.split("@@")[6])));
+			anuncio.setFechaCumlinacion((linea.split("@@")[7]));
 			anuncio.setValor(Double.parseDouble((linea.split("@@")[8])));
 			anuncio.setFoto(null);
 			anuncios.add(anuncio);
@@ -303,9 +302,10 @@ public class Persistencia {
 		return anuncios;
 	}
 	// _______________________________________________________________________________
-	
+
 	/*
-	 * Metodo que permite cargar un comprador especifico del archivo txt y lo retorne
+	 * Metodo que permite cargar un comprador especifico del archivo txt y lo
+	 * retorne
 	 */
 	public static Anuncio cargarAnuncio(String idUsuario) throws IOException {
 
@@ -322,11 +322,11 @@ public class Persistencia {
 			anuncioCom.setDescripcion((linea.split("@@")[3]));
 			anuncioCom.setIdAnuncio((linea.split("@@")[4]));
 			anuncioCom.setTipoArticulo((TipoArticulo.valueOf(linea.split("@@")[5])));
-			anuncioCom.setFechaPublicacion((LocalDate.parse(linea.split("@@")[6])));
-			anuncioCom.setFechaCumlinacion((LocalDate.parse(linea.split("@@")[7])));
+			anuncioCom.setFechaPublicacion(linea.split("@@")[6]);
+			anuncioCom.setFechaCumlinacion(linea.split("@@")[7]);
 			anuncioCom.setValor(Double.parseDouble((linea.split("@@")[8])));
 			anuncioCom.setFoto(null);
-			if(anuncioCom.getIdAnuncio().equalsIgnoreCase(idUsuario)) {
+			if (anuncioCom.getIdAnuncio().equalsIgnoreCase(idUsuario)) {
 				anuncio = anuncioCom;
 				return anuncio;
 			}
@@ -334,61 +334,60 @@ public class Persistencia {
 		}
 		return null;
 	}
-	//----------------------------------     Métodos Carga Datos   ----------------------------------
-	
+	// ---------------------------------- Métodos Carga Datos
+	// ----------------------------------
+
 	/*
 	 * Método que permite cargar toda la información del programa por los txt
 	 */
 	public static void cargarDatosArchivos(SubastaQuindio subasta) throws IOException {
-		
-		
-		//cargar archivo de compradores
+
+		// cargar archivo de compradores
 		ArrayList<Comprador> compradoresCargados = cargarCompradores();
-		
-		if(compradoresCargados.size() > 0)
+
+		if (compradoresCargados.size() > 0)
 			subasta.getListaCompradores().addAll(compradoresCargados);
 
-		
-		//cargar archivos anunciantes
+		// cargar archivos anunciantes
 		ArrayList<Anunciante> anuncianteCargados = cargarAnunciantes();
-		
-		if(anuncianteCargados.size() > 0)
+
+		if (anuncianteCargados.size() > 0)
 			subasta.getListaAnunciantes().addAll(anuncianteCargados);
-		
-		//cargar archivo anuncios
+
+		// cargar archivo anuncios
 		ArrayList<Anuncio> anunciosCargados = cargarAnuncios();
-		
-		if(anunciosCargados.size() > 0)
+
+		if (anunciosCargados.size() > 0)
 			subasta.getListaAnuncios().addAll(anunciosCargados);
-		
+
 	}
-	
+
 // _______________________________________________________________________________
-	
+
 	/*
-	 * Metodo que permite guardar todo lo que se haga en la aplicacion en un archivo xml
+	 * Metodo que permite guardar todo lo que se haga en la aplicacion en un archivo
+	 * xml
 	 */
 	public static void guardarRecursoSubastaQuindioXML(SubastaQuindio subastaQuindio) {
-		
+
 		try {
 			ArchivoUtil.salvarRecursoSerializadoXML(RUTA_ARCHIVO_SUBASTA, subastaQuindio);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 // _______________________________________________________________________________
-	
-	
+
 	/*
 	 * Metodo que permite cargar la aplicacion mediante un archivo serializadoXML
 	 */
 	public static SubastaQuindio cargarRecursoSubastaQuindioXML() {
-		
+
 		SubastaQuindio SubastaQuindio = null;
-		
+
 		try {
-			SubastaQuindio = (SubastaQuindio)ArchivoUtil.cargarRecursoSerializadoXML(RUTA_ARCHIVO_SUBASTA);
+			SubastaQuindio = (SubastaQuindio) ArchivoUtil.cargarRecursoSerializadoXML(RUTA_ARCHIVO_SUBASTA);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -397,28 +396,30 @@ public class Persistencia {
 	}
 
 // _______________________________________________________________________________
-	
+
 	/*
-	 * Metodo que permite cargar la aplicacion mediante un archivo serializadoBinario
+	 * Metodo que permite cargar la aplicacion mediante un archivo
+	 * serializadoBinario
 	 */
 	public static SubastaQuindio cargarRecursoSubastaQuindioBinario() {
-		
+
 		SubastaQuindio SubastaQuindio = null;
-		
+
 		try {
-			SubastaQuindio = (SubastaQuindio)ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_SUBASTABINARIO);
+			SubastaQuindio = (SubastaQuindio) ArchivoUtil.cargarRecursoSerializado(RUTA_ARCHIVO_SUBASTABINARIO);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return SubastaQuindio;
 	}
 // _______________________________________________________________________________
-	
+
 	/*
-	 * Metodo que permite guardar todo lo que se haga en la aplicacion en un archivo binario
+	 * Metodo que permite guardar todo lo que se haga en la aplicacion en un archivo
+	 * binario
 	 */
 	public static void guardarRecursoSubastaQuindioBinario(SubastaQuindio subastaQuindio) {
-		
+
 		try {
 			ArchivoUtil.salvarRecursoSerializado(RUTA_ARCHIVO_SUBASTABINARIO, subastaQuindio);
 		} catch (Exception e) {
@@ -427,27 +428,24 @@ public class Persistencia {
 		}
 	}
 // _______________________________________________________________________________
-	
-	
+
 	/*
 	 * Metodo que permite hacer un log de lo que hacen los usuarios
 	 */
-	public static void guardaRegistroLog(String mensajeLog, int nivel, String accion)
-	{
-		
+	public static void guardaRegistroLog(String mensajeLog, int nivel, String accion) {
+
 		ArchivoUtil.guardarRegistroLog(mensajeLog, nivel, accion, RUTA_ARCHIVO_LOG);
 	}
 
 // _______________________________________________________________________________
 
 	/**
-	 * Metodo que llama a archivo Util CopiadeseguridadArchivo enviandole la ruta donde se va a almacenar la copia
+	 * Metodo que llama a archivo Util CopiadeseguridadArchivo enviandole la ruta
+	 * donde se va a almacenar la copia
 	 */
-	public static void copiaSeguridad (){
+	public static void copiaSeguridad() {
 		ArchivoUtil.copiaSeguridadArchivo(RUTA_ARCHIVO_SUBASTA, RUTA_ARCHIVO_COPIASEGURIDAD);
 	}
 // _______________________________________________________________________________
-	
 
-		
 }

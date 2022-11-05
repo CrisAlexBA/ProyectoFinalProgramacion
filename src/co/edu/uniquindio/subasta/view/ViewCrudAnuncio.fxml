@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="716.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.CrudAnuncioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="716.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.subasta.controller.CrudAnuncioController">
    <children>
       <Pane prefHeight="30.0" prefWidth="716.0" style="-fx-background-color: #759eff;">
          <children>
@@ -22,14 +22,14 @@
             </Label>
          </children>
       </Pane>
-      <DatePicker fx:id="fechaInicial" layoutX="53.0" layoutY="142.0" prefHeight="26.0" prefWidth="204.0" AnchorPane.leftAnchor="53.0" />
+      <DatePicker fx:id="fechaInicial" editable="false" layoutX="53.0" layoutY="142.0" prefHeight="26.0" prefWidth="204.0" AnchorPane.leftAnchor="53.0" />
       <TextField fx:id="txtNombreArticulo" layoutX="49.0" layoutY="84.0" onKeyTyped="#ValidarText" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" AnchorPane.leftAnchor="53.0" />
       <TextField fx:id="txtPrecioArticulo" layoutX="53.0" layoutY="254.0" prefHeight="26.0" prefWidth="204.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="53.0" />
       <ComboBox fx:id="tipoProducto" layoutX="279.0" layoutY="83.0" prefHeight="28.0" prefWidth="204.0" promptText="Artículo" />
       <Label layoutX="51.0" layoutY="60.0" text="Nombre Artículo:" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.leftAnchor="53.0" />
       <Label layoutX="53.0" layoutY="235.0" text="Precio del Articulo:" AnchorPane.leftAnchor="53.0" />
       <Label layoutX="53.0" layoutY="124.0" text="Fecha de iniciación:" AnchorPane.leftAnchor="53.0" />
-      <DatePicker fx:id="fechaFinal" layoutX="52.0" layoutY="194.0" prefHeight="26.0" prefWidth="204.0" AnchorPane.leftAnchor="53.0" />
+      <DatePicker fx:id="fechaFinal" editable="false" layoutX="52.0" layoutY="194.0" prefHeight="26.0" prefWidth="204.0" AnchorPane.leftAnchor="53.0" />
       <Label layoutX="53.0" layoutY="176.0" text="Fecha de Culminación:" AnchorPane.leftAnchor="53.0" />
       <AnchorPane layoutX="589.9000244140625" layoutY="66.9000015258789" />
       <Label fx:id="lblFoto" alignment="CENTER" layoutX="534.0" layoutY="65.0" prefHeight="135.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" text="Agregar foto" textFill="#8b8b8b" AnchorPane.rightAnchor="53.0">

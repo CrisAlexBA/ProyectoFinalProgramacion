@@ -22,17 +22,15 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class CrudAnuncianteRegistroController{
-	
+public class CrudAnuncianteRegistroController {
+
 	/*
 	 * Instanciamos el singleton
 	 */
 	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
-	
-	
+
 	// _________________________________________________________________
-	
-	
+
 	/*
 	 * Atributos
 	 */
@@ -40,9 +38,9 @@ public class CrudAnuncianteRegistroController{
 
 	@FXML
 	private Button btnRegistro;
-	
-    @FXML
-    private Button btnVolver;
+
+	@FXML
+	private Button btnVolver;
 
 	@FXML
 	private TextField txtIdUsuario;
@@ -53,7 +51,6 @@ public class CrudAnuncianteRegistroController{
 	@FXML
 	private TextField txtNombre;
 	// ____________________________________________________________________
-
 
 	/*
 	 * Metodo que permite hacer el registro de un anunciante
@@ -71,19 +68,19 @@ public class CrudAnuncianteRegistroController{
 		crearAnunciante(anunciante);
 	}
 	// ____________________________________________________________________
-	
-	
+
 	/*
 	 * Metodo que permite volver a la pantalla principal
 	 */
-    @FXML
-    public void volver(ActionEvent event) {
-    	try {
-	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
+	@FXML
+	public void volver(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					getClass().getResource("/co/edu/uniquindio/subasta/view/MenuPrincipal.fxml"));
 			Parent root = loader.load();
-	
+
 			PrincipalController controlador = loader.getController();
-	
+
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Proyecto Subastas del Quindio");
@@ -91,22 +88,24 @@ public class CrudAnuncianteRegistroController{
 			stage.show();
 			Stage myStage = (Stage) this.btnVolver.getScene().getWindow();
 			myStage.close();
-    	}catch(IOException ex) {
-    		ex.printStackTrace();
-    	}
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
 	}
-    // ____________________________________________________________________
-    
+	// ____________________________________________________________________
+
 	/*
-	 * Metodo que se encargar de ir al de confirmar que no hayan espacios vacios, o de que el anunciante
-	 *  sea mayor de edad para luego, agregar ese anunciante a la lista
+	 * Metodo que se encargar de ir al de confirmar que no hayan espacios vacios, o
+	 * de que el anunciante sea mayor de edad para luego, agregar ese anunciante a
+	 * la lista
 	 */
 	private void crearAnunciante(Anunciante anunciante) throws EdadException, AnuncianteException {
 
-		
-		// Aqui verifica que ni el campo de nombre, id usuario o la edad esten vacios, de estarlo manda una alerta
-		if(anunciante.getNombre().equals("") && anunciante.getIdUsuario().equals("") || anunciante.getEdad() == 0){
-			modelFactoryController.guardaRegistroLog("Se intento registrar un usuario erroneamente", 2, "RegistroAnunciante");
+		// Aqui verifica que ni el campo de nombre, id usuario o la edad esten vacios,
+		// de estarlo manda una alerta
+		if (anunciante.getNombre().equals("") && anunciante.getIdUsuario().equals("") || anunciante.getEdad() == 0) {
+			modelFactoryController.guardaRegistroLog("Se intento registrar un usuario erroneamente", 2,
+					"RegistroAnunciante");
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
@@ -114,8 +113,9 @@ public class CrudAnuncianteRegistroController{
 			alert.showAndWait();
 			throw new AnuncianteException("Falta información para agregar el anunciante.");
 			// Si la edad es menor a 18, mandara una alerta y propaga la excepcion de edad
-		}else if(anunciante.getEdad() < 18){
-			modelFactoryController.guardaRegistroLog("Se intento registrar un usuario menor de edad", 2, "RegistroAnunciante");
+		} else if (anunciante.getEdad() < 18) {
+			modelFactoryController.guardaRegistroLog("Se intento registrar un usuario menor de edad", 2,
+					"RegistroAnunciante");
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");
@@ -124,26 +124,31 @@ public class CrudAnuncianteRegistroController{
 
 			throw new EdadException("La edad es menor a los 18 a�os.");
 
-		}else{
-			
-			// Este metodo no se usa, X, el proposito era comparar que no exista ya la misma identificacion
-			if(anunciante.getIdUsuario().equals(txtIdUsuario)){
-				modelFactoryController.guardaRegistroLog("Se intento registrar un usuario existente", 2, "RegistroAnunciante");
+		} else {
+
+			// Este metodo no se usa, X, el proposito era comparar que no exista ya la misma
+			// identificacion
+			if (anunciante.getIdUsuario().equals(txtIdUsuario)) {
+				modelFactoryController.guardaRegistroLog("Se intento registrar un usuario existente", 2,
+						"RegistroAnunciante");
 				Alert alert = new Alert(Alert.AlertType.INFORMATION);
 				alert.setHeaderText(null);
 				alert.setTitle("Notificacion");
 				alert.setContentText("El usuario ya existe.");
 				alert.showAndWait();
-				
-			}else{
-				
-				// Si ninguno de los campos esta vacio y la ID no esta repetida procede a crear ese anunciante y
+
+			} else {
+
+				// Si ninguno de los campos esta vacio y la ID no esta repetida procede a crear
+				// ese anunciante y
 				// Abrirle la respectiva intefaz
 				try {
 					modelFactoryController.agregarAnunciante(anunciante);
-					modelFactoryController.guardaRegistroLog("Se registro el usuario: "+this.txtNombre.getText(), 1, "RegistroAnunciante");
+					modelFactoryController.guardaRegistroLog("Se registro el usuario: " + this.txtNombre.getText(), 1,
+							"RegistroAnunciante");
 					modelFactoryController.setAnunciante(anunciante);
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
+					FXMLLoader loader = new FXMLLoader(
+							getClass().getResource("/co/edu/uniquindio/subasta/view/MenuAnunciante.fxml"));
 					Parent root = loader.load();
 
 					MenuAnuncianteController controlador = loader.getController();
@@ -153,7 +158,7 @@ public class CrudAnuncianteRegistroController{
 					stage.setTitle("Menú Anunciante");
 					stage.setScene(scene);
 					stage.show();
-					
+
 					stage.setOnCloseRequest(e -> {
 						try {
 							controlador.btnMostrarVentanaPrincipal(null);
@@ -173,12 +178,12 @@ public class CrudAnuncianteRegistroController{
 
 	}
 	// ____________________________________________________________________
-	
+
 	/*
 	 * Método que permite inicializar los datos de la ventana
 	 */
 	public void init() {
 	}
 	// ____________________________________________________________________
-	
+
 }
