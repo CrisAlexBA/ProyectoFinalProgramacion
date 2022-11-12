@@ -63,11 +63,11 @@ public class MenuCompradorController {
 	void agregarDin(ActionEvent event) throws DineroException {
 		// usuario.setDinero(Float.parseFloat(txtAgregar.getText()));
 		try {
-			double dineroIngresar = Double.parseDouble(txtAgregar.getText());
+			double dineroIngresar = Integer.parseInt(txtAgregar.getText());
 			if (dineroIngresar >= 0) {
 				// Actualiza el usuario para modificar el dinero
 				singleton.actualizarComprador(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(),
-						usuario.getDinero() + Double.parseDouble(txtAgregar.getText()), usuario.getCantPujas(),
+						usuario.getDinero() + dineroIngresar, usuario.getCantPujas(),
 						usuario.getListaCompras());
 				// Trae el "nuevo" usuario
 				usuario = singleton.getComprador();

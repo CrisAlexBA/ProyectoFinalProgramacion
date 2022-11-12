@@ -5,8 +5,10 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -32,11 +34,6 @@
       <DatePicker fx:id="fechaFinal" editable="false" layoutX="52.0" layoutY="194.0" prefHeight="26.0" prefWidth="204.0" AnchorPane.leftAnchor="53.0" />
       <Label layoutX="53.0" layoutY="176.0" text="Fecha de Culminación:" AnchorPane.leftAnchor="53.0" />
       <AnchorPane layoutX="589.9000244140625" layoutY="66.9000015258789" />
-      <Label fx:id="lblFoto" alignment="CENTER" layoutX="534.0" layoutY="65.0" prefHeight="135.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" text="Agregar foto" textFill="#8b8b8b" AnchorPane.rightAnchor="53.0">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Label>
       <TextArea fx:id="txtDescripcion" layoutX="275.0" layoutY="134.0" prefHeight="135.0" prefWidth="207.0" AnchorPane.bottomAnchor="90.0" />
       <Label layoutX="279.0" layoutY="124.0" text="Descripción:" />
       <Button fx:id="crearAnuncio" layoutX="276.0" layoutY="308.6666666666667" mnemonicParsing="false" onAction="#CrearAnuncio" prefHeight="35.0" prefWidth="153.0" style="-fx-background-color: #7097f3;" text="Crear Anuncio" textFill="#f4f4f4" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="287.0">
@@ -52,10 +49,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnAgregarFoto" layoutX="547.0" layoutY="229.0" mnemonicParsing="false" onAction="#AdjuntarFoto" style="-fx-background-color: #7097f3;" text="Adjuntar Foto" textFill="#f4f4f4">
+      <Button fx:id="btnAgregarFoto" layoutX="561.0" layoutY="255.0" mnemonicParsing="false" onAction="#AdjuntarFoto" style="-fx-background-color: #7097f3;" text="Adjuntar Foto" textFill="#f4f4f4">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <SplitPane layoutX="504.0" layoutY="45.0" prefHeight="193.0" prefWidth="194.0">
+         <items>
+            <ImageView fx:id="imagen" fitHeight="163.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </items>
+      </SplitPane>
    </children>
 </AnchorPane>

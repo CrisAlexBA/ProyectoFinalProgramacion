@@ -25,6 +25,7 @@ public class TransaccionAnuncianteLogController {
 	 * Instancia del singleton
 	 */
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
+	
 	// _____________________________________________________________________
 
 	/*

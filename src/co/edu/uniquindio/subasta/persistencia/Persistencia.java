@@ -294,7 +294,7 @@ public class Persistencia {
 			anuncio.setTipoArticulo((TipoArticulo.valueOf(linea.split("@@")[5])));
 			anuncio.setFechaPublicacion(((linea.split("@@")[6])));
 			anuncio.setFechaCumlinacion((linea.split("@@")[7]));
-			anuncio.setValor(Double.parseDouble((linea.split("@@")[8])));
+			anuncio.setValor(Integer.parseInt((linea.split("@@")[8])));
 			anuncio.setFoto(null);
 			anuncios.add(anuncio);
 
@@ -324,7 +324,7 @@ public class Persistencia {
 			anuncioCom.setTipoArticulo((TipoArticulo.valueOf(linea.split("@@")[5])));
 			anuncioCom.setFechaPublicacion(linea.split("@@")[6]);
 			anuncioCom.setFechaCumlinacion(linea.split("@@")[7]);
-			anuncioCom.setValor(Double.parseDouble((linea.split("@@")[8])));
+			anuncioCom.setValor(Integer.parseInt((linea.split("@@")[8])));
 			anuncioCom.setFoto(null);
 			if (anuncioCom.getIdAnuncio().equalsIgnoreCase(idUsuario)) {
 				anuncio = anuncioCom;

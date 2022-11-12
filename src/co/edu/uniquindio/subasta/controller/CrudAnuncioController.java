@@ -1,5 +1,7 @@
 package co.edu.uniquindio.subasta.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -22,7 +24,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class CrudAnuncioController implements InterfaceCrudAnuncio {
@@ -42,6 +47,9 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 	@FXML
 	private Button btnVolver;
 
+	@FXML
+    private ImageView imagen;
+	
 	@FXML
 	private Button crearAnuncio;
 
@@ -73,9 +81,27 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 	 */
 
 	@FXML
-	void AdjuntarFoto(ActionEvent event) {
+    void AdjuntarFoto(ActionEvent event) {
 
-	}
+    	Stage primaryStage = null;
+
+    	try {
+    		FileChooser fileChooser = new FileChooser();
+    		fileChooser.setTitle("Buscar Imagen");
+    		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Archivos Imagen", "*.png", "*.jpg"));
+    		File selectedFile = fileChooser.showOpenDialog(primaryStage);
+
+    		if (selectedFile != null) {
+    			FileInputStream input = new FileInputStream(selectedFile);
+    			Image image = new Image(input);
+    			imagen.setImage(image);
+    		}
+    	} catch (Exception e) {
+    		System.out.println("Debes manejar el error: " + e.getMessage());
+    	}
+
+    }
+
 
 	// ______________________________________________________________________________________________________
 
@@ -83,6 +109,9 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 	 * Método que permite crea el objeto anuncio y lo envia a otro método para ser
 	 * creado
 	 */
+	
+	
+	
 	@FXML
 	void CrearAnuncio(ActionEvent event) {
 		// Extrae los datos de los txt para crear un objeto anuncio.
@@ -93,8 +122,9 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 		String descripcion = txtDescripcion.getText();
 
 		// tener en cuanta para cuando se agrege la logica de agregar un anuncio
-		Image foto = null;
-		float precio = Float.parseFloat(txtPrecioArticulo.getText());
+		Image fotoPNG = imagen.getImage();
+		String foto = fotoPNG.toString();
+		int precio = Integer.parseInt(txtPrecioArticulo.getText());
 
 		Anuncio anuncio = new Anuncio(nombre, usuario.getNombre(), "venta", descripcion, singleton.EnviarCodigo(),
 				tipoArticulo, fechaInicio, fechaFin, precio, foto);
@@ -132,7 +162,7 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 		
 		if (anuncioNuevo.getNombreArticulo().equals("") || anuncioNuevo.getDescripcion().equals("")
 				|| anuncioNuevo.getFechaPublicacion().equals("") || anuncioNuevo.getFechaCumlinacion().equals("")
-				|| anuncioNuevo.getTipoArticulo() == null) {
+				|| anuncioNuevo.getTipoArticulo() == null || anuncioNuevo.getFoto() == null) {
 //    		
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);

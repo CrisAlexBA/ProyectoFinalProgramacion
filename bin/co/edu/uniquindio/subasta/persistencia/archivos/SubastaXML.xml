@@ -48,7 +48,97 @@
           </object>
          </void>
          <void property="valor">
-          <double>20000.0</double>
+         	<int>2000000000</int>
+         	
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio1">
+         <void property="descripcion">
+          <string>Huele rico</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-08</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-07</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0005</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Carl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Un libro</string>
+         </void>
+         <void property="tipoArticulo">
+          <object class="java.lang.Enum" id="TipoArticulo0" method="valueOf">
+           <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+           <string>HOGAR</string>
+          </object>
+         </void>
+         <void property="valor">
+         	<int>2000</int>
+         	
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio2">
+         <void property="descripcion">
+          <string>lindo</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-08</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-07</string>
+         </void>
+         <void property="foto">
+          <string>javafx.scene.image.Image@bbeae0</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0006</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Carl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Un icono Dinero</string>
+         </void>
+         <void property="pujante">
+          <object class="co.edu.uniquindio.subasta.model.Comprador">
+           <void property="dinero">
+            <double>900.0</double>
+           </void>
+           <void property="edad">
+            <int>23</int>
+           </void>
+           <void property="idUsuario">
+            <string>123</string>
+           </void>
+           <void property="listaCompras">
+            <object class="java.util.ArrayList"/>
+           </void>
+           <void property="nombre">
+            <string>jox</string>
+           </void>
+          </object>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+         	<int>2000</int>
+         	
          </void>
         </object>
        </void>
@@ -62,7 +152,7 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
      <void property="cantAnuncios">
-      <int>1</int>
+      <int>2</int>
      </void>
      <void property="edad">
       <int>19</int>
@@ -73,7 +163,7 @@
      <void property="listaAnuncios">
       <object class="java.util.ArrayList">
        <void method="add">
-        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio1">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio3">
          <void property="descripcion">
           <string>Huele rico</string>
          </void>
@@ -96,13 +186,43 @@
           <string>Un libro</string>
          </void>
          <void property="tipoArticulo">
-          <object class="java.lang.Enum" method="valueOf">
-           <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
-           <string>HOGAR</string>
-          </object>
+          <object idref="TipoArticulo0"/>
          </void>
          <void property="valor">
-          <double>500.0</double>
+         	<int>500</int>
+         	
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio4">
+         <void property="descripcion">
+          <string>Chimba de bigcola mi papa</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-11</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-05</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0004</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Darly</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Big cola</string>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+         	<int>12</int>
+         	
          </void>
         </object>
        </void>
@@ -135,23 +255,29 @@
     <object idref="Anuncio0"/>
    </void>
    <void method="add">
+    <object idref="Anuncio3"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio4"/>
+   </void>
+   <void method="add">
     <object idref="Anuncio1"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio2"/>
    </void>
   </void>
   <void property="listaCompradores">
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Comprador">
      <void property="dinero">
-      <double>1000.0</double>
+      <double>900.0</double>
      </void>
      <void property="edad">
       <int>23</int>
      </void>
      <void property="idUsuario">
       <string>123</string>
-     </void>
-     <void property="listaCompras">
-      <object class="java.util.ArrayList"/>
      </void>
      <void property="nombre">
       <string>jox</string>

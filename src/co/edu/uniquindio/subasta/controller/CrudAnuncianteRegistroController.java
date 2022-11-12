@@ -31,11 +31,6 @@ public class CrudAnuncianteRegistroController {
 
 	// _________________________________________________________________
 
-	/*
-	 * Atributos
-	 */
-	private Aplication aplicacion;
-
 	@FXML
 	private Button btnRegistro;
 

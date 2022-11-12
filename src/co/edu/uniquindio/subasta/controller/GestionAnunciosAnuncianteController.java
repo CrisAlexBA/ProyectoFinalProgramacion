@@ -33,6 +33,8 @@ public class GestionAnunciosAnuncianteController {
 
 	private ObservableList<Anuncio> anuncios = FXCollections.observableArrayList();
 
+	//__________________________________________________________________________________
+	
 	@FXML
 	private Button btnAtras;
 
@@ -70,16 +72,20 @@ public class GestionAnunciosAnuncianteController {
 	private TableColumn<Anuncio, String> colNombreProducto;
 
 	@FXML
-	private TableColumn<Anuncio, Double> colPrecio;
+	private TableColumn<Anuncio, Integer> colPrecio;
 
 	@FXML
 	private TableView<Anuncio> tblDatos;
+	
+	//_________________________________________________________________________________________
+	/*
+	 * Método que permite borrar un elemento de la lista del anunciante y del programa
+	 */
 
 	@FXML
 	void btnBorrarEvent(ActionEvent event) throws IOException {
-		singleton.guardarResourceXML();
 		Anuncio anuncio = this.tblDatos.getSelectionModel().getSelectedItem();
-
+		//Confirmación de seleccion de anuncio
 		if (anuncio == null) {
 			Alert alert = new Alert(Alert.AlertType.ERROR);
 			alert.setHeaderText(null);
@@ -87,7 +93,7 @@ public class GestionAnunciosAnuncianteController {
 			alert.setContentText("Seleccione primero un articulo para eliminar.");
 			alert.showAndWait();
 		} else {
-
+			//metodos para remover de la tabla
 			this.anuncios.remove(anuncio);
 			this.tblDatos.refresh();
 
@@ -97,13 +103,13 @@ public class GestionAnunciosAnuncianteController {
 			alert.setContentText("Se ha eliminado correctamente");
 			alert.showAndWait();
 		}
-
+		
+		//Elimina los datos de la lista de anuncios del programa
 		ArrayList<Anuncio> nuevaLista = usuario.getListaAnuncios();
 
 		singleton.elimarAnuncio(anuncio);
 
 		String codigoAnuncio = anuncio.getIdAnuncio();
-
 		for (int i = 0; i < nuevaLista.size(); i++) {
 			if (nuevaLista.get(i).getIdAnuncio().equals(codigoAnuncio)) {
 				nuevaLista.remove(i);
@@ -112,6 +118,7 @@ public class GestionAnunciosAnuncianteController {
 				break;
 			}
 
+			//Actualiza la lista de anuncios del anunciante con base al estado del anuncio
 			if (anuncio.getEstado().equals("venta")) {
 				usuario.setListaAnuncios(nuevaLista);
 				singleton.actualizarAnunciante(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(),
@@ -127,13 +134,26 @@ public class GestionAnunciosAnuncianteController {
 			}
 		}
 
+
+		singleton.guardarResourceXML();
 	}
 
+	//_______________________________________________________________________________________________
+	
+	/*
+	 * Método que permite editar un anuncio
+	 */
 	@FXML
 	void btnEditarEvent(ActionEvent event) {
 
 	}
+	
+	//__________________________________________________________________________________________
 
+	/*
+	 * Método que retorna a la ventana principal
+	 */
+	
 	@FXML
 	void btnMostrarVentanaPrincipal(ActionEvent event) {
 		try {
@@ -155,6 +175,8 @@ public class GestionAnunciosAnuncianteController {
 		}
 	}
 
+	//____________________________________________________________________________________________
+	
 	/*
 	 * Metodo que inicializa datos de la ventana anterior
 	 */
@@ -186,4 +208,5 @@ public class GestionAnunciosAnuncianteController {
 		tblDatos.refresh();
 	}
 
+	//_______________________________________________________________________________________
 }

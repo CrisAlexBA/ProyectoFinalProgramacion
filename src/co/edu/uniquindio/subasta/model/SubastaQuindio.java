@@ -282,6 +282,9 @@ public class SubastaQuindio implements Serializable {
 	}
 //____________________________________________________________________ 
 
+	/*
+	 * Método que carga un anuncio según el codigo enviado
+	 */
 	public Anuncio cargarAnuncio(String idAnuncio) throws IOException {
 
 		ArrayList<Anuncio> contenido = listaAnuncios;
@@ -296,6 +299,9 @@ public class SubastaQuindio implements Serializable {
 	}
 //____________________________________________________________________ 
 
+	/*
+	 * Método que elimina un anuncio de la lista de anuncios
+	 */
 	public void eliminarAnuncio(Anuncio anuncio) throws IOException {
 
 		String codigoAnuncio = anuncio.getIdAnuncio();
@@ -312,5 +318,7 @@ public class SubastaQuindio implements Serializable {
 		}
 
 	}
+	
+	//_______________________________________________________________________________________
 
 }

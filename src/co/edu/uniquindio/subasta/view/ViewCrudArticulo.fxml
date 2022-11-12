@@ -49,14 +49,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnAgregarFoto" layoutX="561.0" layoutY="255.0" mnemonicParsing="false" onAction="#AdjuntarFoto" style="-fx-background-color: #7097f3;" text="Adjuntar Foto" textFill="#f4f4f4">
+      <Button fx:id="btnAgregarFoto" layoutX="546.0" layoutY="240.0" mnemonicParsing="false" onAction="#AdjuntarFoto" style="-fx-background-color: #7097f3;" text="Adjuntar Foto" textFill="#f4f4f4">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <SplitPane layoutX="504.0" layoutY="45.0" prefHeight="193.0" prefWidth="194.0">
+      <SplitPane layoutX="512.0" layoutY="56.0" prefHeight="141.0" prefWidth="153.0">
          <items>
-            <ImageView fx:id="imagen" fitHeight="163.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imagen" fitHeight="170.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" />
          </items>
       </SplitPane>
    </children>

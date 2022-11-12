@@ -4,10 +4,19 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class GeneradorCodigo implements Serializable {
+	
+	/*
+	 * Atributos
+	 */
 	private int dato;
 	private int cont = 1;
 	private String num = "";
 
+	//_______________________________________________________________________________________
+	
+	/*
+	 * Método que genera un codigo unico dentro del programa
+	 */
 	public void generar(int dato) {
 		this.dato = dato;
 
@@ -32,9 +41,17 @@ public class GeneradorCodigo implements Serializable {
 			num = "CP000" + can;
 		}
 	}
+	
+	//_______________________________________________________________________________________
+	
+	/*
+	 * Método que retorna dicho codigo
+	 */
 
 	public String serie() {
 		return this.num;
 	}
+	
+	//_______________________________________________________________________________________
 
 }

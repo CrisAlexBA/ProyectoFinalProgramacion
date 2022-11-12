@@ -15,14 +15,14 @@ public class Anunciante extends Usuario implements Serializable {
 
 	// Metodos constructor
 
-	// Constructor 1
+	// Constructor 1 (Registro de un anunciante)
 	public Anunciante(String nombre, String idUsuario, int edad) {
 		super(nombre, idUsuario, edad, 0);
 		this.cantAnuncios = 0;
 		this.listaAnuncios = new ArrayList<Anuncio>();
 	}
 
-	// Constructor 2
+	// Constructor 2 (Actualizar un anunciate)
 	public Anunciante(String nombre, String idUsuario, int edad, double dinero, int cantAnuncios,
 			ArrayList<Anuncio> listaAnuncios) {
 		super(nombre, idUsuario, edad, dinero);
@@ -30,7 +30,7 @@ public class Anunciante extends Usuario implements Serializable {
 		this.listaAnuncios = listaAnuncios;
 	}
 
-	// Constructor 3
+	// Constructor 3 (varios usos)
 	public Anunciante() {
 		super();
 	}

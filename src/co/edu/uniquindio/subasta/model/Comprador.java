@@ -16,7 +16,7 @@ public class Comprador extends Usuario implements Serializable {
 
 	// Metodos Constructor
 
-	// Constructor 1
+	// Constructor 1 (Actualizar un comprador)
 	public Comprador(String nombre, String idUsuario, int edad, double dinero, int canPujas,
 			ArrayList<Anuncio> listaCompras) {
 		super(nombre, idUsuario, edad, dinero);
@@ -24,14 +24,14 @@ public class Comprador extends Usuario implements Serializable {
 		this.listaCompras = listaCompras;
 	}
 
-	// Constructor 2
+	// Constructor 2 (Registro comprador)
 	public Comprador(String nombre, String idUsuario, int edad) {
 		super(nombre, idUsuario, edad, 0);
 		this.cantPujas = 0;
 		this.listaCompras = new ArrayList<Anuncio>();
 	}
 
-	// Constructor 3
+	// Constructor 3 (base)
 	public Comprador() {
 	}
 

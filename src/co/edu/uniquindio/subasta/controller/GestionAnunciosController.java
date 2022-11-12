@@ -1,6 +1,7 @@
 package co.edu.uniquindio.subasta.controller;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -56,7 +57,7 @@ public class GestionAnunciosController {
 	private TableColumn<Anuncio, String> colNombreProducto;
 
 	@FXML
-	private TableColumn<Anuncio, Float> colPrecio;
+	private TableColumn<Anuncio, Integer> colPrecio;
 
 	@FXML
 	private TableColumn<Anuncio, String> colIdArticulo;
@@ -137,6 +138,8 @@ public class GestionAnunciosController {
 	 * Metodo que inicializa datos de la ventana anterior
 	 */
 	public void init() {
+		
+		//Codigo necesario para madandar los datos a la tabla view
 		colNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombreArticulo"));
 		colNombreAnunciante.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));
 		colCategoria.setCellValueFactory(new PropertyValueFactory<>("tipoArticulo"));
@@ -145,7 +148,7 @@ public class GestionAnunciosController {
 		colPrecio.setCellValueFactory(new PropertyValueFactory<>("valor"));
 		colIdArticulo.setCellValueFactory(new PropertyValueFactory<>("idAnuncio"));
 		colDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
-
+		//Se crean los objetos anuncio con los atributos necesarios para la tabla
 		for (int i = 0; i < listaAnuncios.size(); i++) {
 			if (listaAnuncios.get(i).getEstado().equals("venta")) {
 				Anuncio anuncio = new Anuncio(listaAnuncios.get(i).getNombreArticulo(),
@@ -160,5 +163,7 @@ public class GestionAnunciosController {
 		tblDatos.setItems(anuncios);
 		tblDatos.refresh();
 	}
+
+	//_______________________________________________________________________________________
 
 }

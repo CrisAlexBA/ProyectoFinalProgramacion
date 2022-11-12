@@ -33,6 +33,8 @@ public class GestionAnunciosCompradorController {
 
 	private ObservableList<Anuncio> anuncios = FXCollections.observableArrayList();
 
+	//_______________________________________________________________________________________
+	
 	@FXML
 	private Button btnAtras;
 
@@ -55,11 +57,17 @@ public class GestionAnunciosCompradorController {
 	private TableColumn<Anuncio, String> colNombreProducto;
 
 	@FXML
-	private TableColumn<Anuncio, Double> colPrecio;
+	private TableColumn<Anuncio, Integer> colPrecio;
 
 	@FXML
 	private TableView<Anuncio> tblDatos;
 
+	//_______________________________________________________________________________________
+	
+	/*
+	 * Método que retorna a la ventana principal
+	 */
+	
 	@FXML
 	void btnMostrarVentanaPrincipal(ActionEvent event) {
 		try {
@@ -82,6 +90,8 @@ public class GestionAnunciosCompradorController {
 		}
 	}
 
+	//_______________________________________________________________________________________
+	
 	/*
 	 * Metodo que inicializa datos de la ventana anterior
 	 */
@@ -109,4 +119,5 @@ public class GestionAnunciosCompradorController {
 		tblDatos.refresh();
 	}
 
+	//_______________________________________________________________________________________
 }

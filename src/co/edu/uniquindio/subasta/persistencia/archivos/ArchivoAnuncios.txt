@@ -1,2 +1,5 @@
 Toyota Prado@@Carl@@venta@@La mera elegancia@@CP0002@@VEHICULOS@@2022-11-05@@2022-11-06@@20000.0@@null
 Un libro@@Darly@@venta@@Huele rico@@CP0003@@HOGAR@@2022-11-05@@2022-11-06@@500.0@@null
+Big cola@@Darly@@venta@@Chimba de bigcola mi papa@@CP0004@@HOGAR@@2022-11-05@@2022-11-11@@12.0@@null
+Un libro@@Carl@@venta@@Huele rico@@CP0005@@HOGAR@@2022-11-07@@2022-11-08@@2000.0@@null
+Un icono Dinero@@Carl@@venta@@lindo@@CP0006@@HOGAR@@2022-11-07@@2022-11-08@@2000.0@@javafx.scene.image.Image@bbeae0

@@ -1,7 +1,11 @@
 package co.edu.uniquindio.subasta.controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import co.edu.uniquindio.subasta.exceptions.DineroInsuficienteException;
+import co.edu.uniquindio.subasta.exceptions.PujaMenorException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Anuncio;
 import co.edu.uniquindio.subasta.model.Comprador;
@@ -15,6 +19,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class TransaccionPujaCompraController {
@@ -58,15 +64,16 @@ public class TransaccionPujaCompraController {
 
 	@FXML
 	private Label lblFechaInicio;
-
+	
+	@FXML
+    private ImageView imagen;
+	
 	@FXML
 	private Label lblNomAnunciante;
 
 	@FXML
 	private Label lblPrecio;
 
-	@FXML
-	private Label lblDineroAnunciante;
 
 //____________________________________________________________________ 
 	/*
@@ -100,71 +107,62 @@ public class TransaccionPujaCompraController {
 	 * Método que permite realizar una puja por el anuncio que esta visualizando
 	 */
 	@FXML
-	void btnPujasEvent(ActionEvent event) {
+	void btnPujasEvent(ActionEvent event) throws PujaMenorException, DineroInsuficienteException {
 
 		double dineroAPujar = Double.parseDouble(txtMontoPujar.getText());
-
-		if (dineroAPujar <= 0) {
+		double valorProducto = anuncio.getValor();
+		if(dineroAPujar < valorProducto) {
+			//Notificación por puja menor
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
-			alert.setTitle("Notificacion");
+			alert.setTitle("Notificación");
+			alert.setContentText("Puja por debajo del precio");
+			alert.showAndWait();
+			
+			singleton.guardaRegistroLog("El usuario: " + usuario.getNombre() + " intento hacer una puja menor al valor del producto, PujaMenorException", 2, "TransaccionPuja");
+			throw new PujaMenorException("La puja realizada es menor al precio del anuncio");
+			
+		}else if(usuario.getDinero() < dineroAPujar) {
+			//Notificación por dinero insuficiente
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+			alert.setHeaderText(null);
+			alert.setTitle("Notificación");
 			alert.setContentText("Dinero insuficiente.");
 			alert.showAndWait();
+			
+			singleton.guardaRegistroLog("El usuario: " + usuario.getNombre() + " intento hacer una puja sin el dinero suficiente, DineroInsuficienteException",2, "TransaccionPuja");
+			throw new DineroInsuficienteException("El comprador no tiene dinero suficiente para hacer la puja");
+		}else {
+			//Lógica de la puja
+			
+			anuncio.setPujante(usuario);
+			this.lblPersonaPujante.setText(usuario.getNombre());
+			this.lblPrecio.setText(dineroAPujar+"");
 
-			singleton.guardaRegistroLog(
-					"El usuario: " + usuario.getNombre()
-							+ " intento hacer una puja sin el dinero suficiente, DineroInsuficienteException",
-					2, "TransaccionPuja");
-
-		} else if (dineroAPujar < anuncio.getValor()) {
-
-			Alert alert = new Alert(Alert.AlertType.INFORMATION);
-			alert.setHeaderText(null);
-			alert.setTitle("Notificacion");
-			alert.setContentText("Has comenzado a pujar.");
-			alert.showAndWait();
-
-//			double dineroDescontar = usuario.getDinero();
-
-			double dineroActual = usuario.getDinero() - dineroAPujar;
-
-			System.out.println(dineroActual);
-
-			lblPersonaPujante.setText(usuario.getNombre());
-
-			singleton.guardaRegistroLog(
-					"El usuario: " + usuario.getNombre() + " Ha comenzado a pujar por el articulo seleccionado.", 2,
-					"TransaccionPuja");
-
-		} else if (dineroAPujar == anuncio.getValor()) {
-			Alert alert = new Alert(Alert.AlertType.INFORMATION);
-			alert.setHeaderText(null);
-			alert.setTitle("Notificacion");
-			alert.setContentText("Te lo has comprado chaval.");
-			alert.showAndWait();
-
-			anuncio.setEstado("Comprado");
-
-			System.out.println(anuncio.getEstado());
-
-			singleton.guardaRegistroLog(
-					"El usuario: " + usuario.getNombre() + " Compro directamente el articulo selesccionado.", 2,
-					"TransaccionPuja");
-
-		} else if (dineroAPujar > anuncio.getValor()) {
-
-			Alert alert = new Alert(Alert.AlertType.INFORMATION);
-			alert.setHeaderText(null);
-			alert.setTitle("Notificacion");
-			alert.setContentText(
-					"Excede el precio del producto, por favor ingrese el valor exacto ó,  un precio menor para pujar");
-			alert.showAndWait();
-
-			singleton.guardaRegistroLog(
-					"El usuario: " + usuario.getNombre() + " Compro directamente el articulo selesccionado.", 2,
-					"TransaccionPuja");
-
+			
+			//No sé si esta lógica va acá y si esta bien creada
+			/*
+			 * Trata de comparar si el usuario es el ultimo pujante y si no lo es
+			 * le devuelve el dinero que pujo.
+			 */
+			
+			double dineroEnCaja = 0;
+			if(usuario.getNombre() == anuncio.getPujante().getNombre()) {
+				dineroEnCaja = usuario.getDinero() - dineroAPujar;
+				usuario.setDinero(dineroEnCaja);
+				try {
+					singleton.actualizarComprador(usuario.getNombre(),usuario.getIdUsuario(), usuario.getEdad(), usuario.getDinero(), 0, null);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+			singleton.guardaRegistroLog("El usuario: " + usuario.getNombre() + " hizo una puja por un producto", 1, "TransaccionPuja");
+		
+			
 		}
+		
 //		singleton.guardaRegistroLog("El usuario: " + usuario.getNombre()
 //				+ " intento hacer una puja menor a la indicada, PujaMenorException", 2, "TransaccionPuja");
 //		singleton.guardaRegistroLog(
@@ -182,6 +180,7 @@ public class TransaccionPujaCompraController {
 	 * Método que permite inicializar los datos de la ventana
 	 */
 	public void init(Anuncio anuncio) {
+		//Trae el anuncio seleccionado y envia los datos a los labels
 		this.anuncio = anuncio;
 		lblArticulo.setText(anuncio.getNombreArticulo());
 		lblCategoria.setText(anuncio.getTipoArticulo() + "".toUpperCase());
@@ -192,22 +191,21 @@ public class TransaccionPujaCompraController {
 		lblPersonaPujante.setText("");
 		textDescripcion.setEditable(false);
 		textDescripcion.setText(anuncio.getDescripcion());
-	}
-	// ____________________________________________________________________
+		
+		
+		//Logica de carga de imagen (No funciona)
+		FileInputStream input;
+		try {
+			input = new FileInputStream(anuncio.getFoto());
 
-	/*
-	 * Método que permite inicializar los datos de la ventana
-	 */
-	public void init(Anunciante anunciante) {
-//		this.lblNomAnunciante = anunciante;
-		lblDineroAnunciante.setText(anunciante.getDinero() + "".toUpperCase());
-//		lblCategoria.setText(anuncio.getTipoArticulo()+"".toUpperCase());
-//		lblFechaFin.setText(anuncio.getFechaCumlinacion()+"");
-//		lblFechaInicio.setText(anuncio.getFechaPublicacion()+"");
-//		lblNomAnunciante.setText(anuncio.getNombreAnunciante().toUpperCase());
-//		lblPrecio.setText(anuncio.getValor()+"");
-//		textDescripcion.setEditable(false);
-//		textDescripcion.setText(anuncio.getDescripcion());
+			Image imagenInternaImage = new Image(input);
+			
+			imagen.setImage(imagenInternaImage);
+		} catch (FileNotFoundException e) {
+			System.out.println("Hay un error");
+		}
+		
 	}
+
 	// ____________________________________________________________________
 }

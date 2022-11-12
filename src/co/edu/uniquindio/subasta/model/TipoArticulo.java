@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public enum TipoArticulo implements Serializable {
 
+	//Posibles selecciones
 	HOGAR(0), TECNOLOGIA(1), DEPORTES(2), VEHICULOS(3), VIENESRAIZ(4);
 
 	// Atributos

@@ -65,7 +65,7 @@ public class MenuAnuncianteController {
 	void agregarDin(ActionEvent event) throws DineroException {
 		try {
 
-			double dineroIngresar = Double.parseDouble(txtAgregar.getText());
+			int dineroIngresar = Integer.parseInt(txtAgregar.getText());
 			if (dineroIngresar >= 0) {
 				// Actualiza el usuario para modificar el dinero
 				singleton.actualizarAnunciante(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(),

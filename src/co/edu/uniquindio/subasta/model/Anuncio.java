@@ -16,17 +16,20 @@ public class Anuncio implements Serializable {
 	private TipoArticulo tipoArticulo;
 	private String fechaPublicacion;
 	private String fechaCumlinacion;
-	private double valor;
-	private Image foto;
+	private int valor;
+	private String foto;
+	
+	//Posiblemente necesario
+	private Comprador pujante;
 
 	// ____________________________________________________________________
 
 	// Metodos constructor
 
-	// Constructor 1
+	// Constructor 1 (Crud de un anuncio)
 	public Anuncio(String nombreArticulo, String nombreAnunciante, String estado, String descripcion, String idAnuncio,
-			TipoArticulo tipoArticulo, String fechaPublicacion, String fechaCumlinacion, double valor,
-			Image foto) {
+			TipoArticulo tipoArticulo, String fechaPublicacion, String fechaCumlinacion, int valor,
+			String foto) {
 		super();
 		this.nombreArticulo = nombreArticulo;
 		this.nombreAnunciante = nombreAnunciante;
@@ -38,11 +41,12 @@ public class Anuncio implements Serializable {
 		this.fechaCumlinacion = fechaCumlinacion;
 		this.valor = valor;
 		this.foto = foto;
+		this.pujante = null;
 	}
 
-	// Constructor 2
+	// Constructor 2 (Carga de gestion de anuncios)
 	public Anuncio(String nombreArticulo, String nombreAnunciante, TipoArticulo tipoArticulo,
-			String fechaPublicacion, String fechaCumlinacion, double valor, String idAnuncio,
+			String fechaPublicacion, String fechaCumlinacion, int valor, String idAnuncio,
 			String descripcion) {
 		super();
 		this.nombreArticulo = nombreArticulo;
@@ -53,11 +57,12 @@ public class Anuncio implements Serializable {
 		this.valor = valor;
 		this.idAnuncio = idAnuncio;
 		this.descripcion = descripcion;
+		this.pujante = null;
 	}
 
-	// Constructor 3
+	// Constructor 3 (carga de gestion de anuncios de un anunciante)
 	public Anuncio(String nombreArticulo, String nombreAnunciante, String estado, String idAnuncio,
-			TipoArticulo tipoArticulo, double valor, Image image) {
+			TipoArticulo tipoArticulo, int valor, String image) {
 		super();
 		this.nombreAnunciante = nombreAnunciante;
 		this.nombreArticulo = nombreArticulo;
@@ -65,14 +70,25 @@ public class Anuncio implements Serializable {
 		this.tipoArticulo = tipoArticulo;
 		this.valor = valor;
 		this.idAnuncio = idAnuncio;
+		this.pujante = null;
 	}
-
+	// Constructor 4 (base)
 	public Anuncio() {
 
 	}
 //____________________________________________________________________ 
 
 	// Metodos Getters and Setters
+	
+	public Comprador getPujante() {
+		return pujante;
+	}
+
+	public void setPujante(Comprador pujante) {
+		this.pujante = pujante;
+	}
+	
+	//___________________________________________________________________
 	public String getNombreArticulo() {
 		return nombreArticulo;
 	}
@@ -137,19 +153,19 @@ public class Anuncio implements Serializable {
 		this.fechaCumlinacion = fechaCumlinacion;
 	}
 
-	public double getValor() {
+	public int getValor() {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor(int valor) {
 		this.valor = valor;
 	}
 
-	public Image getFoto() {
+	public String getFoto() {
 		return foto;
 	}
 
-	public void setFoto(Image foto) {
+	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 
