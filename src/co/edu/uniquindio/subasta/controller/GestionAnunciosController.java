@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -90,6 +91,7 @@ public class GestionAnunciosController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Pestaña de pujar Anuncio");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnPujar.getScene().getWindow();
@@ -122,6 +124,7 @@ public class GestionAnunciosController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Menú Comprador");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 

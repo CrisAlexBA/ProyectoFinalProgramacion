@@ -1,6 +1,8 @@
 package co.edu.uniquindio.subasta.controller;
 
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -113,6 +115,7 @@ public class MenuCompradorController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Proyecto Subastas del Quindio");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
@@ -140,6 +143,7 @@ public class MenuCompradorController {
 			Stage stage = new Stage();
 
 			stage.setTitle("Lista de anuncios");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
@@ -172,6 +176,7 @@ public class MenuCompradorController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Lista de anuncios comprados");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();

@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class GestionAnunciosAnuncianteController {
@@ -166,6 +167,7 @@ public class GestionAnunciosAnuncianteController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Menú Anunciante");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();

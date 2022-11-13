@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -61,6 +62,7 @@ public class PrincipalController {
 			stage.setScene(scene);
 			stage.show();
 			stage.setTitle("Login Anunciante");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -95,6 +97,7 @@ public class PrincipalController {
 			stage.setScene(scene);
 			stage.show();
 			stage.setTitle("Login Comprador");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -130,6 +133,7 @@ public class PrincipalController {
 			stage.setScene(scene);
 			stage.show();
 			stage.setTitle("Registro Anunciante");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();
@@ -165,6 +169,7 @@ public class PrincipalController {
 			stage.setScene(scene);
 			stage.show();
 			stage.setTitle("Registro Comprador");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setOnCloseRequest(e -> controlador.volver(event));
 			Stage myStage = (Stage) this.btnLoginAnunciante.getScene().getWindow();
 			myStage.close();

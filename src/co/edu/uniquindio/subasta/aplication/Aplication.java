@@ -6,6 +6,7 @@ import co.edu.uniquindio.subasta.controller.ModelFactoryController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -73,6 +74,7 @@ public class Aplication extends Application {
 			// Seteo la scene y la muestro
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Proyecto Subastas del Quindio");
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			// primaryStage.initStyle(StageStyle.UNDECORATED); //---> linea que permite
 			// ocultar la barra superior de la ventana
 			primaryStage.show();

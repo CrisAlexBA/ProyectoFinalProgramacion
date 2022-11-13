@@ -91,6 +91,7 @@ public class TransaccionPujaCompraController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Menú Comprador");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 

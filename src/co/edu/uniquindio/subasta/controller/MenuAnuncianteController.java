@@ -1,6 +1,8 @@
 package co.edu.uniquindio.subasta.controller;
 
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+
 import java.io.IOException;
 
 import co.edu.uniquindio.subasta.exceptions.CantidadAnunciosException;
@@ -124,6 +126,7 @@ public class MenuAnuncianteController {
 				Scene scene = new Scene(root);
 				Stage stage = new Stage();
 				stage.setTitle("Registro Anuncios");
+				stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 				stage.setScene(scene);
 				stage.setOnCloseRequest(e -> controlador.volver(event));
 				// stage.initStyle(StageStyle.UNDECORATED);
@@ -158,11 +161,13 @@ public class MenuAnuncianteController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Proyecto Subastas del Quindio");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();
 			myStage.close();
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
@@ -184,6 +189,7 @@ public class MenuAnuncianteController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Lista de anuncios comprados");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnAtras.getScene().getWindow();

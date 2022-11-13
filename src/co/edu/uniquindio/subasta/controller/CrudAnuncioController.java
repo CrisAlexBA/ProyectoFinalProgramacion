@@ -217,6 +217,7 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Menú Anunciante");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnVolver.getScene().getWindow();

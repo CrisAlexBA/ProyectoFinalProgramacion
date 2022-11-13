@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class GestionAnunciosCompradorController {
@@ -80,6 +81,7 @@ public class GestionAnunciosCompradorController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Menú Comprador");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 
@@ -106,7 +108,7 @@ public class GestionAnunciosCompradorController {
 		colPrecio.setCellValueFactory(new PropertyValueFactory<>("valor"));
 		colFoto.setCellValueFactory(new PropertyValueFactory<>("foto"));
 
-		for (int i = 0; i < listaAnuncios.size(); i++) {
+		for (int i = 0; i <= listaAnuncios.size(); i++) {
 			Anuncio anuncio = new Anuncio(listaAnuncios.get(i).getNombreArticulo(),
 					listaAnuncios.get(i).getNombreAnunciante(), listaAnuncios.get(i).getEstado(),
 					listaAnuncios.get(i).getIdAnuncio(), listaAnuncios.get(i).getTipoArticulo(),

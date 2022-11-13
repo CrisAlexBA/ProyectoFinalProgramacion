@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -60,6 +61,7 @@ public class CrudCompradorRegistroController {
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Proyecto Subastas del Quindio");
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/Logo Subasta.png")));
 			stage.setScene(scene);
 			stage.show();
 			Stage myStage = (Stage) this.btnVolver.getScene().getWindow();
