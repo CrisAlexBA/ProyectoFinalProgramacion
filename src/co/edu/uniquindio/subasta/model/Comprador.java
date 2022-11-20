@@ -3,6 +3,7 @@ package co.edu.uniquindio.subasta.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.swing.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @SuppressWarnings("serial")
@@ -10,7 +11,7 @@ public class Comprador extends Usuario implements Serializable {
 
 	// Atributos
 	private int cantPujas;
-	private ArrayList<Anuncio> listaCompras;
+	private ArrayList <Anuncio> listaCompras = new ArrayList<>();
 
 //____________________________________________________________________ 
 
@@ -52,6 +53,19 @@ public class Comprador extends Usuario implements Serializable {
 
 	public void setListaCompras(ArrayList<Anuncio> listaCompras) {
 		this.listaCompras = listaCompras;
+	}
+
+	public void setAununcio (Anuncio a){
+		listaCompras.add(a);
+	}
+
+	public void delete (Anuncio a){
+		try {
+			listaCompras.remove(a);
+		}catch (Exception e){
+
+		}
+
 	}
 
 //____________________________________________________________________ 

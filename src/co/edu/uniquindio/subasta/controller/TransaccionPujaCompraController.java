@@ -23,6 +23,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
 public class TransaccionPujaCompraController {
 
 	/*
@@ -32,7 +34,7 @@ public class TransaccionPujaCompraController {
 
 	private Comprador usuario = singleton.getComprador();
 	private Anuncio anuncio;
-	private Anunciante anunciante;
+
 //________________________________________________________________________________________
 	// Atributos
 	@FXML
@@ -87,7 +89,7 @@ public class TransaccionPujaCompraController {
 			Parent root = loader.load();
 
 			MenuCompradorController controlador = loader.getController();
-			controlador.init();
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Menú Comprador");
@@ -112,6 +114,7 @@ public class TransaccionPujaCompraController {
 
 		double dineroAPujar = Double.parseDouble(txtMontoPujar.getText());
 		double valorProducto = anuncio.getValor();
+
 		if(dineroAPujar < valorProducto) {
 			//Notificación por puja menor
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -119,7 +122,6 @@ public class TransaccionPujaCompraController {
 			alert.setTitle("Notificación");
 			alert.setContentText("Puja por debajo del precio");
 			alert.showAndWait();
-			
 			singleton.guardaRegistroLog("El usuario: " + usuario.getNombre() + " intento hacer una puja menor al valor del producto, PujaMenorException", 2, "TransaccionPuja");
 			throw new PujaMenorException("La puja realizada es menor al precio del anuncio");
 			
@@ -134,13 +136,22 @@ public class TransaccionPujaCompraController {
 			singleton.guardaRegistroLog("El usuario: " + usuario.getNombre() + " intento hacer una puja sin el dinero suficiente, DineroInsuficienteException",2, "TransaccionPuja");
 			throw new DineroInsuficienteException("El comprador no tiene dinero suficiente para hacer la puja");
 		}else {
+
 			//Lógica de la puja
 			
 			anuncio.setPujante(usuario);
+			anuncio.setValor((int) dineroAPujar);
 			this.lblPersonaPujante.setText(usuario.getNombre());
 			this.lblPrecio.setText(dineroAPujar+"");
 
-			
+			//se elimina el usuario anterior
+			anuncio.getPujante().delete(anuncio);
+
+			//se agrega a la la lista de compras del usuario
+			usuario.setAununcio(anuncio);
+
+
+
 			//No sé si esta lógica va acá y si esta bien creada
 			/*
 			 * Trata de comparar si el usuario es el ultimo pujante y si no lo es
@@ -148,6 +159,7 @@ public class TransaccionPujaCompraController {
 			 */
 			
 			double dineroEnCaja = 0;
+
 			if(usuario.getNombre() == anuncio.getPujante().getNombre()) {
 				dineroEnCaja = usuario.getDinero() - dineroAPujar;
 				usuario.setDinero(dineroEnCaja);
@@ -192,20 +204,23 @@ public class TransaccionPujaCompraController {
 		lblPersonaPujante.setText("");
 		textDescripcion.setEditable(false);
 		textDescripcion.setText(anuncio.getDescripcion());
-		
-		
-		//Logica de carga de imagen (No funciona)
 		FileInputStream input;
 		try {
-			input = new FileInputStream(anuncio.getFoto());
 
+			input = new FileInputStream(anuncio.getFoto());
 			Image imagenInternaImage = new Image(input);
-			
 			imagen.setImage(imagenInternaImage);
+
 		} catch (FileNotFoundException e) {
 			System.out.println("Hay un error");
 		}
-		
+
+		//imprime el nombre del usuario con la puja actual
+		try {
+				this.lblPersonaPujante.setText(anuncio.getPujante().getNombre());
+		} catch (NullPointerException e){
+
+		}
 	}
 
 	// ____________________________________________________________________

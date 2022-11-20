@@ -11,6 +11,7 @@ import co.edu.uniquindio.subasta.exceptions.FechaException;
 import co.edu.uniquindio.subasta.model.Anunciante;
 import co.edu.uniquindio.subasta.model.Anuncio;
 import co.edu.uniquindio.subasta.model.TipoArticulo;
+import com.sun.jndi.toolkit.url.Uri;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +30,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 
 public class CrudAnuncioController implements InterfaceCrudAnuncio {
 
@@ -74,6 +77,8 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 	@FXML
 	private TextField txtPrecioArticulo;
 
+	String foto;
+
 	// _____________________________________________________________________________________________
 
 	/*
@@ -90,6 +95,7 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
     		fileChooser.setTitle("Buscar Imagen");
     		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Archivos Imagen", "*.png", "*.jpg"));
     		File selectedFile = fileChooser.showOpenDialog(primaryStage);
+			foto = selectedFile.getPath();
 
     		if (selectedFile != null) {
     			FileInputStream input = new FileInputStream(selectedFile);
@@ -120,10 +126,6 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 		String fechaInicio = fechaInicial.getValue()+"";
 		String fechaFin = fechaFinal.getValue()+"";
 		String descripcion = txtDescripcion.getText();
-
-		// tener en cuanta para cuando se agrege la logica de agregar un anuncio
-		Image fotoPNG = imagen.getImage();
-		String foto = fotoPNG.toString();
 		int precio = Integer.parseInt(txtPrecioArticulo.getText());
 
 		Anuncio anuncio = new Anuncio(nombre, usuario.getNombre(), "venta", descripcion, singleton.EnviarCodigo(),

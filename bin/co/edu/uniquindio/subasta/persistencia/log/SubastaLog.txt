@@ -1494,3 +1494,407 @@ nov 13, 2022 10:01:27 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guar
 INFORMACIÓN: LoginComprador,Usuario: jox inicio sesion,2022-11-13
 nov 13, 2022 10:01:47 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: MenuComprador,El usuario: jox cerró sesión,2022-11-13
+nov 19, 2022 7:23:02 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 7:23:58 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 7:24:41 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox cerró sesión,2022-11-19
+nov 19, 2022 7:25:25 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 7:25:28 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 7:27:45 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-11-19
+nov 19, 2022 7:27:49 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-11-19
+nov 19, 2022 7:27:57 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-11-19
+nov 19, 2022 7:28:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-11-19
+nov 19, 2022 7:31:45 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 7:32:07 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 7:46:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 7:47:07 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 7:47:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 7:47:13 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 7:47:21 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 7:47:27 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 7:47:34 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 7:47:41 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 7:48:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 7:55:18 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 7:55:36 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 7:55:45 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 7:55:51 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 8:22:14 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 8:23:03 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-11-19
+nov 19, 2022 8:23:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-11-19
+nov 19, 2022 8:23:15 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 8:23:19 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 8:30:29 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 8:31:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 8:32:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 8:35:13 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 8:35:20 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Carl intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-11-19
+nov 19, 2022 8:35:27 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 8:43:43 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 8:44:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-11-19
+nov 19, 2022 8:44:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-11-19
+nov 19, 2022 8:45:08 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 8:46:18 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 8:58:44 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 8:58:48 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 9:03:34 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 9:14:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 9:14:58 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 9:19:56 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:20:23 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 9:20:27 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 9:27:31 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:34:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:34:20 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 9:39:39 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:47:41 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:48:29 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 9:49:41 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:49:50 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 9:51:06 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:51:08 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 9:51:26 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 9:51:29 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 9:53:00 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 9:55:10 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:55:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 9:55:30 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 9:55:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 9:57:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 9:57:12 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 9:57:14 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 9:57:17 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 10:04:02 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 10:04:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:04:14 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-11-19
+nov 19, 2022 10:04:36 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Darly inicio sesion,2022-11-19
+nov 19, 2022 10:04:38 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:04:43 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly cerró sesión,2022-11-19
+nov 19, 2022 10:05:20 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Darly inicio sesion,2022-11-19
+nov 19, 2022 10:11:41 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginAnunciante,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:11:48 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Darly inicio sesion,2022-11-19
+nov 19, 2022 10:12:23 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly cerró sesión,2022-11-19
+nov 19, 2022 10:12:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 10:14:48 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 10:14:50 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:15:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:25:31 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginAnunciante,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:25:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Darly inicio sesion,2022-11-19
+nov 19, 2022 10:25:58 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:26:36 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Darly intento agregar un anuncio sin datos, AnuncioExcepcion,2022-11-19
+nov 19, 2022 10:26:42 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Darly Creo un anuncio,2022-11-19
+nov 19, 2022 10:26:45 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:28:00 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 10:28:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 10:29:41 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Darly inicio sesion,2022-11-19
+nov 19, 2022 10:29:43 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:29:49 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Darly intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-11-19
+nov 19, 2022 10:29:51 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Darly intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-11-19
+nov 19, 2022 10:29:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:29:58 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Darly intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-11-19
+nov 19, 2022 10:29:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly cerró sesión,2022-11-19
+nov 19, 2022 10:30:10 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Carl inicio sesion,2022-11-19
+nov 19, 2022 10:31:08 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: CrudAnuncio,El usuario: Carl Creo un anuncio,2022-11-19
+nov 19, 2022 10:31:10 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:31:17 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Carl cerró sesión,2022-11-19
+nov 19, 2022 10:32:07 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:32:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:32:20 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:32:25 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:32:50 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:33:02 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:33:16 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginAnunciante,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:33:24 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginAnunciante,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:33:29 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginAnunciante,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:33:40 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Darly inicio sesion,2022-11-19
+nov 19, 2022 10:33:45 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Darly intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-11-19
+nov 19, 2022 10:33:46 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Darly intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-11-19
+nov 19, 2022 10:33:47 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly cerró sesión,2022-11-19
+nov 19, 2022 10:36:39 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Karl inicio sesion,2022-11-19
+nov 19, 2022 10:36:44 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario:Karl agrego dinero,2022-11-19
+nov 19, 2022 10:36:49 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Karl cerró sesión,2022-11-19
+nov 19, 2022 10:37:00 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginAnunciante,Usuario: Darly inicio sesion,2022-11-19
+nov 19, 2022 10:37:03 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: CrudAnuncio,El usuario: Darly intento agregar más anuncios de los posibles, CantidadAnunciosException,2022-11-19
+nov 19, 2022 10:37:04 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly abrió la ventana lista de ventas,2022-11-19
+nov 19, 2022 10:37:08 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuAnunciante,El usuario: Darly cerró sesión,2022-11-19
+nov 19, 2022 10:37:16 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:37:21 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:37:26 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:37:45 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:38:00 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 10:38:20 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 10:38:25 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 10:38:40 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 10:38:44 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 10:48:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 10:48:58 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 10:49:04 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 10:50:21 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 10:50:35 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 10:51:52 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 10:51:54 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-19
+nov 19, 2022 10:54:47 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 10:54:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 11:01:22 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:01:35 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 11:03:36 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:03:41 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 11:08:13 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:08:42 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 11:08:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 11:14:28 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:14:36 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 11:14:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 11:14:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 11:15:13 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 11:15:21 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-19
+nov 19, 2022 11:15:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox cerró sesión,2022-11-19
+nov 19, 2022 11:15:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: RegistroComprador,Se registro el usuario: Andres,2022-11-19
+nov 19, 2022 11:15:59 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:Andres agrego dinero,2022-11-19
+nov 19, 2022 11:16:10 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: Andres hizo una puja por un producto,2022-11-19
+nov 19, 2022 11:16:14 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Andres cerró sesión,2022-11-19
+nov 19, 2022 11:16:25 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:16:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 11:17:04 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:jox agrego dinero,2022-11-19
+nov 19, 2022 11:17:13 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 11:17:17 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 11:17:21 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox cerró sesión,2022-11-19
+nov 19, 2022 11:17:29 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:18:53 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:19:10 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 11:19:24 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja sin el dinero suficiente, DineroInsuficienteException,2022-11-19
+nov 19, 2022 11:25:09 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:28:33 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:32:35 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox cerró sesión,2022-11-19
+nov 19, 2022 11:32:49 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: LoginComprador,Se intento iniciar sesion sin cuenta,2022-11-19
+nov 19, 2022 11:32:55 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:33:07 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 11:38:08 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:38:26 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+ADVERTENCIA: TransaccionPuja,El usuario: jox intento hacer una puja menor al valor del producto, PujaMenorException,2022-11-19
+nov 19, 2022 11:44:52 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:46:32 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:49:05 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:52:43 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:55:04 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 19, 2022 11:59:11 PM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-19
+nov 20, 2022 12:00:49 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-20
+nov 20, 2022 12:04:48 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-20
+nov 20, 2022 12:09:00 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-20
+nov 20, 2022 12:11:15 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-20
+nov 20, 2022 12:11:17 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-20
+nov 20, 2022 12:11:27 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: jox hizo una puja por un producto,2022-11-20
+nov 20, 2022 12:11:29 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox abrió la ventana de ver pujas,2022-11-20
+nov 20, 2022 12:11:32 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox cerró sesión,2022-11-20
+nov 20, 2022 12:11:50 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: RegistroComprador,Se registro el usuario: Andres,2022-11-20
+nov 20, 2022 12:11:54 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario:Andres agrego dinero,2022-11-20
+nov 20, 2022 12:12:00 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Andres abrió la ventana de ver pujas,2022-11-20
+nov 20, 2022 12:12:09 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: Andres hizo una puja por un producto,2022-11-20
+nov 20, 2022 12:12:12 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Andres cerró sesión,2022-11-20
+nov 20, 2022 12:12:23 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-20
+nov 20, 2022 12:19:53 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Jox inicio sesion,2022-11-20
+nov 20, 2022 12:20:01 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: jox cerró sesión,2022-11-20
+nov 20, 2022 12:20:14 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: LoginComprador,Usuario: Andres inicio sesion,2022-11-20
+nov 20, 2022 12:20:16 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Andres abrió la ventana de ver pujas,2022-11-20
+nov 20, 2022 12:20:29 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: TransaccionPuja,El usuario: Andres hizo una puja por un producto,2022-11-20
+nov 20, 2022 12:20:32 AM co.edu.uniquindio.subasta.persistencia.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: MenuComprador,El usuario: Andres abrió la ventana de ver pujas,2022-11-20

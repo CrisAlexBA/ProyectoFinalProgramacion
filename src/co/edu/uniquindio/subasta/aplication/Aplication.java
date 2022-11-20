@@ -3,6 +3,8 @@ package co.edu.uniquindio.subasta.aplication;
 import java.io.IOException;
 
 import co.edu.uniquindio.subasta.controller.ModelFactoryController;
+import co.edu.uniquindio.subasta.model.Anuncio;
+import co.edu.uniquindio.subasta.model.TipoArticulo;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -44,7 +46,7 @@ public class Aplication extends Application {
 	 * logica para hacer una puja. 
 	 * 
 	 * - Añadir la logica para agregar una imagen en la
-	 * creacion de un anuncio. 
+	 * creacion de un anuncio. LISTO
 	 * 
 	 * - Realizar toda la lógica para verificación(agregar
 	 * dinero positivo, crear un anuncio, valores de puja, etc). LISTO

@@ -3,10 +3,7 @@ package co.edu.uniquindio.subasta.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import co.edu.uniquindio.subasta.model.Anunciante;
-import co.edu.uniquindio.subasta.model.Anuncio;
-import co.edu.uniquindio.subasta.model.Comprador;
-import co.edu.uniquindio.subasta.model.TipoArticulo;
+import co.edu.uniquindio.subasta.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,7 +27,7 @@ public class GestionAnunciosCompradorController {
 
 	private Comprador usuario = singleton.getComprador();
 
-	private ArrayList<Anuncio> listaAnuncios = usuario.getListaCompras();
+
 
 	private ObservableList<Anuncio> anuncios = FXCollections.observableArrayList();
 
@@ -77,7 +74,7 @@ public class GestionAnunciosCompradorController {
 			Parent root = loader.load();
 
 			MenuCompradorController controlador = loader.getController();
-			controlador.init();
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Menú Comprador");
@@ -98,7 +95,10 @@ public class GestionAnunciosCompradorController {
 	 * Metodo que inicializa datos de la ventana anterior
 	 */
 	@SuppressWarnings("unchecked")
-	public void init() {
+	public void init(Comprador usuario) {
+
+		this.usuario = usuario;
+		ArrayList<Anuncio> listaAnuncios = usuario.getListaCompras();
 		System.out.println(listaAnuncios);
 		colNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombreArticulo"));
 		colNombreComprador.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));
@@ -108,7 +108,7 @@ public class GestionAnunciosCompradorController {
 		colPrecio.setCellValueFactory(new PropertyValueFactory<>("valor"));
 		colFoto.setCellValueFactory(new PropertyValueFactory<>("foto"));
 
-		for (int i = 0; i <= listaAnuncios.size(); i++) {
+		for (int i = 0; i < listaAnuncios.size(); i++) {
 			Anuncio anuncio = new Anuncio(listaAnuncios.get(i).getNombreArticulo(),
 					listaAnuncios.get(i).getNombreAnunciante(), listaAnuncios.get(i).getEstado(),
 					listaAnuncios.get(i).getIdAnuncio(), listaAnuncios.get(i).getTipoArticulo(),

@@ -1,3 +1,3 @@
-Carl@@123@@23@@1000.0@@1@@[co.edu.uniquindio.subasta.model.Anuncio@1df1479e, co.edu.uniquindio.subasta.model.Anuncio@7a3f7986, co.edu.uniquindio.subasta.model.Anuncio@5d13a8ba]
-Darly@@90@@19@@2.34568058E8@@2@@[co.edu.uniquindio.subasta.model.Anuncio@5f3f4016]
-Karl@@45@@21@@0.0@@0@@[]
+Carl@@123@@23@@1000.0@@-8@@[co.edu.uniquindio.subasta.model.Anuncio@64654ad7]
+Darly@@90@@19@@2.34568058E8@@3@@[]
+Karl@@45@@21@@7099.0@@0@@[]

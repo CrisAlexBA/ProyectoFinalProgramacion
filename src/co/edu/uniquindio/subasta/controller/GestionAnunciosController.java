@@ -1,7 +1,6 @@
 package co.edu.uniquindio.subasta.controller;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 

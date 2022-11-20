@@ -1,5 +1,6 @@
 package co.edu.uniquindio.subasta.controller;
 
+import co.edu.uniquindio.subasta.model.Usuario;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 
@@ -21,6 +22,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 
 public class MenuCompradorController {
 
@@ -55,6 +58,7 @@ public class MenuCompradorController {
 
 	@FXML
 	private Label lblDinero;
+
 
 	// _____________________________________________________________________
 
@@ -172,7 +176,7 @@ public class MenuCompradorController {
 			Parent root = loader.load();
 
 			GestionAnunciosCompradorController controlador = loader.getController();
-			controlador.init();
+			controlador.init(usuario);
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 			stage.setTitle("Lista de anuncios comprados");
@@ -192,6 +196,13 @@ public class MenuCompradorController {
 	/*
 	 * Método que permite inicializar los datos de la ventana
 	 */
+	public void init(Comprador u) {
+		lblNombre.setText(u.getNombre().toUpperCase());
+		lblDinero.setText(u.getDinero() + "");
+		this.usuario = u;
+
+	}
+
 	public void init() {
 		lblNombre.setText(usuario.getNombre().toUpperCase());
 		lblDinero.setText(usuario.getDinero() + "");

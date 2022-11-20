@@ -63,6 +63,7 @@ public class Usuario implements Serializable {
 		this.dinero = dinero;
 	}
 
+
 //____________________________________________________________________ 
 
 }
