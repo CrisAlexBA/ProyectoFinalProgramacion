@@ -2,6 +2,7 @@ package co.edu.uniquindio.subasta.aplication;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.subasta.Services.GuardarArchivos;
 import co.edu.uniquindio.subasta.controller.ModelFactoryController;
 import co.edu.uniquindio.subasta.model.Anuncio;
 import co.edu.uniquindio.subasta.model.TipoArticulo;
@@ -86,6 +87,10 @@ public class Aplication extends Application {
 	}
 
 	public static void main(String[] args) throws IOException {
+
+		GuardarArchivos guardar = new GuardarArchivos();
+		guardar.start();
+
 		// Saca la copia de seguridad
 		singleton.copiaSeguridad();
 		launch(args);

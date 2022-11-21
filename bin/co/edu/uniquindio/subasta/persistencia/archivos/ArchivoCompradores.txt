@@ -1,2 +1,2 @@
-jox@@123@@23@@8.4568422E7@@0@@null
-Andres@@345@@32@@890000.0@@0@@null
+jox@@123@@23@@58500.0@@0@@[co.edu.uniquindio.subasta.model.Anuncio@497b5799]
+Andres@@345@@32@@15000.0@@0@@[co.edu.uniquindio.subasta.model.Anuncio@1144bf78, co.edu.uniquindio.subasta.model.Anuncio@1f35b0f6]

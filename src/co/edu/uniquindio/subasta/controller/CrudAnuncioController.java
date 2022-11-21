@@ -41,6 +41,8 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
 
 	private Anunciante usuario = singleton.getAnunciante();
+
+	private LocalDate fechaActual = LocalDate.now();
 	// _________________________________________________________________
 
 	// Atributoss
@@ -150,6 +152,7 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 		}
 	}
 
+
 // ___________________________________________________________________________________
 
 	/*
@@ -187,7 +190,17 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 					+ " intento agregar un anuncio con fecha erronea, FechaException", 2, "CrudAnuncio");
 
 			throw new FechaException("Trato de ingresar una serie de fechas erroneas");
-		} else {
+		}
+		else if (fechaActual.isAfter(fechaInicioInt)) {
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+			alert.setHeaderText(null);
+			alert.setTitle("Fecha Exception");
+			alert.setContentText("La fecha de iniciación no puede ser antes que la fecha actual");
+			alert.showAndWait();
+			throw new FechaException("Trato de ingresar la fecha de iniciacion antes de la fecha actual");
+		}
+
+		else {
 			// Agrega el nuevo anuncio al objeto subasta
 			singleton.agregarAnuncio(anuncioNuevo);
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -196,9 +209,20 @@ public class CrudAnuncioController implements InterfaceCrudAnuncio {
 			alert.setContentText("Anuncio Agregado con exito.");
 			alert.showAndWait();
 			// Log
+			limpiarCampos();
 			singleton.guardaRegistroLog("El usuario: " + usuario.getNombre() + " Creo un anuncio", 1, "CrudAnuncio");
 		}
 
+	}
+
+	private void limpiarCampos() {
+		txtNombreArticulo.setText("");
+		txtDescripcion.setText("");
+		txtPrecioArticulo.setText("");
+		fechaInicial.setValue(null);
+		fechaFinal.setValue(null);
+		imagen.setImage(null);
+		tipoProducto.setValue(null);
 	}
 
 	// _______________________________________________________________________________________

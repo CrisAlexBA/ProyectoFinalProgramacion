@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.subasta.model.Anuncio;
+import co.edu.uniquindio.subasta.model.PujaArticulo;
 import co.edu.uniquindio.subasta.model.TipoArticulo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +30,9 @@ public class GestionAnunciosController {
 	ModelFactoryController singleton = ModelFactoryController.getInstance();
 
 	private ArrayList<Anuncio> listaAnuncios = singleton.traerListaAnuncios();
+
+
+	PujaArticulo puja;
 
 	// ____________________________________________________________________________________________
 
@@ -139,8 +143,9 @@ public class GestionAnunciosController {
 	/*
 	 * Metodo que inicializa datos de la ventana anterior
 	 */
-	public void init() {
-		
+	public void init() throws IOException {
+
+
 		//Codigo necesario para madandar los datos a la tabla view
 		colNombreProducto.setCellValueFactory(new PropertyValueFactory<>("nombreArticulo"));
 		colNombreAnunciante.setCellValueFactory(new PropertyValueFactory<>("nombreAnunciante"));

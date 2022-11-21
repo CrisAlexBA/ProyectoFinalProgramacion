@@ -104,7 +104,7 @@ public class MenuAnuncianteController {
 	@FXML
 	void btnCrearAnuncioEvent(ActionEvent event) throws CantidadAnunciosException {
 
-		if (usuario.getCantAnuncios() >= 3) {
+		if (usuario.getCantAnuncios() >= 10) {
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setTitle("Notificacion");

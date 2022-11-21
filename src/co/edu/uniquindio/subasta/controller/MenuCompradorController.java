@@ -71,12 +71,16 @@ public class MenuCompradorController {
 		try {
 			double dineroIngresar = Integer.parseInt(txtAgregar.getText());
 			if (dineroIngresar >= 0) {
+
+				usuario.setContadorPuja(usuario.getDinero()+dineroIngresar);
 				// Actualiza el usuario para modificar el dinero
 				singleton.actualizarComprador(usuario.getNombre(), usuario.getIdUsuario(), usuario.getEdad(),
 						usuario.getDinero() + dineroIngresar, usuario.getCantPujas(),
-						usuario.getListaCompras());
+						usuario.getListaCompras(), usuario.getContadorPuja());
 				// Trae el "nuevo" usuario
+
 				usuario = singleton.getComprador();
+
 				// Envia los datos al lbl
 				lblDinero.setText(usuario.getDinero() + "");
 				txtAgregar.setText("");
@@ -197,6 +201,7 @@ public class MenuCompradorController {
 	 * Método que permite inicializar los datos de la ventana
 	 */
 	public void init(Comprador u) {
+		singleton.cargarResourceXML();
 		lblNombre.setText(u.getNombre().toUpperCase());
 		lblDinero.setText(u.getDinero() + "");
 		this.usuario = u;
@@ -204,6 +209,7 @@ public class MenuCompradorController {
 	}
 
 	public void init() {
+		singleton.cargarResourceXML();
 		lblNombre.setText(usuario.getNombre().toUpperCase());
 		lblDinero.setText(usuario.getDinero() + "");
 	}

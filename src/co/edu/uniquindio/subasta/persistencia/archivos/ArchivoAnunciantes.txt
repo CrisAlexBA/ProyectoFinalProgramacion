@@ -1,3 +1,3 @@
-Carl@@123@@23@@1000.0@@-8@@[co.edu.uniquindio.subasta.model.Anuncio@64654ad7]
-Darly@@90@@19@@2.34568058E8@@3@@[]
-Karl@@45@@21@@7099.0@@0@@[]
+Carl@@123@@23@@33000.0@@6@@[co.edu.uniquindio.subasta.model.Anuncio@42d11391, co.edu.uniquindio.subasta.model.Anuncio@2fe849d2, co.edu.uniquindio.subasta.model.Anuncio@2dd0e294, co.edu.uniquindio.subasta.model.Anuncio@bcc60c5, co.edu.uniquindio.subasta.model.Anuncio@41cbb7b6, co.edu.uniquindio.subasta.model.Anuncio@2c80c084, co.edu.uniquindio.subasta.model.Anuncio@66e53c2]
+Darly@@90@@19@@2.34575058E8@@4@@[co.edu.uniquindio.subasta.model.Anuncio@6eccc182, co.edu.uniquindio.subasta.model.Anuncio@72a6adea, co.edu.uniquindio.subasta.model.Anuncio@5888d7da, co.edu.uniquindio.subasta.model.Anuncio@2c8c6f4a]
+Karl@@45@@21@@12699.0@@2@@[co.edu.uniquindio.subasta.model.Anuncio@24c46b88, co.edu.uniquindio.subasta.model.Anuncio@63ca5b07, co.edu.uniquindio.subasta.model.Anuncio@7de276a3, co.edu.uniquindio.subasta.model.Anuncio@46c2d76d]

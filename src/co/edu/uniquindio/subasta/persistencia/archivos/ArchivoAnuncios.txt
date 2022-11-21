@@ -1,2 +1,8 @@
 Toyota Prado@@Carl@@Venta@@La mera elegancia@@CP0002@@VEHICULOS@@2022-11-05@@2022-11-06@@2000000000@@javafx.scene.image.Image@63bd8f3
-Mona China@@Carl@@venta@@una loli@@CP0011@@HOGAR@@2022-11-01@@2022-11-02@@90000@@C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\menhera.jpg
+Mona china@@Darly@@Venta@@una loli@@CP0010@@HOGAR@@2022-10-05@@2022-12-16@@20000@@src/resources/ImagenesAnuncios/menhera.jpg
+Celular@@Carl@@venta@@El celular mas potente del mercado@@CP0013@@TECNOLOGIA@@2022-11-21@@2022-11-22@@1000000@@C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Tecnologia.Celular.jpg
+Casa Lujosa (Promocion)@@Carl@@venta@@La mejor casa del mercado@@CP0014@@VIENESRAIZ@@2022-11-21@@2022-12-31@@200000000@@C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\BienesRaiz.Casa.jpg
+Pc@@Darly@@venta@@Pc fullHD 4k no fake un link por mega@@CP0015@@TECNOLOGIA@@2022-11-21@@2022-12-01@@100000@@C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Tecnologia.Computador.jpg
+Muebles@@Darly@@venta@@El mueble mas comodo@@CP0016@@HOGAR@@2022-11-21@@2022-11-29@@800000@@C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Hogra.Muebles.jpg
+Balon@@Karl@@venta@@Balon tronchatoro@@CP0017@@DEPORTES@@2022-11-21@@2022-11-30@@5000@@C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Deportes.Balon.jpg
+Vehiculo@@Karl@@venta@@Mas rapido que el rayo@@CP0018@@VEHICULOS@@2022-11-21@@2022-12-12@@50000000@@C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Vehiculos.Auto.jpg

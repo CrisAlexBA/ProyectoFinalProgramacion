@@ -236,7 +236,8 @@ public class SubastaQuindio implements Serializable {
 	 * persistencia
 	 */
 	public boolean actualizarComprador(String nombre, String idUsuario, int edad, double dinero, int canPujas,
-			ArrayList<Anuncio> listaCompras) throws IOException {
+									   ArrayList<Anuncio> listaCompras) throws IOException {
+
 		Comprador compradorNu = new Comprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras);
 		if (idUsuario != null) {
 			for (int i = 0; i < listaCompradores.size(); i++) {
@@ -251,6 +252,25 @@ public class SubastaQuindio implements Serializable {
 		}
 		return false;
 	}
+
+	public boolean actualizarComprador(String nombre, String idUsuario, int edad, double dinero, int canPujas,
+									   ArrayList<Anuncio> listaCompras, double contadorPuja) throws IOException {
+
+		Comprador compradorNu = new Comprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras, contadorPuja);
+		if (idUsuario != null) {
+			for (int i = 0; i < listaCompradores.size(); i++) {
+				if (listaCompradores.get(i).getIdUsuario().equals(idUsuario)) {
+					listaCompradores.set(i, compradorNu);
+
+					// Guarda en el txt
+					Persistencia.guardarComprador(listaCompradores);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 
 //____________________________________________________________________ 
 

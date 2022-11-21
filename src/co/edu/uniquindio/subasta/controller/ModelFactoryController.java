@@ -102,13 +102,23 @@ public class ModelFactoryController {
 	 * Método que permite enviar los datos del controlador al modelo para modificar
 	 * un comprador
 	 */
+
 	public void actualizarComprador(String nombre, String idUsuario, int edad, double dinero, int canPujas,
-			ArrayList<Anuncio> listaCompras) throws IOException {
+									ArrayList<Anuncio> listaCompras) throws IOException {
 		boolean bandera = getSubasta().actualizarComprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras);
 		if (bandera == true) {
 			this.comprador = new Comprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras);
 		}
 	}
+
+	public void actualizarComprador(String nombre, String idUsuario, int edad, double dinero, int canPujas,
+									ArrayList<Anuncio> listaCompras, double contadorpuja) throws IOException {
+		boolean bandera = getSubasta().actualizarComprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras,contadorpuja);
+		if (bandera == true) {
+			this.comprador = new Comprador(nombre, idUsuario, edad, dinero, canPujas, listaCompras, contadorpuja);
+		}
+	}
+
 //____________________________________________________________________ 
 
 	/*

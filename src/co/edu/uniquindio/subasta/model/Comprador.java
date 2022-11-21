@@ -11,6 +11,8 @@ public class Comprador extends Usuario implements Serializable {
 
 	// Atributos
 	private int cantPujas;
+
+	private double contadorPuja;
 	private ArrayList <Anuncio> listaCompras = new ArrayList<>();
 
 //____________________________________________________________________ 
@@ -23,6 +25,14 @@ public class Comprador extends Usuario implements Serializable {
 		super(nombre, idUsuario, edad, dinero);
 		this.cantPujas = canPujas;
 		this.listaCompras = listaCompras;
+	}
+
+	public Comprador(String nombre, String idUsuario, int edad, double dinero, int canPujas,
+					 ArrayList<Anuncio> listaCompras, Double sumPujas) {
+		super(nombre, idUsuario, edad, dinero);
+		this.cantPujas = canPujas;
+		this.listaCompras = listaCompras;
+		this.contadorPuja = sumPujas;
 	}
 
 	// Constructor 2 (Registro comprador)
@@ -68,6 +78,13 @@ public class Comprador extends Usuario implements Serializable {
 
 	}
 
-//____________________________________________________________________ 
+	public double getContadorPuja() {
+		return contadorPuja;
+	}
+
+	public void setContadorPuja(double contadorPuja) {
+		this.contadorPuja = contadorPuja;
+	}
+//____________________________________________________________________
 
 }

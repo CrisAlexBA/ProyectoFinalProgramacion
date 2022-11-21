@@ -5,10 +5,10 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
      <void property="cantAnuncios">
-      <int>-8</int>
+      <int>6</int>
      </void>
      <void property="dinero">
-      <double>1000.0</double>
+      <double>33000.0</double>
      </void>
      <void property="edad">
       <int>23</int>
@@ -20,40 +20,19 @@
       <object class="java.util.ArrayList">
        <void method="add">
         <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio0">
-         <void property="descripcion">
-          <string>una loli</string>
-         </void>
-         <void property="estado">
-          <string>venta</string>
-         </void>
-         <void property="fechaCumlinacion">
-          <string>2022-11-02</string>
-         </void>
-         <void property="fechaPublicacion">
-          <string>2022-11-01</string>
-         </void>
-         <void property="foto">
-          <string>src\resources\ImagenesAnuncios\menhera.jpg</string>
-         </void>
-         <void property="idAnuncio">
-          <string>CP0011</string>
-         </void>
-         <void property="nombreAnunciante">
-          <string>Carl</string>
-         </void>
-         <void property="nombreArticulo">
-          <string>Mona China</string>
-         </void>
          <void property="pujante">
           <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador0">
+           <void property="contadorPuja">
+            <double>5000.0</double>
+           </void>
            <void property="dinero">
-            <double>895000.0</double>
+            <double>-2000.0</double>
            </void>
            <void property="edad">
-            <int>32</int>
+            <int>23</int>
            </void>
            <void property="idUsuario">
-            <string>345</string>
+            <string>123</string>
            </void>
            <void property="listaCompras">
             <void method="add">
@@ -61,7 +40,7 @@
             </void>
            </void>
            <void property="nombre">
-            <string>Andres</string>
+            <string>jox</string>
            </void>
           </object>
          </void>
@@ -76,6 +55,434 @@
          </void>
         </object>
        </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio1">
+         <void property="pujante">
+          <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador1">
+           <void property="contadorPuja">
+            <double>5000.0</double>
+           </void>
+           <void property="dinero">
+            <double>-4000.0</double>
+           </void>
+           <void property="edad">
+            <int>32</int>
+           </void>
+           <void property="idUsuario">
+            <string>345</string>
+           </void>
+           <void property="listaCompras">
+            <void method="add">
+             <object idref="Anuncio1"/>
+            </void>
+           </void>
+           <void property="nombre">
+            <string>Andres</string>
+           </void>
+          </object>
+         </void>
+         <void property="tipoArticulo">
+          <object class="java.lang.Enum" id="TipoArticulo1" method="valueOf">
+           <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+           <string>TECNOLOGIA</string>
+          </object>
+         </void>
+         <void property="valor">
+          <int>5000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio2">
+         <void property="descripcion">
+          <string>FGYDCHNJSDBVSDKVNSDVSDKVNSDKVNSK
+DDVSDVSDVSDVDNV</string>
+         </void>
+         <void property="estado">
+          <string>Vendido</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-20</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\Documents\imagenes\3w.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0011</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Carl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>FFFFFFFFFFFFFFFF</string>
+         </void>
+         <void property="pujante">
+          <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador2">
+           <void property="dinero">
+            <double>8500.0</double>
+           </void>
+           <void property="edad">
+            <int>23</int>
+           </void>
+           <void property="idUsuario">
+            <string>123</string>
+           </void>
+           <void property="listaCompras">
+            <void method="add">
+             <object idref="Anuncio2"/>
+            </void>
+           </void>
+           <void property="nombre">
+            <string>jox</string>
+           </void>
+          </object>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+          <int>16000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio">
+         <void property="descripcion">
+          <string>ESooooo</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-22</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\Downloads\ajsjkajajs.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0011</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Carl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>HOooooo</string>
+         </void>
+         <void property="pujante">
+          <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador3">
+           <void property="dinero">
+            <double>15000.0</double>
+           </void>
+           <void property="edad">
+            <int>32</int>
+           </void>
+           <void property="idUsuario">
+            <string>345</string>
+           </void>
+           <void id="ArrayList0" property="listaCompras">
+            <void method="add">
+             <object class="co.edu.uniquindio.subasta.model.Anuncio">
+              <void property="descripcion">
+               <string>HHHHHH</string>
+              </void>
+              <void property="estado">
+               <string>Vendido</string>
+              </void>
+              <void property="fechaCumlinacion">
+               <string>2022-11-20</string>
+              </void>
+              <void property="fechaPublicacion">
+               <string>2022-11-20</string>
+              </void>
+              <void property="foto">
+               <string>C:\Users\HP 245 RYZEN 3\Downloads\fan.jpg</string>
+              </void>
+              <void property="idAnuncio">
+               <string>CP0011</string>
+              </void>
+              <void property="nombreAnunciante">
+               <string>Carl</string>
+              </void>
+              <void property="nombreArticulo">
+               <string>WIUYTRDTYUWIO</string>
+              </void>
+              <void property="pujante">
+               <object class="co.edu.uniquindio.subasta.model.Comprador">
+                <void property="contadorPuja">
+                 <double>5000.0</double>
+                </void>
+                <void property="dinero">
+                 <double>-4000.0</double>
+                </void>
+                <void property="edad">
+                 <int>32</int>
+                </void>
+                <void property="idUsuario">
+                 <string>345</string>
+                </void>
+                <void property="nombre">
+                 <string>Andres</string>
+                </void>
+               </object>
+              </void>
+              <void property="tipoArticulo">
+               <object idref="TipoArticulo1"/>
+              </void>
+              <void property="valor">
+               <int>5000</int>
+              </void>
+             </object>
+            </void>
+            <void method="add">
+             <object class="co.edu.uniquindio.subasta.model.Anuncio">
+              <void property="descripcion">
+               <string>gvfds</string>
+              </void>
+              <void property="estado">
+               <string>Vendido</string>
+              </void>
+              <void property="fechaCumlinacion">
+               <string>2022-11-20</string>
+              </void>
+              <void property="fechaPublicacion">
+               <string>2022-11-20</string>
+              </void>
+              <void property="foto">
+               <string>C:\Users\HP 245 RYZEN 3\Downloads\mam.jpg</string>
+              </void>
+              <void property="idAnuncio">
+               <string>CP0011</string>
+              </void>
+              <void property="nombreAnunciante">
+               <string>Darly</string>
+              </void>
+              <void property="nombreArticulo">
+               <string>XDDDD</string>
+              </void>
+              <void property="pujante">
+               <object class="co.edu.uniquindio.subasta.model.Comprador">
+                <void property="contadorPuja">
+                 <double>4000.0</double>
+                </void>
+                <void property="dinero">
+                 <double>36000.0</double>
+                </void>
+                <void property="edad">
+                 <int>32</int>
+                </void>
+                <void property="idUsuario">
+                 <string>345</string>
+                </void>
+                <void property="listaCompras">
+                 <object idref="ArrayList0"/>
+                </void>
+                <void property="nombre">
+                 <string>Andres</string>
+                </void>
+               </object>
+              </void>
+              <void property="tipoArticulo">
+               <object idref="TipoArticulo0"/>
+              </void>
+              <void property="valor">
+               <int>4000</int>
+              </void>
+             </object>
+            </void>
+           </void>
+           <void property="nombre">
+            <string>Andres</string>
+           </void>
+          </object>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+          <int>11000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio3">
+         <void property="descripcion">
+          <string>Cualquier</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-22</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\Downloads\otra mas.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0012</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Carl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Tatto</string>
+         </void>
+         <void property="pujante">
+          <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador4">
+           <void property="dinero">
+            <double>58500.0</double>
+           </void>
+           <void property="edad">
+            <int>23</int>
+           </void>
+           <void property="idUsuario">
+            <string>123</string>
+           </void>
+           <void id="ArrayList1" property="listaCompras">
+            <void method="add">
+             <object class="co.edu.uniquindio.subasta.model.Anuncio">
+              <void property="descripcion">
+               <string>FGYDCHNJSDBVSDKVNSDVSDKVNSDKVNSK
+DDVSDVSDVSDVDNV</string>
+              </void>
+              <void property="estado">
+               <string>Vendido</string>
+              </void>
+              <void property="fechaCumlinacion">
+               <string>2022-11-21</string>
+              </void>
+              <void property="fechaPublicacion">
+               <string>2022-11-20</string>
+              </void>
+              <void property="foto">
+               <string>C:\Users\HP 245 RYZEN 3\Documents\imagenes\3w.jpg</string>
+              </void>
+              <void property="idAnuncio">
+               <string>CP0011</string>
+              </void>
+              <void property="nombreAnunciante">
+               <string>Carl</string>
+              </void>
+              <void property="nombreArticulo">
+               <string>FFFFFFFFFFFFFFFF</string>
+              </void>
+              <void property="pujante">
+               <object class="co.edu.uniquindio.subasta.model.Comprador">
+                <void property="dinero">
+                 <double>8500.0</double>
+                </void>
+                <void property="edad">
+                 <int>23</int>
+                </void>
+                <void property="idUsuario">
+                 <string>123</string>
+                </void>
+                <void property="nombre">
+                 <string>jox</string>
+                </void>
+               </object>
+              </void>
+              <void property="tipoArticulo">
+               <object idref="TipoArticulo0"/>
+              </void>
+              <void property="valor">
+               <int>16000</int>
+              </void>
+             </object>
+            </void>
+           </void>
+           <void property="nombre">
+            <string>jox</string>
+           </void>
+          </object>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+          <int>5000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio4">
+         <void property="descripcion">
+          <string>El celular mas potente del mercado</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-22</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Tecnologia.Celular.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0013</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Carl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Celular</string>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo1"/>
+         </void>
+         <void property="valor">
+          <int>1000000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio5">
+         <void property="descripcion">
+          <string>La mejor casa del mercado</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-12-31</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\BienesRaiz.Casa.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0014</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Carl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Casa Lujosa (Promocion)</string>
+         </void>
+         <void property="tipoArticulo">
+          <object class="java.lang.Enum" method="valueOf">
+           <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+           <string>VIENESRAIZ</string>
+          </object>
+         </void>
+         <void property="valor">
+          <int>200000000</int>
+         </void>
+        </object>
+       </void>
       </object>
      </void>
      <void property="nombre">
@@ -86,10 +493,10 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
      <void property="cantAnuncios">
-      <int>3</int>
+      <int>4</int>
      </void>
      <void property="dinero">
-      <double>2.34568058E8</double>
+      <double>2.34575058E8</double>
      </void>
      <void property="edad">
       <int>19</int>
@@ -98,7 +505,242 @@
       <string>90</string>
      </void>
      <void property="listaAnuncios">
-      <object class="java.util.ArrayList"/>
+      <object class="java.util.ArrayList">
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio6">
+         <void property="descripcion">
+          <string>fjrhjfvrburbv</string>
+         </void>
+         <void property="estado">
+          <string>Vendido</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-20</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-20</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\Downloads\sia.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0011</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Darly</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>AHHHHHH</string>
+         </void>
+         <void property="pujante">
+          <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador5">
+           <void property="contadorPuja">
+            <double>3000.0</double>
+           </void>
+           <void property="edad">
+            <int>32</int>
+           </void>
+           <void property="idUsuario">
+            <string>345</string>
+           </void>
+           <void property="listaCompras">
+            <void method="add">
+             <object idref="Anuncio6"/>
+            </void>
+           </void>
+           <void property="nombre">
+            <string>Andres</string>
+           </void>
+          </object>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+          <int>3000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio7">
+         <void property="descripcion">
+          <string>gvfds</string>
+         </void>
+         <void property="estado">
+          <string>Vendido</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-20</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-20</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\Downloads\mam.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0011</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Darly</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>XDDDD</string>
+         </void>
+         <void property="pujante">
+          <object class="co.edu.uniquindio.subasta.model.Comprador" id="Comprador6">
+           <void property="contadorPuja">
+            <double>4000.0</double>
+           </void>
+           <void property="dinero">
+            <double>36000.0</double>
+           </void>
+           <void property="edad">
+            <int>32</int>
+           </void>
+           <void property="idUsuario">
+            <string>345</string>
+           </void>
+           <void property="listaCompras">
+            <void method="add">
+             <object class="co.edu.uniquindio.subasta.model.Anuncio">
+              <void property="descripcion">
+               <string>HHHHHH</string>
+              </void>
+              <void property="estado">
+               <string>Vendido</string>
+              </void>
+              <void property="fechaCumlinacion">
+               <string>2022-11-20</string>
+              </void>
+              <void property="fechaPublicacion">
+               <string>2022-11-20</string>
+              </void>
+              <void property="foto">
+               <string>C:\Users\HP 245 RYZEN 3\Downloads\fan.jpg</string>
+              </void>
+              <void property="idAnuncio">
+               <string>CP0011</string>
+              </void>
+              <void property="nombreAnunciante">
+               <string>Carl</string>
+              </void>
+              <void property="nombreArticulo">
+               <string>WIUYTRDTYUWIO</string>
+              </void>
+              <void property="pujante">
+               <object class="co.edu.uniquindio.subasta.model.Comprador">
+                <void property="contadorPuja">
+                 <double>5000.0</double>
+                </void>
+                <void property="dinero">
+                 <double>-4000.0</double>
+                </void>
+                <void property="edad">
+                 <int>32</int>
+                </void>
+                <void property="idUsuario">
+                 <string>345</string>
+                </void>
+                <void property="nombre">
+                 <string>Andres</string>
+                </void>
+               </object>
+              </void>
+              <void property="tipoArticulo">
+               <object idref="TipoArticulo1"/>
+              </void>
+              <void property="valor">
+               <int>5000</int>
+              </void>
+             </object>
+            </void>
+            <void method="add">
+             <object idref="Anuncio7"/>
+            </void>
+           </void>
+           <void property="nombre">
+            <string>Andres</string>
+           </void>
+          </object>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+          <int>4000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio8">
+         <void property="descripcion">
+          <string>Pc fullHD 4k no fake un link por mega</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-12-01</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Tecnologia.Computador.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0015</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Darly</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Pc</string>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo1"/>
+         </void>
+         <void property="valor">
+          <int>100000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio9">
+         <void property="descripcion">
+          <string>El mueble mas comodo</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-29</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Hogra.Muebles.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0016</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Darly</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Muebles</string>
+         </void>
+         <void property="tipoArticulo">
+          <object idref="TipoArticulo0"/>
+         </void>
+         <void property="valor">
+          <int>800000</int>
+         </void>
+        </object>
+       </void>
+      </object>
      </void>
      <void property="nombre">
       <string>Darly</string>
@@ -107,8 +749,11 @@
    </void>
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Anunciante">
+     <void property="cantAnuncios">
+      <int>2</int>
+     </void>
      <void property="dinero">
-      <double>7099.0</double>
+      <double>12699.0</double>
      </void>
      <void property="edad">
       <int>21</int>
@@ -117,7 +762,82 @@
       <string>45</string>
      </void>
      <void property="listaAnuncios">
-      <object class="java.util.ArrayList"/>
+      <object class="java.util.ArrayList">
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio10">
+         <void property="descripcion">
+          <string>Balon tronchatoro</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-11-30</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Deportes.Balon.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0017</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Karl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Balon</string>
+         </void>
+         <void property="tipoArticulo">
+          <object class="java.lang.Enum" method="valueOf">
+           <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+           <string>DEPORTES</string>
+          </object>
+         </void>
+         <void property="valor">
+          <int>5000</int>
+         </void>
+        </object>
+       </void>
+       <void method="add">
+        <object class="co.edu.uniquindio.subasta.model.Anuncio" id="Anuncio11">
+         <void property="descripcion">
+          <string>Mas rapido que el rayo</string>
+         </void>
+         <void property="estado">
+          <string>venta</string>
+         </void>
+         <void property="fechaCumlinacion">
+          <string>2022-12-12</string>
+         </void>
+         <void property="fechaPublicacion">
+          <string>2022-11-21</string>
+         </void>
+         <void property="foto">
+          <string>C:\Users\HP 245 RYZEN 3\IdeaProjects\ProyectoFinalProgramacion\src\resources\ImagenesAnuncios\Vehiculos.Auto.jpg</string>
+         </void>
+         <void property="idAnuncio">
+          <string>CP0018</string>
+         </void>
+         <void property="nombreAnunciante">
+          <string>Karl</string>
+         </void>
+         <void property="nombreArticulo">
+          <string>Vehiculo</string>
+         </void>
+         <void property="tipoArticulo">
+          <object class="java.lang.Enum" id="TipoArticulo2" method="valueOf">
+           <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
+           <string>VEHICULOS</string>
+          </object>
+         </void>
+         <void property="valor">
+          <int>50000000</int>
+         </void>
+        </object>
+       </void>
+      </object>
      </void>
      <void property="nombre">
       <string>Karl</string>
@@ -153,10 +873,7 @@
       <string>Toyota Prado</string>
      </void>
      <void property="tipoArticulo">
-      <object class="java.lang.Enum" method="valueOf">
-       <class>co.edu.uniquindio.subasta.model.TipoArticulo</class>
-       <string>VEHICULOS</string>
-      </object>
+      <object idref="TipoArticulo2"/>
      </void>
      <void property="valor">
       <int>2000000000</int>
@@ -198,14 +915,32 @@
     </object>
    </void>
    <void method="add">
-    <object idref="Anuncio0"/>
+    <object idref="Anuncio3"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio4"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio5"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio8"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio9"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio10"/>
+   </void>
+   <void method="add">
+    <object idref="Anuncio11"/>
    </void>
   </void>
   <void property="listaCompradores">
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Comprador">
      <void property="dinero">
-      <double>8.4568422E7</double>
+      <double>58500.0</double>
      </void>
      <void property="edad">
       <int>23</int>
@@ -214,6 +949,7 @@
       <string>123</string>
      </void>
      <void property="listaCompras">
+      <object idref="ArrayList1"/>
      </void>
      <void property="nombre">
       <string>jox</string>
@@ -223,13 +959,16 @@
    <void method="add">
     <object class="co.edu.uniquindio.subasta.model.Comprador">
      <void property="dinero">
-      <double>895000.0</double>
+      <double>15000.0</double>
      </void>
      <void property="edad">
       <int>32</int>
      </void>
      <void property="idUsuario">
       <string>345</string>
+     </void>
+     <void property="listaCompras">
+      <object idref="ArrayList0"/>
      </void>
      <void property="nombre">
       <string>Andres</string>
